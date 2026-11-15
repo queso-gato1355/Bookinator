@@ -1,0 +1,34 @@
+[
+  {
+    "task": "new_books.csv",
+    "row_index": 147,
+    "book_id": "cmu:enwiki:22119663",
+    "title": "Hunted",
+    "reason": "Insufficient independent recall",
+    "batch_start": 135
+  },
+  {
+    "task": "new_books.csv",
+    "row_index": 171,
+    "book_id": "cmu:enwiki:22105170",
+    "title": "Tempted",
+    "reason": "Insufficient independent recall",
+    "batch_start": 165
+  },
+  {
+    "task": "new_books.csv",
+    "row_index": 180,
+    "book_id": "cmu:enwiki:24942721",
+    "title": "Burned",
+    "reason": "Insufficient independent recall",
+    "batch_start": 180
+  },
+  {
+    "task": "new_books.csv",
+    "row_index": 228,
+    "book_id": "cmu:enwiki:33303850",
+    "title": "Awakened",
+    "reason": "Insufficient independent recall",
+    "batch_start": 225
+  }
+]

@@ -152,7 +152,7 @@ The validator checks:
 | QR code | Deploy workflow added; generate the QR from the Pages URL once deployed. |
 | Human playtests, timed rehearsals | **Can't be done by me.** Recruit 10 fresh testers and record outcomes with exact denominators. |
 
-## Research catalog (500 imported records → 181 targets, 268 titles)
+## Research catalog (500 imported records → 388 targets, 488 titles)
 
 Two catalogs ship, switchable on the start screen (live: https://wiseshrestha.github.io/Bookinator/). The **CMU /
 research catalog** ("Research shelf", 268 titles) is the **default**. The **10-book fixture** ("Classic shelf") is at
@@ -164,7 +164,7 @@ research catalog** ("Research shelf", 268 titles) is the **default**. The **10-b
 | Records with a validated question matrix | 500 (7,348 source-linked cells; 468 have ≥12) |
 | Form holds kept out of the novel pool | 8 |
 | Cells reviewed by a person | **0** |
-| **Playable game targets** | **181** covering **268** titles (27 before series + AI recall; 17 with the base 64 only) |
+| **Playable game targets** | **388** covering **488** titles (catalog v3, 40-question engine; 181/268 in v1) |
 
 Pipeline (`npm run catalog:research`; needs the research and Core packs next to the repo, not committed):
 1. `scripts/merge_research.py`: researched matrix (`core500_researched_labels.json`) merged by stable ID with
@@ -232,6 +232,40 @@ that disagree on a cell leave it unknown, and per-labeller agreement is reported
 
 Simulated readers answer from the same labels (internal consistency, not accuracy). More books means more to
 confuse, so per-game rates drop while coverage grows tenfold.
+
+### Second labeller: GPT recall pass, rebuilt as catalog `cmu-priority500-v3` (15 Nov 2026)
+
+`data/ai_recall/gpt.txt` (GPT, independent of Claude's file; see `docs/GPT_RECALL_HANDOFF.md`): 488 books, 37,168
+answers, 4 skipped; imported unchanged. Full rebuild (`merge_research` → `motif_labels` → `build_cmu_catalog
+--version cmu-priority500-v3` → `gate_catalog`) with the **merged engine settings from PR #1** (40-question cap,
+check-ins, 4 rejections; `src/engine/config.ts`, not changed here) and three AI labellers:
+
+| Labeller | Answers | Agreement with sourced labels |
+| --- | ---: | ---: |
+| Claude (`labels.txt`, incl. 5 books added in PR #1) | 10,345 | 2200/2354 (93.5%) |
+| GPT (`gpt.txt`) | 37,168 | 6618/6757 (97.9%) |
+| Gemini (`gemini.txt`, from PR #1) | 482 | 67/70 (95.7%) |
+
+Between labellers on shared cells: 8,271 agree, 787 disagree → unknown (91.3%). Recall cells added: 29,002.
+
+**Disagreement review.** Disagreements cluster on questions where the written definition was broader than the
+question players see (e.g. "Is there a courtroom trial?" was defined as "a trial, lawyer or court case", so a
+solicitor in *Dracula* counted). Rule added (`RELIABILITY_MIN_AGREE` = 0.75 in `build_cmu_catalog.py`, a data rule,
+not an engine threshold): on questions where labellers agree < 75% of the time on shared cells, an answer from only
+one labeller is dropped and only agreed answers are kept. Affected: m12 (42/63), m13 (18/60), m27 (33/50), m36 (43/81), m49 (32/51), q22 (26/36), q26 (149/202), q29 (51/76), q39 (48/66); 2,498 single-labeller answers dropped.
+The trial, battle and train definitions and keyword patterns now match the question text. AI agreement is not
+measured factual accuracy; every cell stays `ai_recall`, no source, `reviewed=false`.
+
+| Catalog | Engine settings | Playable targets | Titles reachable |
+| --- | --- | ---: | ---: |
+| v1 (Claude recall + series) | 18-question cap | 181 | 268 |
+| v2 (PR #1, labels applied without rebuild) | 40-question cap | 179 | 266 |
+| v3, before merging PR #1 (Claude + GPT) | 18-question cap | 341 | 440 |
+| **v3 (Claude + GPT + Gemini, full rebuild)** | **40-question cap** | **388** of 392 in scope | **488** |
+
+Not playable: Divine Secrets of the Ya-Ya Sisterhood, The Lucky One, Good in Bed, Evermore (sparse labels). Browser playtests (en, 1440 and 390 px):
+*Harry Potter*, *Narnia* and *Twilight* series with volume pick; *To Kill a Mockingbird*, *Pride and Prejudice*,
+*The Wonderful Wizard of Oz*; *The Catcher in the Rye* with one wrong answer (found after 22): all found, no errors.
 
 ## Front end: the seagull, the clouds and the sea
 

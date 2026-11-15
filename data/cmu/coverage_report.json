@@ -1,1170 +1,1412 @@
 {
- "catalog_version": "cmu-priority500-v1",
+ "catalog_version": "cmu-priority500-v3",
  "source": "priority_500.jsonl (first 500 records)",
  "counts": {
   "imported_source_records": 500,
   "labelled_with_validated_matrix": 500,
   "records_with_human_reviewed_cells": 0,
-  "playable_game_targets": 179,
+  "playable_game_targets": 388,
   "series_targets": 35,
-  "titles_reachable": 266
+  "titles_reachable": 488
  },
- "supported_cells_total": 14589,
- "supported_cells_per_labelled_book_mean": 29.18,
- "books_meeting_handoff_heuristic_12_supported": 390,
+ "supported_cells_total": 31371,
+ "supported_cells_per_labelled_book_mean": 62.74,
+ "books_meeting_handoff_heuristic_12_supported": 394,
  "gate": {
   "min_supported": 6,
   "pairwise_likelihood_ratio": 4,
   "engine": "first guess when answering exactly from own labels (scripts/gate_catalog.ts); thresholds unchanged"
  },
  "status_breakdown": {
-  "playable": 179,
-  "part of series target series:the-hunger-games": 3,
-  "part of series target series:harry-potter": 6,
-  "part of series target series:twilight": 5,
-  "not identifiable by the engine from its own labels": 213,
-  "part of series target series:millennium": 3,
-  "part of series target series:chronicles-of-narnia": 7,
-  "part of series target series:robert-langdon": 2,
-  "part of series target series:percy-jackson-and-the-olympians": 5,
-  "part of series target series:a-song-of-ice-and-fire": 4,
-  "part of series target series:the-giver": 2,
-  "part of series target series:the-mortal-instruments": 4,
-  "part of series target series:the-inheritance-cycle": 4,
-  "part of series target series:his-dark-materials": 3,
-  "part of series target series:hitchhiker-s-guide-to-the-galaxy": 4,
-  "part of series target series:maze-runner": 3,
-  "part of series target series:outlander": 2,
-  "part of series target series:the-kingsbridge-series": 2,
-  "part of series target series:uglies": 3,
-  "part of series target series:sookie-stackhouse": 10,
-  "part of series target series:the-kingkiller-chronicle": 2,
-  "part of series target series:stephanie-plum": 7,
-  "part of series target series:the-vampire-chronicles": 3,
-  "part of series target series:house-of-night": 8,
-  "part of series target series:hannibal-lecter": 2,
-  "form hold (not a novel)": 8,
-  "part of series target series:the-dark-tower": 6,
-  "part of series target series:jason-bourne": 2,
-  "part of series target series:the-heroes-of-olympus": 2,
-  "part of series target series:graceling-realm": 2,
-  "part of series target series:foundation": 3,
-  "part of series target series:jack-ryan-universe": 3,
-  "part of series target series:vampire-academy": 6,
-  "part of series target series:wheel-of-time": 7,
-  "part of series target series:lorien-legacies": 2,
-  "part of series target series:hush-hush": 2,
-  "part of series target series:the-dresden-files": 4,
-  "part of series target series:ender-s-saga": 2
+  "playable": 388,
+  "grouped into a series target": 135,
+  "not identifiable by the engine from its own labels": 4,
+  "form hold (not a novel)": 8
  },
  "ai_recall": {
-  "cells_added": 7626,
-  "checked_against_sourced_labels": 2245,
-  "agree": 2088,
-  "conflict": 157,
-  "agreement_rate": 0.93,
+  "labellers": {
+   "claude": {
+    "answers": 10345,
+    "agree_with_sourced": 2200,
+    "conflict_with_sourced": 154,
+    "agreement_with_sourced": 0.935
+   },
+   "gemini": {
+    "answers": 482,
+    "agree_with_sourced": 67,
+    "conflict_with_sourced": 3,
+    "agreement_with_sourced": 0.957
+   },
+   "gpt": {
+    "answers": 37168,
+    "agree_with_sourced": 6618,
+    "conflict_with_sourced": 139,
+    "agreement_with_sourced": 0.979
+   }
+  },
+  "unreliable_questions": {
+   "m12": {
+    "agree": 42,
+    "disagree": 21,
+    "rule": "single-labeller answers dropped; agreed answers kept"
+   },
+   "m13": {
+    "agree": 18,
+    "disagree": 42,
+    "rule": "single-labeller answers dropped; agreed answers kept"
+   },
+   "m27": {
+    "agree": 33,
+    "disagree": 17,
+    "rule": "single-labeller answers dropped; agreed answers kept"
+   },
+   "m36": {
+    "agree": 43,
+    "disagree": 38,
+    "rule": "single-labeller answers dropped; agreed answers kept"
+   },
+   "m49": {
+    "agree": 32,
+    "disagree": 19,
+    "rule": "single-labeller answers dropped; agreed answers kept"
+   },
+   "q22": {
+    "agree": 26,
+    "disagree": 10,
+    "rule": "single-labeller answers dropped; agreed answers kept"
+   },
+   "q26": {
+    "agree": 149,
+    "disagree": 53,
+    "rule": "single-labeller answers dropped; agreed answers kept"
+   },
+   "q29": {
+    "agree": 51,
+    "disagree": 25,
+    "rule": "single-labeller answers dropped; agreed answers kept"
+   },
+   "q39": {
+    "agree": 48,
+    "disagree": 18,
+    "rule": "single-labeller answers dropped; agreed answers kept"
+   }
+  },
+  "cells_added": 29002,
+  "checked_against_sourced_labels": 6469,
+  "agree": 6330,
+  "conflict": 139,
+  "agreement_rate": 0.979,
+  "between_labellers": {
+   "agree": 8271,
+   "disagree_dropped": 787,
+   "single_labeller_on_unreliable_question_dropped": 2498
+  },
   "conflicts": [
    {
-    "book_id": "cmu:enwiki:20128213",
-    "question_id": "m48",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:48648",
-    "question_id": "m28",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:48648",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:48648",
-    "question_id": "m44",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:24162",
-    "question_id": "q10",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:254498",
-    "question_id": "m14",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:1398951",
-    "question_id": "m17",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:6111753",
-    "question_id": "m34",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:713577",
-    "question_id": "q32",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:901398",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:901398",
-    "question_id": "m49",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:55438",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:55438",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:55438",
-    "question_id": "m32",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:55438",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:606612",
-    "question_id": "q02",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:714218",
-    "question_id": "q53",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:419078",
-    "question_id": "q06",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:419078",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:571011",
-    "question_id": "m34",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:890626",
-    "question_id": "q20",
-    "sourced": 0.3,
-    "ai_recall": 0.9,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:10433866",
-    "question_id": "q04",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:13116455",
-    "question_id": "q53",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:959366",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:959366",
+    "book_id": "cmu:enwiki:1022544",
     "question_id": "m39",
     "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:25491508",
-    "question_id": "m14",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:1937988",
-    "question_id": "q53",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:3433040",
-    "question_id": "m49",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:3681524",
-    "question_id": "m24",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:22216108",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:31342",
-    "question_id": "q26",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:31342",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:31342",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
     "book_id": "cmu:enwiki:10951",
     "question_id": "q01",
     "sourced": 0.7,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gemini": 0.3,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:1164368",
+    "question_id": "m33",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:1268726",
+    "question_id": "q10",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:13116455",
+    "question_id": "q04",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:13116455",
+    "question_id": "q53",
+    "sourced": 0.7,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:13116455",
+    "question_id": "q54",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:1364178",
+    "question_id": "m33",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:13726089",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:1388208",
+    "question_id": "q04",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:1388208",
+    "question_id": "q50",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:15120912",
+    "question_id": "m11",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:15120912",
+    "question_id": "q04",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:1524981",
+    "question_id": "m04",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:1544083",
+    "question_id": "m32",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:1599634",
+    "question_id": "q06",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:161446",
+    "question_id": "q40",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:162770",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:162770",
+    "question_id": "m33",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:163629",
+    "question_id": "m32",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:1678384",
+    "question_id": "m51",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:180464",
+    "question_id": "q06",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:186397",
+    "question_id": "q04",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:1890954",
+    "question_id": "q06",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:19859",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:19918431",
+    "question_id": "m17",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
     "book_id": "cmu:enwiki:20584690",
     "question_id": "m33",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:161502",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:3012644",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:7906594",
+    "book_id": "cmu:enwiki:2059673",
     "question_id": "m31",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:28411923",
-    "question_id": "q08",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:654705",
-    "question_id": "m28",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:889073",
-    "question_id": "q39",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:889073",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:71416",
-    "question_id": "q29",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:23404033",
-    "question_id": "m04",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:23404033",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:288153",
-    "question_id": "q23",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:843",
-    "question_id": "q06",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:843",
-    "question_id": "q42",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:33314889",
-    "question_id": "q10",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:3552124",
+    "book_id": "cmu:enwiki:2059673",
     "question_id": "q04",
     "sourced": 0.7,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:23817576",
-    "question_id": "q53",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:23817576",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:944096",
-    "question_id": "q20",
-    "sourced": 0.3,
-    "ai_recall": 0.9,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:45896",
-    "question_id": "q26",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:45896",
-    "question_id": "q47",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:18949410",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:18949410",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:20007123",
-    "question_id": "m01",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:29798",
-    "question_id": "q08",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:871902",
-    "question_id": "q07",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:871902",
-    "question_id": "q08",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:133874",
-    "question_id": "q06",
-    "sourced": 0.3,
-    "ai_recall": 0.9,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:182128",
+    "book_id": "cmu:enwiki:2220261",
     "question_id": "q53",
     "sourced": 0.7,
-    "ai_recall": 0.3,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:23854860",
-    "question_id": "m27",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:23854860",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:540888",
-    "question_id": "q39",
+    "book_id": "cmu:enwiki:2220261",
+    "question_id": "q54",
     "sourced": 0.7,
-    "ai_recall": 0.3,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:19859",
-    "question_id": "q14",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:19859",
+    "book_id": "cmu:enwiki:22216108",
     "question_id": "m31",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:19859",
-    "question_id": "m36",
+    "book_id": "cmu:enwiki:2224493",
+    "question_id": "m17",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:891623",
-    "question_id": "q08",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:386568",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:63987",
-    "question_id": "q15",
-    "sourced": 0.9,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:63987",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:161446",
-    "question_id": "q01",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:161446",
-    "question_id": "q26",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:161446",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:10876585",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:159941",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:159941",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:271590",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:67317",
-    "question_id": "q53",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:1364178",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:1364178",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:5205080",
-    "question_id": "q10",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:360245",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:1022544",
+    "book_id": "cmu:enwiki:2224493",
     "question_id": "m39",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:309409",
-    "question_id": "m10",
+    "book_id": "cmu:enwiki:2224493",
+    "question_id": "m46",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:309409",
-    "question_id": "m35",
+    "book_id": "cmu:enwiki:2295010",
+    "question_id": "q04",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:229593",
+    "question_id": "m33",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:894970",
+    "book_id": "cmu:enwiki:2332270",
     "question_id": "m32",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:894970",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:30761",
-    "question_id": "m32",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:1301931",
-    "question_id": "m27",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:53071",
-    "question_id": "q18",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:53071",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:167963",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:3832478",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:31058296",
-    "question_id": "q09",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:381491",
-    "question_id": "q19",
-    "sourced": 0.3,
-    "ai_recall": 0.9,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:381491",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:381491",
-    "question_id": "m28",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:54436",
-    "question_id": "q60",
-    "sourced": 0.1,
-    "ai_recall": 0.9,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:54436",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:340909",
-    "question_id": "m39",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:231716",
-    "question_id": "q03",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:231716",
-    "question_id": "q08",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:182433",
-    "question_id": "m24",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:182433",
-    "question_id": "m37",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:876994",
-    "question_id": "q53",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:1268726",
-    "question_id": "m51",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:358335",
-    "question_id": "m32",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:635510",
-    "question_id": "m25",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:635510",
-    "question_id": "m34",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:224500",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:224500",
-    "question_id": "m27",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:1164368",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:1164368",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:21725",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:21725",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:410134",
-    "question_id": "m27",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:410134",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:55483",
-    "question_id": "q13",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:5085908",
-    "question_id": "q08",
-    "sourced": 0.7,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:155311",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:163629",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:163629",
-    "question_id": "m32",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:30280",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:30280",
-    "question_id": "m28",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:32688947",
-    "question_id": "q34",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:162770",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:162770",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:162770",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:607536",
-    "question_id": "m27",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:2890",
-    "question_id": "m35",
-    "sourced": 0.9,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:71989",
-    "question_id": "m33",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:28426",
-    "question_id": "m10",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:42609",
-    "question_id": "q53",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:42609",
-    "question_id": "m14",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:42609",
-    "question_id": "m36",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:30709",
-    "question_id": "q03",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:8179637",
-    "question_id": "m31",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:375359",
+    "book_id": "cmu:enwiki:23404033",
     "question_id": "m04",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:528860",
-    "question_id": "m13",
-    "sourced": 0.9,
-    "ai_recall": 0.1,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:528860",
-    "question_id": "m21",
-    "sourced": 0.9,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:986",
-    "question_id": "q49",
-    "sourced": 0.7,
-    "ai_recall": 0.3,
-    "resolution": "set to unknown (0.5)"
-   },
-   {
-    "book_id": "cmu:enwiki:986",
+    "book_id": "cmu:enwiki:23404033",
     "question_id": "m33",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:723638",
+    "book_id": "cmu:enwiki:236599",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:23817576",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:23817576",
     "question_id": "q53",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:723638",
-    "question_id": "m36",
+    "book_id": "cmu:enwiki:24015984",
+    "question_id": "q05",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:24162",
+    "question_id": "m32",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:24162",
+    "question_id": "q10",
+    "sourced": 0.7,
+    "ai_recall": {
+     "claude": 0.3,
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:2449650",
+    "question_id": "q11",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:248364",
+    "question_id": "q19",
+    "sourced": 0.3,
+    "ai_recall": {
+     "gpt": 0.7
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:24977554",
+    "question_id": "m40",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:254498",
+    "question_id": "m14",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:25812499",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:25839458",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
     "book_id": "cmu:enwiki:26476",
     "question_id": "m32",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:5257205",
-    "question_id": "m10",
+    "book_id": "cmu:enwiki:2662485",
+    "question_id": "m04",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:5257205",
-    "question_id": "m13",
+    "book_id": "cmu:enwiki:271590",
+    "question_id": "m31",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:5257205",
-    "question_id": "m36",
+    "book_id": "cmu:enwiki:27722629",
+    "question_id": "m31",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:27979753",
+    "question_id": "m26",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:27979753",
+    "question_id": "m32",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:27979753",
+    "question_id": "m33",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:288153",
+    "question_id": "q23",
+    "sourced": 0.7,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:30280",
+    "question_id": "m28",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:302997",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:30761",
+    "question_id": "m32",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:30841087",
+    "question_id": "q32",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:31342",
+    "question_id": "m33",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:31879966",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:32860050",
+    "question_id": "m33",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
     "book_id": "cmu:enwiki:333987",
     "question_id": "m33",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:6961605",
-    "question_id": "q01",
+    "book_id": "cmu:enwiki:3345384",
+    "question_id": "m32",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:3345384",
+    "question_id": "m51",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:340909",
+    "question_id": "m39",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:340909",
+    "question_id": "q04",
     "sourced": 0.7,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:6961605",
-    "question_id": "q18",
+    "book_id": "cmu:enwiki:3433040",
+    "question_id": "m49",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:3434631",
+    "question_id": "q08",
     "sourced": 0.7,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "gpt": 0.3
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:6961605",
+    "book_id": "cmu:enwiki:3552124",
+    "question_id": "q04",
+    "sourced": 0.7,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:358335",
+    "question_id": "m32",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:360245",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:3608386",
+    "question_id": "q09",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:381491",
+    "question_id": "m28",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:381491",
     "question_id": "q19",
     "sourced": 0.3,
-    "ai_recall": 0.9,
+    "ai_recall": {
+     "claude": 0.9
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:386568",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:419078",
+    "question_id": "m33",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:42609",
+    "question_id": "q04",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:42609",
+    "question_id": "q53",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:427317",
+    "question_id": "m47",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:43168",
+    "question_id": "q50",
+    "sourced": 0.3,
+    "ai_recall": {
+     "gpt": 0.9
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:48648",
+    "question_id": "m28",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:48648",
+    "question_id": "m36",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:48648",
+    "question_id": "m44",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:5162233",
+    "question_id": "m32",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:5162233",
+    "question_id": "q10",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:5205080",
+    "question_id": "q10",
+    "sourced": 0.7,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:5306304",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:53071",
+    "question_id": "q18",
+    "sourced": 0.7,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:535391",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:540888",
+    "question_id": "q51",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:543142",
+    "question_id": "m28",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:54436",
+    "question_id": "m17",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:54436",
+    "question_id": "q60",
+    "sourced": 0.1,
+    "ai_recall": {
+     "claude": 0.9
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:55438",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:55438",
+    "question_id": "m32",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:55438",
+    "question_id": "m33",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:55483",
+    "question_id": "q13",
+    "sourced": 0.7,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:576114",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:5842145",
+    "question_id": "q53",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:594829",
+    "question_id": "q53",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:6111753",
+    "question_id": "m34",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:6161733",
+    "question_id": "q01",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:635510",
+    "question_id": "m25",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:635510",
+    "question_id": "m34",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:63987",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:63987",
+    "question_id": "q14",
+    "sourced": 0.1,
+    "ai_recall": {
+     "gpt": 0.7
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:654705",
+    "question_id": "m28",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:67003",
+    "question_id": "m15",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
     "book_id": "cmu:enwiki:703539",
     "question_id": "m32",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
     "resolution": "set to unknown (0.5)"
    },
    {
-    "book_id": "cmu:enwiki:901697",
-    "question_id": "m36",
+    "book_id": "cmu:enwiki:71989",
+    "question_id": "m33",
     "sourced": 0.9,
-    "ai_recall": 0.1,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:723638",
+    "question_id": "q53",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:7504806",
+    "question_id": "q04",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:7906594",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:80124",
+    "question_id": "m33",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:8179637",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:8179637",
+    "question_id": "q05",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:842685",
+    "question_id": "q19",
+    "sourced": 0.3,
+    "ai_recall": {
+     "gpt": 0.7
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:843",
+    "question_id": "q06",
+    "sourced": 0.7,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:8520267",
+    "question_id": "q09",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:8595912",
+    "question_id": "q10",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:889073",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:890626",
+    "question_id": "q19",
+    "sourced": 0.7,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:890626",
+    "question_id": "q20",
+    "sourced": 0.3,
+    "ai_recall": {
+     "claude": 0.9,
+     "gpt": 0.9
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:894970",
+    "question_id": "m32",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:894970",
+    "question_id": "m44",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:901398",
+    "question_id": "m31",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.3
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:933335",
+    "question_id": "m15",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:9366759",
+    "question_id": "m04",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:9366759",
+    "question_id": "m32",
+    "sourced": 0.9,
+    "ai_recall": {
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:944096",
+    "question_id": "q20",
+    "sourced": 0.3,
+    "ai_recall": {
+     "claude": 0.9
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:959366",
+    "question_id": "m39",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:986",
+    "question_id": "m33",
+    "sourced": 0.9,
+    "ai_recall": {
+     "claude": 0.1,
+     "gpt": 0.1
+    },
+    "resolution": "set to unknown (0.5)"
+   },
+   {
+    "book_id": "cmu:enwiki:986",
+    "question_id": "q49",
+    "sourced": 0.7,
+    "ai_recall": {
+     "claude": 0.3,
+     "gpt": 0.3
+    },
     "resolution": "set to unknown (0.5)"
    }
   ],
-  "note": "On conflict both are dropped (unknown). Agreement is with AI-drafted sourced labels, not a human check."
+  "note": "Recall vs sourced: on conflict the cell becomes unknown. Labellers disagreeing: no recall answer. Agreement is with AI-drafted sourced labels, not a human check."
  },
  "scope": "Counts of records and labels. Not a measure of factual correctness or of game success.",
  "records": [
@@ -1176,7 +1418,7 @@
     "Suzanne Collins"
    ],
    "labelled": true,
-   "supported_cells": 79,
+   "supported_cells": 93,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1208,7 +1450,7 @@
     "J. K. Rowling"
    ],
    "labelled": true,
-   "supported_cells": 69,
+   "supported_cells": 90,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1243,7 +1485,7 @@
     "Stephenie Meyer"
    ],
    "labelled": true,
-   "supported_cells": 75,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1277,10 +1519,10 @@
     "Harper Lee"
    ],
    "labelled": true,
-   "supported_cells": 26,
+   "supported_cells": 83,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 4,
@@ -1290,7 +1532,7 @@
     "F. Scott Fitzgerald"
    ],
    "labelled": true,
-   "supported_cells": 28,
+   "supported_cells": 104,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1303,7 +1545,7 @@
     "John Green"
    ],
    "labelled": true,
-   "supported_cells": 75,
+   "supported_cells": 91,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1316,10 +1558,10 @@
     "J. D. Salinger"
    ],
    "labelled": true,
-   "supported_cells": 26,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 7,
@@ -1329,7 +1571,7 @@
     "Jane Austen"
    ],
    "labelled": true,
-   "supported_cells": 87,
+   "supported_cells": 96,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1342,7 +1584,7 @@
     "George Orwell"
    ],
    "labelled": true,
-   "supported_cells": 29,
+   "supported_cells": 101,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1355,7 +1597,7 @@
     "George Orwell"
    ],
    "labelled": true,
-   "supported_cells": 75,
+   "supported_cells": 100,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1396,7 +1638,7 @@
     "Khaled Hosseini"
    ],
    "labelled": true,
-   "supported_cells": 68,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1409,7 +1651,7 @@
     "Stieg Larsson"
    ],
    "labelled": true,
-   "supported_cells": 72,
+   "supported_cells": 87,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1511,10 +1753,10 @@
     "William Golding"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 80,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 20,
@@ -1524,7 +1766,7 @@
     "C. S. Lewis"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1560,7 +1802,7 @@
     "Kathryn Stockett"
    ],
    "labelled": true,
-   "supported_cells": 68,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1573,10 +1815,10 @@
     "John Steinbeck"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 23,
@@ -1586,7 +1828,7 @@
     "Dan Brown"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 75,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1617,7 +1859,7 @@
     "Rick Riordan"
    ],
    "labelled": true,
-   "supported_cells": 57,
+   "supported_cells": 77,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1651,7 +1893,7 @@
     "George R. R. Martin"
    ],
    "labelled": true,
-   "supported_cells": 63,
+   "supported_cells": 90,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1684,7 +1926,7 @@
     "Arthur Golden"
    ],
    "labelled": true,
-   "supported_cells": 60,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1697,7 +1939,7 @@
     "Lois Lowry"
    ],
    "labelled": true,
-   "supported_cells": 67,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1728,7 +1970,7 @@
     "Louisa May Alcott"
    ],
    "labelled": true,
-   "supported_cells": 78,
+   "supported_cells": 91,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1741,7 +1983,7 @@
     "Charlotte Brontë"
    ],
    "labelled": true,
-   "supported_cells": 72,
+   "supported_cells": 87,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1754,7 +1996,7 @@
     "Cassandra Clare"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1815,7 +2057,7 @@
     "Christopher Paolini"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1862,7 +2104,7 @@
     "Sara Gruen"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 91,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1875,7 +2117,7 @@
     "E. B. White"
    ],
    "labelled": true,
-   "supported_cells": 65,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1888,7 +2130,7 @@
     "Nicholas Sparks"
    ],
    "labelled": true,
-   "supported_cells": 60,
+   "supported_cells": 81,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -1901,10 +2143,10 @@
     "Aldous Huxley"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 82,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 39,
@@ -1914,10 +2156,10 @@
     "Yann Martel"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 82,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 40,
@@ -1927,7 +2169,7 @@
     "Philip Pullman"
    ],
    "labelled": true,
-   "supported_cells": 50,
+   "supported_cells": 93,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1959,7 +2201,7 @@
     "Douglas Adams"
    ],
    "labelled": true,
-   "supported_cells": 62,
+   "supported_cells": 90,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -1992,7 +2234,7 @@
     "Sue Monk Kidd"
    ],
    "labelled": true,
-   "supported_cells": 31,
+   "supported_cells": 100,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2005,7 +2247,7 @@
     "Emily Brontë"
    ],
    "labelled": true,
-   "supported_cells": 70,
+   "supported_cells": 90,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2018,7 +2260,7 @@
     "Stephen Chbosky"
    ],
    "labelled": true,
-   "supported_cells": 67,
+   "supported_cells": 86,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2031,10 +2273,10 @@
     "Margaret Mitchell"
    ],
    "labelled": true,
-   "supported_cells": 28,
+   "supported_cells": 81,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 46,
@@ -2044,7 +2286,7 @@
     "Mark Haddon"
    ],
    "labelled": true,
-   "supported_cells": 64,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2057,10 +2299,10 @@
     "Jodi Picoult"
    ],
    "labelled": true,
-   "supported_cells": 26,
+   "supported_cells": 80,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 48,
@@ -2070,7 +2312,7 @@
     "Khaled Hosseini"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 81,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2083,7 +2325,7 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 63,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2096,7 +2338,7 @@
     "Stephenie Meyer"
    ],
    "labelled": true,
-   "supported_cells": 50,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2109,7 +2351,7 @@
     "Louis Sachar"
    ],
    "labelled": true,
-   "supported_cells": 60,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2122,7 +2364,7 @@
     "Audrey Niffenegger"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2135,7 +2377,7 @@
     "Jane Austen"
    ],
    "labelled": true,
-   "supported_cells": 65,
+   "supported_cells": 88,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2148,7 +2390,7 @@
     "James Dashner"
    ],
    "labelled": true,
-   "supported_cells": 60,
+   "supported_cells": 90,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -2180,7 +2422,7 @@
     "Lauren Weisberger"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2193,7 +2435,7 @@
     "S. E. Hinton"
    ],
    "labelled": true,
-   "supported_cells": 62,
+   "supported_cells": 87,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2206,7 +2448,7 @@
     "Frances Hodgson Burnett"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2219,7 +2461,7 @@
     "Charles Dickens"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 88,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2232,7 +2474,7 @@
     "William Goldman"
    ],
    "labelled": true,
-   "supported_cells": 52,
+   "supported_cells": 86,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2245,7 +2487,7 @@
     "Bram Stoker"
    ],
    "labelled": true,
-   "supported_cells": 62,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2258,7 +2500,7 @@
     "Madeleine L'Engle"
    ],
    "labelled": true,
-   "supported_cells": 52,
+   "supported_cells": 76,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2271,7 +2513,7 @@
     "Ransom Riggs"
    ],
    "labelled": true,
-   "supported_cells": 45,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2284,7 +2526,7 @@
     "Margaret Atwood"
    ],
    "labelled": true,
-   "supported_cells": 66,
+   "supported_cells": 87,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2311,7 +2553,7 @@
     "Oscar Wilde"
    ],
    "labelled": true,
-   "supported_cells": 57,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2324,7 +2566,7 @@
     "Ray Bradbury"
    ],
    "labelled": true,
-   "supported_cells": 65,
+   "supported_cells": 84,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2351,7 +2593,7 @@
     "Joseph Heller"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2364,7 +2606,7 @@
     "Nicholas Sparks"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2377,10 +2619,10 @@
     "Barbara Kingsolver"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 80,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 71,
@@ -2404,7 +2646,7 @@
     "Ann Brashares"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 76,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2417,7 +2659,7 @@
     "Ernest Hemingway"
    ],
    "labelled": true,
-   "supported_cells": 72,
+   "supported_cells": 93,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2430,7 +2672,7 @@
     "Diana Gabaldon"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -2461,10 +2703,10 @@
     "Amy Tan"
    ],
    "labelled": true,
-   "supported_cells": 46,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 76,
@@ -2488,10 +2730,10 @@
     "Victor Hugo"
    ],
    "labelled": true,
-   "supported_cells": 25,
+   "supported_cells": 81,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 78,
@@ -2501,7 +2743,7 @@
     "Emma Donoghue"
    ],
    "labelled": true,
-   "supported_cells": 66,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2528,10 +2770,10 @@
     "Gregory Maguire"
    ],
    "labelled": true,
-   "supported_cells": 31,
+   "supported_cells": 45,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 81,
@@ -2541,7 +2783,7 @@
     "Cormac McCarthy"
    ],
    "labelled": true,
-   "supported_cells": 72,
+   "supported_cells": 87,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2554,7 +2796,7 @@
     "Gayle Forman"
    ],
    "labelled": true,
-   "supported_cells": 52,
+   "supported_cells": 77,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2567,10 +2809,10 @@
     "Kim Edwards"
    ],
    "labelled": true,
-   "supported_cells": 29,
+   "supported_cells": 39,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 84,
@@ -2580,7 +2822,7 @@
     "Ken Kesey"
    ],
    "labelled": true,
-   "supported_cells": 57,
+   "supported_cells": 81,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2593,7 +2835,7 @@
     "Cassandra Clare"
    ],
    "labelled": true,
-   "supported_cells": 32,
+   "supported_cells": 95,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2606,7 +2848,7 @@
     "Gabriel García Márquez"
    ],
    "labelled": true,
-   "supported_cells": 51,
+   "supported_cells": 86,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2619,10 +2861,10 @@
     "Jeffrey Eugenides"
    ],
    "labelled": true,
-   "supported_cells": 51,
+   "supported_cells": 84,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 88,
@@ -2632,7 +2874,7 @@
     "Frank Herbert"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2645,7 +2887,7 @@
     "J. R. R. Tolkien"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 77,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2672,10 +2914,10 @@
     "Rebecca Wells"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 22,
    "reviewed_cells": 0,
    "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "reason": "engine gate: engine never became confident (shortlist after 40 questions) when answering from its own labels"
   },
   {
    "rank": 92,
@@ -2685,10 +2927,10 @@
     "Jay Asher"
    ],
    "labelled": true,
-   "supported_cells": 57,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 93,
@@ -2698,7 +2940,7 @@
     "Ken Follett"
    ],
    "labelled": true,
-   "supported_cells": 57,
+   "supported_cells": 87,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -2729,7 +2971,7 @@
     "John Green"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 81,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2742,10 +2984,10 @@
     "Dan Brown"
    ],
    "labelled": true,
-   "supported_cells": 41,
+   "supported_cells": 69,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 96,
@@ -2755,7 +2997,7 @@
     "Roald Dahl"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 77,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2768,7 +3010,7 @@
     "Mitch Albom"
    ],
    "labelled": true,
-   "supported_cells": 49,
+   "supported_cells": 74,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2781,7 +3023,7 @@
     "Scott Westerfeld"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 96,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -2813,10 +3055,10 @@
     "Michael Crichton"
    ],
    "labelled": true,
-   "supported_cells": 28,
+   "supported_cells": 81,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 100,
@@ -2854,7 +3096,7 @@
     "Roald Dahl"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2867,7 +3109,7 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2880,7 +3122,7 @@
     "Margaret Stohl"
    ],
    "labelled": true,
-   "supported_cells": 39,
+   "supported_cells": 72,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2893,7 +3135,7 @@
     "Anthony Burgess"
    ],
    "labelled": true,
-   "supported_cells": 64,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2906,7 +3148,7 @@
     "Erin Morgenstern"
    ],
    "labelled": true,
-   "supported_cells": 52,
+   "supported_cells": 75,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2933,7 +3175,7 @@
     "Anita Diamant"
    ],
    "labelled": true,
-   "supported_cells": 52,
+   "supported_cells": 76,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2946,7 +3188,7 @@
     "Nicholas Sparks"
    ],
    "labelled": true,
-   "supported_cells": 51,
+   "supported_cells": 81,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2959,7 +3201,7 @@
     "Dan Brown"
    ],
    "labelled": true,
-   "supported_cells": 47,
+   "supported_cells": 67,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2972,7 +3214,7 @@
     "Charlaine Harris"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 88,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -3011,7 +3253,7 @@
     "Albert Camus"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3024,7 +3266,7 @@
     "Agatha Christie"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3037,7 +3279,7 @@
     "Emily Giffin"
    ],
    "labelled": true,
-   "supported_cells": 50,
+   "supported_cells": 75,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3050,7 +3292,7 @@
     "Patrick Rothfuss"
    ],
    "labelled": true,
-   "supported_cells": 44,
+   "supported_cells": 95,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -3095,7 +3337,7 @@
     "Lauren Kate"
    ],
    "labelled": true,
-   "supported_cells": 42,
+   "supported_cells": 66,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3108,7 +3350,7 @@
     "Charles Dickens"
    ],
    "labelled": true,
-   "supported_cells": 66,
+   "supported_cells": 84,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3121,7 +3363,7 @@
     "Janet Evanovich"
    ],
    "labelled": true,
-   "supported_cells": 44,
+   "supported_cells": 67,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -3157,7 +3399,7 @@
     "J. R. R. Tolkien"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3170,7 +3412,7 @@
     "Eoin Colfer"
    ],
    "labelled": true,
-   "supported_cells": 49,
+   "supported_cells": 76,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3183,7 +3425,7 @@
     "Fyodor Dostoyevsky"
    ],
    "labelled": true,
-   "supported_cells": 62,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3196,7 +3438,7 @@
     "Neil Gaiman"
    ],
    "labelled": true,
-   "supported_cells": 39,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3209,7 +3451,7 @@
     "Alice Walker"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 84,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3222,7 +3464,7 @@
     "Anne Rice"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -3254,10 +3496,10 @@
     "Hermann Hesse"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 82,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 127,
@@ -3295,7 +3537,7 @@
     "Jane Austen"
    ],
    "labelled": true,
-   "supported_cells": 66,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3308,10 +3550,10 @@
     "Chuck Palahniuk"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 85,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 131,
@@ -3321,10 +3563,10 @@
     "Laurie Halse Anderson"
    ],
    "labelled": true,
-   "supported_cells": 53,
+   "supported_cells": 75,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 132,
@@ -3335,7 +3577,7 @@
     "P. C. Cast"
    ],
    "labelled": true,
-   "supported_cells": 49,
+   "supported_cells": 71,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -3372,10 +3614,10 @@
     "Herman Melville"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 86,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 134,
@@ -3385,7 +3627,7 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3398,7 +3640,7 @@
     "Thomas Harris"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 98,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -3429,7 +3671,7 @@
     "Ernest Cline"
    ],
    "labelled": true,
-   "supported_cells": 47,
+   "supported_cells": 81,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3442,7 +3684,7 @@
     "Ian McEwan"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3469,7 +3711,7 @@
     "Gail Carson Levine"
    ],
    "labelled": true,
-   "supported_cells": 38,
+   "supported_cells": 75,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3482,10 +3724,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 81,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 141,
@@ -3495,7 +3737,7 @@
     "William Shakespeare"
    ],
    "labelled": true,
-   "supported_cells": 12,
+   "supported_cells": 19,
    "reviewed_cells": 0,
    "playable": false,
    "reason": "form hold: Play; excluded from the default novels-only scope."
@@ -3508,7 +3750,7 @@
     "Lois Lowry"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3521,7 +3763,7 @@
     "Gillian Flynn"
    ],
    "labelled": true,
-   "supported_cells": 48,
+   "supported_cells": 77,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3534,7 +3776,7 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 49,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -3569,10 +3811,10 @@
     "Garth Stein"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 84,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 146,
@@ -3582,10 +3824,10 @@
     "Robert Ludlum"
    ],
    "labelled": true,
-   "supported_cells": 24,
+   "supported_cells": 80,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels",
+   "playable": true,
+   "reason": null,
    "volumes": [
     "cmu:enwiki:397398",
     "cmu:enwiki:901796"
@@ -3613,7 +3855,7 @@
     "John Steinbeck"
    ],
    "labelled": true,
-   "supported_cells": 63,
+   "supported_cells": 84,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3626,7 +3868,7 @@
     "John Steinbeck"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 88,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3639,7 +3881,7 @@
     "Daniel Keyes"
    ],
    "labelled": true,
-   "supported_cells": 60,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3652,10 +3894,10 @@
     "John Green"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 88,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 151,
@@ -3693,7 +3935,7 @@
     "Neil Gaiman"
    ],
    "labelled": true,
-   "supported_cells": 44,
+   "supported_cells": 76,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3706,7 +3948,7 @@
     "Rick Riordan"
    ],
    "labelled": true,
-   "supported_cells": 37,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -3737,7 +3979,7 @@
     "Leo Tolstoy"
    ],
    "labelled": true,
-   "supported_cells": 62,
+   "supported_cells": 91,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3750,10 +3992,10 @@
     "Jonathan Safran Foer"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 85,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 157,
@@ -3763,10 +4005,10 @@
     "Kazuo Ishiguro"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 89,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 158,
@@ -3776,7 +4018,7 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3789,7 +4031,7 @@
     "Richard Adams"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3802,7 +4044,7 @@
     "Betty Smith"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3815,10 +4057,10 @@
     "John Grisham"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 87,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 162,
@@ -3828,7 +4070,7 @@
     "John Boyne"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3841,7 +4083,7 @@
     "Ernest Hemingway"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3854,7 +4096,7 @@
     "Gabriel García Márquez"
    ],
    "labelled": true,
-   "supported_cells": 52,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3867,7 +4109,7 @@
     "Ayn Rand"
    ],
    "labelled": true,
-   "supported_cells": 49,
+   "supported_cells": 84,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3880,10 +4122,10 @@
     "Kristin Cashore"
    ],
    "labelled": true,
-   "supported_cells": 26,
+   "supported_cells": 89,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels",
+   "playable": true,
+   "reason": null,
    "volumes": [
     "cmu:enwiki:22293380",
     "cmu:enwiki:26321496"
@@ -3911,10 +4153,10 @@
     "Lisa See"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 72,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 168,
@@ -3924,7 +4166,7 @@
     "Isaac Asimov"
    ],
    "labelled": true,
-   "supported_cells": 46,
+   "supported_cells": 75,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -3956,7 +4198,7 @@
     "H. G. Wells"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 77,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3983,7 +4225,7 @@
     "Roald Dahl"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 76,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3996,7 +4238,7 @@
     "Tom Clancy"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -4028,7 +4270,7 @@
     "Wilson Rawls"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 84,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4055,10 +4297,10 @@
     "Neil Gaiman"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 176,
@@ -4068,7 +4310,7 @@
     "Robert Louis Stevenson"
    ],
    "labelled": true,
-   "supported_cells": 64,
+   "supported_cells": 86,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4081,10 +4323,10 @@
     "Nicholas Sparks"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 23,
    "reviewed_cells": 0,
    "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "reason": "engine gate: engine never became confident (shortlist after 40 questions) when answering from its own labels"
   },
   {
    "rank": 178,
@@ -4094,10 +4336,10 @@
     "Richelle Mead"
    ],
    "labelled": true,
-   "supported_cells": 29,
+   "supported_cells": 87,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels",
+   "playable": true,
+   "reason": null,
    "volumes": [
     "cmu:enwiki:23896488",
     "cmu:enwiki:16781602",
@@ -4129,7 +4371,7 @@
     "Carlos Ruiz Zafón"
    ],
    "labelled": true,
-   "supported_cells": 48,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4143,7 +4385,7 @@
     "Robert Jordan"
    ],
    "labelled": true,
-   "supported_cells": 43,
+   "supported_cells": 90,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null,
@@ -4179,10 +4421,10 @@
     "Wally Lamb"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 68,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 182,
@@ -4192,7 +4434,7 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 86,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4219,7 +4461,7 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4232,7 +4474,7 @@
     "Colleen McCullough"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 87,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4245,7 +4487,7 @@
     "Jeff Kinney"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4258,10 +4500,10 @@
     "Pittacus Lore"
    ],
    "labelled": true,
-   "supported_cells": 28,
+   "supported_cells": 82,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels",
+   "playable": true,
+   "reason": null,
    "volumes": [
     "cmu:enwiki:30841087",
     "cmu:enwiki:32581076"
@@ -4317,7 +4559,7 @@
     "Erich Maria Remarque"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 84,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4330,10 +4572,10 @@
     "Jennifer Weiner"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 30,
    "reviewed_cells": 0,
    "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "reason": "engine gate: engine never became confident (shortlist after 40 questions) when answering from its own labels"
   },
   {
    "rank": 192,
@@ -4357,7 +4599,7 @@
     "L. Frank Baum"
    ],
    "labelled": true,
-   "supported_cells": 50,
+   "supported_cells": 76,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4370,10 +4612,10 @@
     "Wally Lamb"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 46,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 195,
@@ -4383,7 +4625,7 @@
     "Jack Kerouac"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4396,7 +4638,7 @@
     "Roald Dahl"
    ],
    "labelled": true,
-   "supported_cells": 42,
+   "supported_cells": 74,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4423,10 +4665,10 @@
     "Janet Fitch"
    ],
    "labelled": true,
-   "supported_cells": 25,
+   "supported_cells": 81,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 199,
@@ -4449,10 +4691,10 @@
     "Ayn Rand"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 89,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 201,
@@ -4476,7 +4718,7 @@
     "Neil Gaiman"
    ],
    "labelled": true,
-   "supported_cells": 40,
+   "supported_cells": 75,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4489,10 +4731,10 @@
     "Jerry Spinelli"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 89,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 204,
@@ -4502,10 +4744,10 @@
     "David Levithan"
    ],
    "labelled": true,
-   "supported_cells": 12,
+   "supported_cells": 94,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 205,
@@ -4515,7 +4757,7 @@
     "Scott O'Dell"
    ],
    "labelled": true,
-   "supported_cells": 57,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4528,10 +4770,10 @@
     "Jodi Picoult"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 87,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 207,
@@ -4541,10 +4783,10 @@
     "James Patterson"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 89,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 208,
@@ -4554,7 +4796,7 @@
     "Toni Morrison"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4567,7 +4809,7 @@
     "Rick Riordan"
    ],
    "labelled": true,
-   "supported_cells": 25,
+   "supported_cells": 89,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4580,10 +4822,10 @@
     "Hunter S. Thompson"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 90,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 211,
@@ -4607,10 +4849,10 @@
     "J. K. Rowling"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 86,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 213,
@@ -4620,7 +4862,7 @@
     "Charles Dickens"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 86,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4633,10 +4875,10 @@
     "Alyson Noel"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 40,
    "reviewed_cells": 0,
    "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "reason": "engine gate: engine never became confident (shortlist after 40 questions) when answering from its own labels"
   },
   {
    "rank": 215,
@@ -4646,10 +4888,10 @@
     "John Irving"
    ],
    "labelled": true,
-   "supported_cells": 25,
+   "supported_cells": 84,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 216,
@@ -4672,10 +4914,10 @@
     "Becca Fitzpatrick"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 63,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels",
+   "playable": true,
+   "reason": null,
    "volumes": [
     "cmu:enwiki:31080252",
     "cmu:enwiki:32249586"
@@ -4717,10 +4959,10 @@
     "Jack London"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 83,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 220,
@@ -4744,10 +4986,10 @@
     "John Grisham"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 90,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 222,
@@ -4757,7 +4999,7 @@
     "Gary Paulsen"
    ],
    "labelled": true,
-   "supported_cells": 62,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4770,7 +5012,7 @@
     "Roald Dahl"
    ],
    "labelled": true,
-   "supported_cells": 44,
+   "supported_cells": 74,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4783,10 +5025,10 @@
     "Robert A. Heinlein"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 82,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 225,
@@ -4796,10 +5038,10 @@
     "Diane Setterfield"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 66,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 226,
@@ -4823,10 +5065,10 @@
     "Brandon Sanderson"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 81,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 228,
@@ -4836,10 +5078,10 @@
     "Billie Letts"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 75,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 229,
@@ -4863,10 +5105,10 @@
     "Dean Koontz"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 231,
@@ -4890,10 +5132,10 @@
     "Jane Austen"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 91,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 233,
@@ -4903,10 +5145,10 @@
     "Jim Butcher"
    ],
    "labelled": true,
-   "supported_cells": 30,
+   "supported_cells": 89,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels",
+   "playable": true,
+   "reason": null,
    "volumes": [
     "cmu:enwiki:8600119",
     "cmu:enwiki:9648004",
@@ -4936,10 +5178,10 @@
     "Sarah Dessen"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 89,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 235,
@@ -4949,7 +5191,7 @@
     "Arthur Conan Doyle"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4962,7 +5204,7 @@
     "Umberto Eco"
    ],
    "labelled": true,
-   "supported_cells": 59,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4975,7 +5217,7 @@
     "Frances Hodgson Burnett"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5002,10 +5244,10 @@
     "Jeanne DuPrau"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 94,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 240,
@@ -5015,7 +5257,7 @@
     "Alexandre Dumas"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5028,7 +5270,7 @@
     "Ernest Hemingway"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 87,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5069,10 +5311,10 @@
     "Meg Cabot"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 91,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 245,
@@ -5082,10 +5324,10 @@
     "Ann Patchett"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 90,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 246,
@@ -5137,10 +5379,10 @@
     "Terry Pratchett"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 250,
@@ -5164,10 +5406,10 @@
     "Elizabeth Kostova"
    ],
    "labelled": true,
-   "supported_cells": 24,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 252,
@@ -5191,10 +5433,10 @@
     "Tana French"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 81,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 254,
@@ -5204,10 +5446,10 @@
     "Ernest Hemingway"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 83,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 255,
@@ -5217,10 +5459,10 @@
     "Charles Frazier"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 97,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 256,
@@ -5243,10 +5485,10 @@
     "Nicholas Sparks"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 258,
@@ -5256,10 +5498,10 @@
     "Jhumpa Lahiri"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 96,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 259,
@@ -5269,7 +5511,7 @@
     "William Gibson"
    ],
    "labelled": true,
-   "supported_cells": 49,
+   "supported_cells": 76,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5282,10 +5524,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 84,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 261,
@@ -5295,7 +5537,7 @@
     "Anna Sewell"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5308,10 +5550,10 @@
     "Pearl S. Buck"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 84,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 263,
@@ -5349,10 +5591,10 @@
     "S. J. Watson"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 83,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 266,
@@ -5362,10 +5604,10 @@
     "Alexander McCall Smith"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 89,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 267,
@@ -5375,10 +5617,10 @@
     "Sarah Dessen"
    ],
    "labelled": true,
-   "supported_cells": 11,
+   "supported_cells": 82,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 268,
@@ -5388,10 +5630,10 @@
     "Norton Juster"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 87,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 269,
@@ -5401,7 +5643,7 @@
     "Daniel Defoe"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 84,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5428,7 +5670,7 @@
     "Daphne du Maurier"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5441,10 +5683,10 @@
     "Jean M. Auel"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 81,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 273,
@@ -5454,10 +5696,10 @@
     "Terry Goodkind"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 75,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 274,
@@ -5467,10 +5709,10 @@
     "Natalie Babbitt"
    ],
    "labelled": true,
-   "supported_cells": 51,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 275,
@@ -5480,7 +5722,7 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 88,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5493,10 +5735,10 @@
     "Libba Bray"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 80,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 277,
@@ -5506,7 +5748,7 @@
     "Michael Crichton"
    ],
    "labelled": true,
-   "supported_cells": 53,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5519,7 +5761,7 @@
     "Arthur C. Clarke"
    ],
    "labelled": true,
-   "supported_cells": 47,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5560,10 +5802,10 @@
     "Ken Follett"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 90,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 282,
@@ -5573,7 +5815,7 @@
     "Jonathan Swift"
    ],
    "labelled": true,
-   "supported_cells": 53,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5586,10 +5828,10 @@
     "Donna Tartt"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 86,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 284,
@@ -5599,7 +5841,7 @@
     "Leo Tolstoy"
    ],
    "labelled": true,
-   "supported_cells": 61,
+   "supported_cells": 91,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5612,7 +5854,7 @@
     "Haruki Murakami"
    ],
    "labelled": true,
-   "supported_cells": 50,
+   "supported_cells": 81,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5625,10 +5867,10 @@
     "Jennifer Weiner"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 88,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 287,
@@ -5638,10 +5880,10 @@
     "Patricia Cornwell"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 84,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 288,
@@ -5651,7 +5893,7 @@
     "Bret Easton Ellis"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5664,10 +5906,10 @@
     "Arundhati Roy"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 89,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 290,
@@ -5677,10 +5919,10 @@
     "Laura Ingalls Wilder"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 102,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 291,
@@ -5690,10 +5932,10 @@
     "Orson Scott Card"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 95,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels",
+   "playable": true,
+   "reason": null,
    "volumes": [
     "cmu:enwiki:28230",
     "cmu:enwiki:200701"
@@ -5735,10 +5977,10 @@
     "Lee Child"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 93,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 294,
@@ -5776,10 +6018,10 @@
     "Ned Vizzini"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 95,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 297,
@@ -5789,10 +6031,10 @@
     "Sherman Alexie"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 97,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 298,
@@ -5802,10 +6044,10 @@
     "Junot Díaz"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 94,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 299,
@@ -5815,7 +6057,7 @@
     "H. G. Wells"
    ],
    "labelled": true,
-   "supported_cells": 51,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5841,10 +6083,10 @@
     "Jeffrey Eugenides"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 95,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 302,
@@ -5868,10 +6110,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 90,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 304,
@@ -5881,10 +6123,10 @@
     "Marion Zimmer Bradley"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 89,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 305,
@@ -5894,10 +6136,10 @@
     "Francine Rivers"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 95,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 306,
@@ -5907,10 +6149,10 @@
     "John Knowles"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 99,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 307,
@@ -5920,7 +6162,7 @@
     "Fyodor Dostoyevsky"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 88,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5933,7 +6175,7 @@
     "Ursula K. Le Guin"
    ],
    "labelled": true,
-   "supported_cells": 44,
+   "supported_cells": 76,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5946,10 +6188,10 @@
     "Chuck Palahniuk"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 96,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 310,
@@ -5959,7 +6201,7 @@
     "Arthur Conan Doyle"
    ],
    "labelled": true,
-   "supported_cells": 58,
+   "supported_cells": 87,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5972,10 +6214,10 @@
     "Kate DiCamillo"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 97,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 312,
@@ -5999,10 +6241,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 83,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 314,
@@ -6026,7 +6268,7 @@
     "David Mitchell"
    ],
    "labelled": true,
-   "supported_cells": 51,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6039,10 +6281,10 @@
     "Sarah Dessen"
    ],
    "labelled": true,
-   "supported_cells": 11,
+   "supported_cells": 65,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 317,
@@ -6052,10 +6294,10 @@
     "Judy Blume"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 318,
@@ -6065,10 +6307,10 @@
     "Sarah Dessen"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 72,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 319,
@@ -6078,10 +6320,10 @@
     "Margaret Atwood"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 320,
@@ -6091,10 +6333,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 321,
@@ -6118,10 +6360,10 @@
     "Charles Dickens"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 84,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 323,
@@ -6131,10 +6373,10 @@
     "Ally Carter"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 66,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 324,
@@ -6144,10 +6386,10 @@
     "Jeff Lindsay"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 65,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 325,
@@ -6157,10 +6399,10 @@
     "Alex Flinn"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 326,
@@ -6170,10 +6412,10 @@
     "Michael Connelly"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 69,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 327,
@@ -6183,10 +6425,10 @@
     "Michael Crichton"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 328,
@@ -6196,10 +6438,10 @@
     "Lev Grossman"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 75,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 329,
@@ -6209,10 +6451,10 @@
     "Michael Chabon"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 330,
@@ -6264,10 +6506,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 334,
@@ -6277,10 +6519,10 @@
     "Neal Shusterman"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 70,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 335,
@@ -6290,10 +6532,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 336,
@@ -6358,7 +6600,7 @@
     "Gaston Leroux"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6371,10 +6613,10 @@
     "Richelle Mead"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 53,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 342,
@@ -6412,7 +6654,7 @@
     "Agatha Christie"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6439,10 +6681,10 @@
     "Harriet Beecher Stowe"
    ],
    "labelled": true,
-   "supported_cells": 52,
+   "supported_cells": 85,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 347,
@@ -6452,10 +6694,10 @@
     "Neil Gaiman"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 75,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 348,
@@ -6465,10 +6707,10 @@
     "John Grisham"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 349,
@@ -6478,10 +6720,10 @@
     "Garth Nix"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 62,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 350,
@@ -6491,7 +6733,7 @@
     "Robert A. Heinlein"
    ],
    "labelled": true,
-   "supported_cells": 48,
+   "supported_cells": 76,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6504,10 +6746,10 @@
     "Nicholas Sparks"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 62,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 352,
@@ -6517,7 +6759,7 @@
     "Virginia Woolf"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6530,10 +6772,10 @@
     "Robert C. O'Brien"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 72,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 354,
@@ -6543,10 +6785,10 @@
     "Nick Hornby"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 75,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 355,
@@ -6556,10 +6798,10 @@
     "E. L. Konigsburg"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 356,
@@ -6582,10 +6824,10 @@
     "Susanna Clarke"
    ],
    "labelled": true,
-   "supported_cells": 25,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 358,
@@ -6595,10 +6837,10 @@
     "Chris Bohjalian"
    ],
    "labelled": true,
-   "supported_cells": 11,
+   "supported_cells": 63,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 359,
@@ -6608,10 +6850,10 @@
     "Robin Hobb"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 360,
@@ -6621,10 +6863,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 24,
+   "supported_cells": 81,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 361,
@@ -6634,10 +6876,10 @@
     "David Guterson"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 362,
@@ -6647,7 +6889,7 @@
     "Franz Kafka"
    ],
    "labelled": true,
-   "supported_cells": 57,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6674,7 +6916,7 @@
     "Mikhail Bulgakov"
    ],
    "labelled": true,
-   "supported_cells": 53,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6687,10 +6929,10 @@
     "Michael Crichton"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 75,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 366,
@@ -6700,10 +6942,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 72,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 367,
@@ -6713,10 +6955,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 72,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 368,
@@ -6726,10 +6968,10 @@
     "Michael Crichton"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 369,
@@ -6739,10 +6981,10 @@
     "Nicholas Sparks"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 72,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 370,
@@ -6752,10 +6994,10 @@
     "Truman Capote"
    ],
    "labelled": true,
-   "supported_cells": 49,
+   "supported_cells": 84,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 371,
@@ -6765,10 +7007,10 @@
     "Sharon Creech"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 372,
@@ -6792,10 +7034,10 @@
     "Terry Pratchett"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 65,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 374,
@@ -6805,10 +7047,10 @@
     "Jodi Picoult"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 72,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 375,
@@ -6818,10 +7060,10 @@
     "Michael Crichton"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 376,
@@ -6859,10 +7101,10 @@
     "Justin Cronin"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 379,
@@ -6872,10 +7114,10 @@
     "John Irving"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 83,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 380,
@@ -6885,10 +7127,10 @@
     "Philippa Gregory"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 70,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 381,
@@ -6898,10 +7140,10 @@
     "William Faulkner"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 82,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 382,
@@ -6911,7 +7153,7 @@
     "Kenneth Grahame"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6924,7 +7166,7 @@
     "William Peter Blatty"
    ],
    "labelled": true,
-   "supported_cells": 49,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6937,7 +7179,7 @@
     "Diana Wynne Jones"
    ],
    "labelled": true,
-   "supported_cells": 39,
+   "supported_cells": 74,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6950,10 +7192,10 @@
     "Ralph Ellison"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 83,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 386,
@@ -6977,10 +7219,10 @@
     "Dan Simmons"
    ],
    "labelled": true,
-   "supported_cells": 24,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 388,
@@ -7004,10 +7246,10 @@
     "Sarah Dessen"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 72,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 390,
@@ -7017,10 +7259,10 @@
     "Isabel Allende"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 87,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 391,
@@ -7030,10 +7272,10 @@
     "Bernhard Schlink"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 392,
@@ -7043,7 +7285,7 @@
     "Victor Hugo"
    ],
    "labelled": true,
-   "supported_cells": 53,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7056,10 +7298,10 @@
     "Scott Lynch"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 394,
@@ -7069,10 +7311,10 @@
     "Christopher Moore"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 65,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 395,
@@ -7082,10 +7324,10 @@
     "Jonathan Franzen"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 87,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 396,
@@ -7109,10 +7351,10 @@
     "Ellen Raskin"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 398,
@@ -7122,7 +7364,7 @@
     "Jules Verne"
    ],
    "labelled": true,
-   "supported_cells": 56,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7135,10 +7377,10 @@
     "C. S. Lewis"
    ],
    "labelled": true,
-   "supported_cells": 42,
+   "supported_cells": 71,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 400,
@@ -7162,10 +7404,10 @@
     "Sue Grafton"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 68,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 402,
@@ -7175,10 +7417,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 403,
@@ -7188,10 +7430,10 @@
     "Orson Scott Card"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 404,
@@ -7215,7 +7457,7 @@
     "Dennis Lehane"
    ],
    "labelled": true,
-   "supported_cells": 57,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7242,10 +7484,10 @@
     "Kate DiCamillo"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 71,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 408,
@@ -7255,10 +7497,10 @@
     "Louise Rennison"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 409,
@@ -7268,10 +7510,10 @@
     "Larry McMurtry"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 410,
@@ -7295,10 +7537,10 @@
     "Jodi Picoult"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 412,
@@ -7322,10 +7564,10 @@
     "E. M. Forster"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 414,
@@ -7335,10 +7577,10 @@
     "Toni Morrison"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 80,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 415,
@@ -7348,7 +7590,7 @@
     "Jostein Gaarder"
    ],
    "labelled": true,
-   "supported_cells": 53,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7361,10 +7603,10 @@
     "Dean Koontz"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 417,
@@ -7374,10 +7616,10 @@
     "Brent Weeks"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 68,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 418,
@@ -7387,7 +7629,7 @@
     "Michael Ende"
    ],
    "labelled": true,
-   "supported_cells": 35,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7400,10 +7642,10 @@
     "V. C. Andrews"
    ],
    "labelled": true,
-   "supported_cells": 29,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 420,
@@ -7413,10 +7655,10 @@
     "Terry Pratchett"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 421,
@@ -7426,7 +7668,7 @@
     "Thomas Keneally"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7453,10 +7695,10 @@
     "Lisa See"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 424,
@@ -7466,10 +7708,10 @@
     "Judy Blume"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 425,
@@ -7479,10 +7721,10 @@
     "Seth Grahame-Smith"
    ],
    "labelled": true,
-   "supported_cells": 26,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 426,
@@ -7492,7 +7734,7 @@
     "Kazuo Ishiguro"
    ],
    "labelled": true,
-   "supported_cells": 55,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7505,10 +7747,10 @@
     "Elizabeth George Speare"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 428,
@@ -7546,10 +7788,10 @@
     "Barbara Kingsolver"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 431,
@@ -7587,10 +7829,10 @@
     "Geraldine Brooks"
    ],
    "labelled": true,
-   "supported_cells": 26,
+   "supported_cells": 84,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 434,
@@ -7600,10 +7842,10 @@
     "Laurell K. Hamilton"
    ],
    "labelled": true,
-   "supported_cells": 17,
+   "supported_cells": 65,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 435,
@@ -7613,10 +7855,10 @@
     "Ellen Hopkins"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 436,
@@ -7626,10 +7868,10 @@
     "Nora Roberts"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 70,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 437,
@@ -7639,10 +7881,10 @@
     "William Faulkner"
    ],
    "labelled": true,
-   "supported_cells": 21,
+   "supported_cells": 83,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 438,
@@ -7652,10 +7894,10 @@
     "Jacquelyn Mitchard"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 72,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 439,
@@ -7665,7 +7907,7 @@
     "Edith Wharton"
    ],
    "labelled": true,
-   "supported_cells": 50,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7678,7 +7920,7 @@
     "Peter Benchley"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 78,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7691,10 +7933,10 @@
     "Paulo Coelho"
    ],
    "labelled": true,
-   "supported_cells": 12,
+   "supported_cells": 68,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 442,
@@ -7704,10 +7946,10 @@
     "Mitch Albom"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 75,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 443,
@@ -7717,10 +7959,10 @@
     "Nick Hornby"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 444,
@@ -7730,10 +7972,10 @@
     "Muriel Barbery"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 445,
@@ -7743,10 +7985,10 @@
     "Lionel Shriver"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 446,
@@ -7770,10 +8012,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 448,
@@ -7783,10 +8025,10 @@
     "Cormac McCarthy"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 79,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 449,
@@ -7796,10 +8038,10 @@
     "Kathy Reichs"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 67,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 450,
@@ -7809,7 +8051,7 @@
     "Jack London"
    ],
    "labelled": true,
-   "supported_cells": 54,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7822,10 +8064,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 452,
@@ -7835,10 +8077,10 @@
     "Jerry Spinelli"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 453,
@@ -7848,10 +8090,10 @@
     "Patrick Ness"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 454,
@@ -7861,10 +8103,10 @@
     "Brandon Mull"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 66,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 455,
@@ -7888,10 +8130,10 @@
     "Rohinton Mistry"
    ],
    "labelled": true,
-   "supported_cells": 20,
+   "supported_cells": 80,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 457,
@@ -7901,10 +8143,10 @@
     "Jodi Picoult"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 458,
@@ -7914,10 +8156,10 @@
     "José Saramago"
    ],
    "labelled": true,
-   "supported_cells": 51,
+   "supported_cells": 82,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 459,
@@ -7927,10 +8169,10 @@
     "Michael Connelly"
    ],
    "labelled": true,
-   "supported_cells": 14,
+   "supported_cells": 67,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 460,
@@ -7940,10 +8182,10 @@
     "Margaret Atwood"
    ],
    "labelled": true,
-   "supported_cells": 13,
+   "supported_cells": 64,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 461,
@@ -7953,10 +8195,10 @@
     "Nicole Krauss"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 462,
@@ -8022,10 +8264,10 @@
     "John Scalzi"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 72,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 467,
@@ -8035,10 +8277,10 @@
     "Michael Cunningham"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 82,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 468,
@@ -8048,10 +8290,10 @@
     "Caleb Carr"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 469,
@@ -8075,10 +8317,10 @@
     "Maria V. Snyder"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 69,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 471,
@@ -8088,10 +8330,10 @@
     "Brandon Sanderson"
    ],
    "labelled": true,
-   "supported_cells": 18,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 472,
@@ -8101,7 +8343,7 @@
     "Albert Camus"
    ],
    "labelled": true,
-   "supported_cells": 57,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -8114,10 +8356,10 @@
     "Geraldine Brooks"
    ],
    "labelled": true,
-   "supported_cells": 9,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 474,
@@ -8127,7 +8369,7 @@
     "Ayn Rand"
    ],
    "labelled": true,
-   "supported_cells": 50,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -8140,10 +8382,10 @@
     "Anne McCaffrey"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 73,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 476,
@@ -8153,10 +8395,10 @@
     "Elizabeth Gaskell"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 80,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 477,
@@ -8166,10 +8408,10 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 478,
@@ -8193,10 +8435,10 @@
     "Susan Beth Pfeffer"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 480,
@@ -8234,10 +8476,10 @@
     "Ken Follett"
    ],
    "labelled": true,
-   "supported_cells": 23,
+   "supported_cells": 78,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 483,
@@ -8275,7 +8517,7 @@
     "Arthur C. Clarke"
    ],
    "labelled": true,
-   "supported_cells": 45,
+   "supported_cells": 77,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -8288,10 +8530,10 @@
     "Wilkie Collins"
    ],
    "labelled": true,
-   "supported_cells": 57,
+   "supported_cells": 86,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 487,
@@ -8301,10 +8543,10 @@
     "Markus Zusak"
    ],
    "labelled": true,
-   "supported_cells": 12,
+   "supported_cells": 77,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 488,
@@ -8314,10 +8556,10 @@
     "Shannon Hale"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 74,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 489,
@@ -8341,10 +8583,10 @@
     "Scott Turow"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 76,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 491,
@@ -8382,7 +8624,7 @@
     "Carl Sagan"
    ],
    "labelled": true,
-   "supported_cells": 49,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -8408,10 +8650,10 @@
     "Richard Russo"
    ],
    "labelled": true,
-   "supported_cells": 16,
+   "supported_cells": 80,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 496,
@@ -8421,10 +8663,10 @@
     "Isabel Allende"
    ],
    "labelled": true,
-   "supported_cells": 22,
+   "supported_cells": 83,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 497,
@@ -8434,10 +8676,10 @@
     "Douglas Adams"
    ],
    "labelled": true,
-   "supported_cells": 15,
+   "supported_cells": 75,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 498,
@@ -8447,10 +8689,10 @@
     "Tess Gerritsen"
    ],
    "labelled": true,
-   "supported_cells": 19,
+   "supported_cells": 69,
    "reviewed_cells": 0,
-   "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 18 questions) when answering from its own labels"
+   "playable": true,
+   "reason": null
   },
   {
    "rank": 499,
@@ -8460,7 +8702,7 @@
     "Jules Verne"
    ],
    "labelled": true,
-   "supported_cells": 52,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null

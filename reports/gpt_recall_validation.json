@@ -1,0 +1,89 @@
+{
+  "worklist_snapshot_commit": "7e9847a9408864b6dd78e3c1597637f1178840d8",
+  "total_worklist_books": 492,
+  "labelled_books": 488,
+  "skipped_books": 4,
+  "answers": 37168,
+  "strength_counts": {
+    "Y": 13455,
+    "N": 20290,
+    "y": 2315,
+    "n": 1108
+  },
+  "task_1": {
+    "reviewed": 273,
+    "labelled": 269,
+    "skipped": 4
+  },
+  "task_2": {
+    "reviewed": 219,
+    "labelled": 219,
+    "skipped": 0
+  },
+  "answers_per_book": {
+    "min": 15,
+    "median": 76.0,
+    "max": 106
+  },
+  "sparse_books_below_40": [
+    {
+      "book_id": "cmu:enwiki:1240426",
+      "title": "Wicked: The Life and Times of the Wicked Witch of the West",
+      "answers": 39
+    },
+    {
+      "book_id": "cmu:enwiki:7911644",
+      "title": "The Memory Keeper's Daughter",
+      "answers": 28
+    },
+    {
+      "book_id": "cmu:enwiki:2133642",
+      "title": "Divine Secrets of the Ya-Ya Sisterhood",
+      "answers": 15
+    },
+    {
+      "book_id": "cmu:enwiki:19902875",
+      "title": "The Lucky One",
+      "answers": 17
+    },
+    {
+      "book_id": "cmu:enwiki:25812499",
+      "title": "Good in Bed",
+      "answers": 28
+    },
+    {
+      "book_id": "cmu:enwiki:23344986",
+      "title": "Evermore",
+      "answers": 37
+    },
+    {
+      "book_id": "cmu:enwiki:33247807",
+      "title": "Betrayed",
+      "answers": 39
+    },
+    {
+      "book_id": "cmu:enwiki:16274299",
+      "title": "Untamed",
+      "answers": 39
+    }
+  ],
+  "checks": {
+    "canonical_ids_and_titles": true,
+    "unique_books": true,
+    "valid_unique_codes": true,
+    "excluded_codes_absent": true,
+    "all_worklist_rows_accounted_for": true,
+    "current_repository_read_recall_file_accepts_all_answers": true,
+    "github_main_content_matches_local": true
+  },
+  "gpt_txt_git_blob_sha": "16680532643b1328d8e0ed748425fddabf3af3ab",
+  "gpt_txt_sha256": "4259058e49f66982d0501a5b4f2b6babc0d011c557330fb359331ea803bfb3b8",
+  "current_builder_sha256": "b885412b22e6397528cfbd828df10620b3fc28e71c674734d9c06d5d55643f4a",
+  "status": "independent_ai_recall_unreviewed",
+  "human_reviewed_cells": 0,
+  "literary_fact_check": "Not externally sourced; own-knowledge recall as requested. Format validation is not factual verification.",
+  "runtime_catalog_rebuilt": false,
+  "engine_gate_rerun": false,
+  "full_npm_verify_run": false,
+  "label_data_commit": "4e5ee5c2b3bea8d436e4ac1df47db86b97c83d45"
+}

@@ -104,7 +104,8 @@ function main() {
   const breakdown: Record<string, number> = {};
   for (const r of report.records) {
     const k = r.playable ? "playable" : r.reason?.startsWith("engine gate") ? "not identifiable by the engine from its own labels"
-      : r.reason?.startsWith("form hold") ? "form hold (not a novel)" : r.reason?.startsWith("only") ? "too few supported cells" : (r.reason ?? "other");
+      : r.reason?.startsWith("form hold") ? "form hold (not a novel)"
+      : r.reason?.startsWith("part of series") ? "grouped into a series target" : r.reason?.startsWith("only") ? "too few supported cells" : (r.reason ?? "other");
     breakdown[k] = (breakdown[k] ?? 0) + 1;
   }
   report.status_breakdown = breakdown;

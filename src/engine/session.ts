@@ -13,6 +13,7 @@ export type SessionEvent =
   | { type: "answer"; questionId: string; answer: Answer }
   | { type: "reject"; bookId: string }
   | { type: "accept"; bookId: string }
+  | { type: "suggest" } // reader explicitly asks for a tentative best guess
   | { type: "exit" }; // "My book isn't in this collection"
 
 export interface SessionOptions {
@@ -112,20 +113,25 @@ export function deriveState(cc: CompiledCatalog, config: EngineConfig, session: 
   let rejectionCount = 0;
   let answersSinceRejection = 0;
   let terminal: SessionEvent | null = null;
+  let requestedGuess = false;
 
   for (const ev of session.events) {
     if (terminal) throw new Error("Events after a terminal event are not allowed");
     if (ev.type === "answer") {
+      requestedGuess = false;
       const qi = cc.questionIndex.get(ev.questionId);
       if (qi === undefined) throw new Error(`Unknown question ${ev.questionId}`);
       answers.push({ questionIndex: qi, answer: ev.answer });
       answersSinceRejection++;
     } else if (ev.type === "reject") {
+      requestedGuess = false;
       const bi = cc.bookIndex.get(ev.bookId);
       if (bi === undefined) throw new Error(`Unknown book ${ev.bookId}`);
       rejected.add(bi);
       rejectionCount++;
       answersSinceRejection = 0;
+    } else if (ev.type === "suggest") {
+      requestedGuess = true;
     } else {
       terminal = ev;
     }
@@ -149,6 +155,11 @@ export function deriveState(cc: CompiledCatalog, config: EngineConfig, session: 
     const prev = deriveState(cc, config, { ...session, events: session.events.slice(0, -1) });
     const via = prev.action.kind === "shortlist" ? "shortlist" : "guess";
     return state({ kind: "found", book: cc.books[bi], bookIndex: bi, via });
+  }
+
+  if (requestedGuess && informativeAnswers > 0) {
+    const bookIndex = ranked[0];
+    return state({ kind: "guess", book: cc.books[bookIndex], bookIndex, tentative: true });
   }
 
   const shortlist = (reason: ShortlistReason): SessionState => {
@@ -214,6 +225,7 @@ export function applyEvent(
 ): Session {
   const a = current.action;
   const ok =
+    (event.type === "suggest" && a.kind === "ask" && current.informativeAnswers > 0) ||
     (event.type === "answer" && a.kind === "ask" && a.question.id === event.questionId) ||
     (event.type === "reject" && a.kind === "guess" && a.book.id === event.bookId) ||
     (event.type === "accept" &&

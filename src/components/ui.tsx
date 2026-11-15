@@ -28,6 +28,7 @@ import tileSearch from "../assets/icons/tile-search.svg";
 import tileStart from "../assets/icons/tile-start.svg";
 import waves from "../assets/icons/waves.svg";
 import type { Lang } from "../i18n/index.ts";
+import { EXPERIENCE } from "../i18n/experience.ts";
 import type { LibraryStrings } from "../i18n/library.ts";
 
 const ICONS = {
@@ -46,19 +47,24 @@ export function Icon({ name, size = 18 }: { name: IconName; size?: number }) {
   );
 }
 
-/** Loads optional data for a key; null while loading or when unavailable. */
-export function useLoaded<T>(load: () => Promise<T | null>, key: string): T | null {
-  const [value, setValue] = useState<T | null>(null);
+/** Optional content never blocks the game, and failures have an explicit settled state. */
+export function useLoadedState<T>(load: () => Promise<T | null>, key: string): { value: T | null; loading: boolean } {
+  const [result, setResult] = useState<{ value: T | null; loading: boolean }>({ value: null, loading: true });
   useEffect(() => {
     let live = true;
-    setValue(null);
-    load().then((v) => live && setValue(v));
-    return () => {
-      live = false;
-    };
+    setResult({ value: null, loading: true });
+    load().then(
+      (value) => { if (live) setResult({ value, loading: false }); },
+      () => { if (live) setResult({ value: null, loading: false }); },
+    );
+    return () => { live = false; };
+    // The key identifies the request; callers use stable data for a given key.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
-  return value;
+  return result;
+}
+export function useLoaded<T>(load: () => Promise<T | null>, key: string): T | null {
+  return useLoadedState(load, key).value;
 }
 
 // ---------------------------------------------------------------- Button
@@ -182,9 +188,6 @@ export function BookCard(p: BookCardProps) {
             <span>{p.actionLabel}</span>
             <Icon name="arrowRightSm" size={16} />
           </button>
-          <button type="button" className="icon-btn-plain" disabled aria-label={p.saveLabel} title={p.soonLabel}>
-            <Icon name="bookmark" size={20} />
-          </button>
         </div>
       </div>
     </article>
@@ -223,9 +226,9 @@ interface HeaderProps {
   L: LibraryStrings;
   lang: Lang;
   setLang: (l: Lang) => void;
-  hours: string;
   onHome: () => void;
   onStart: () => void;
+  onCatalog: () => void;
 }
 
 function Logo({ L, onHome, size }: { L: LibraryStrings; onHome: () => void; size: number }) {
@@ -250,81 +253,46 @@ function LangSwitch({ L, lang, setLang }: { L: LibraryStrings; lang: Lang; setLa
   );
 }
 
-/** A menu entry the demo does not implement: visible as in the design, not a link. */
-function Soon({ label, hint }: { label: string; hint: string }) {
-  return <span className="soon" title={hint}>{label}</span>;
+export function Header({ L, lang, setLang, onHome, onStart, onCatalog }: HeaderProps) {
+  const E = EXPERIENCE[lang];
+  return <header className="header desktop-only">
+    <div className="mainbar">
+      <Logo L={L} onHome={onHome} size={24} />
+      <nav className="nav" aria-label="Bookinator">
+        <button type="button" onClick={onHome}>{E.home}</button>
+        <button type="button" onClick={onCatalog}>{E.catalog}</button>
+      </nav>
+      <div className="header-actions"><LangSwitch L={L} lang={lang} setLang={setLang} /><Button onClick={onStart}>{E.find}</Button></div>
+    </div>
+  </header>;
 }
 
-export function Header({ L, lang, setLang, hours, onHome, onStart }: HeaderProps) {
-  return (
-    <header className="header desktop-only">
-      <div className="utility">
-        <p>{hours}</p>
-        <div className="utility-links">
-          {L.utilLinks.map((x) => <Soon key={x} label={x} hint={L.comingSoon} />)}
-          <LangSwitch L={L} lang={lang} setLang={setLang} />
-        </div>
-      </div>
-      <div className="mainbar">
-        <Logo L={L} onHome={onHome} size={24} />
-        <nav className="nav" aria-label="Bookinator">
-          <button type="button" onClick={onStart}>{L.nav[0]}</button>
-          {L.nav.slice(1).map((x) => <Soon key={x} label={x} hint={L.comingSoon} />)}
-        </nav>
-        <div className="header-actions">
-          <button type="button" className="icon-btn" aria-label={L.search} title={L.comingSoon} disabled>
-            <Icon name="search" size={20} />
-          </button>
-          <Button variant="secondary" arrow={false} disabled title={L.comingSoon}>{L.login}</Button>
-        </div>
-      </div>
-    </header>
-  );
+export function MobileHeader({ L, lang, setLang, onHome, onStart, onCatalog }: HeaderProps) {
+  const [open, setOpen] = useState(false);
+  const E = EXPERIENCE[lang];
+  const go = (action: () => void) => { setOpen(false); action(); };
+  return <header className="mobile-header mobile-only">
+    <Logo L={L} onHome={() => go(onHome)} size={20} />
+    <div className="header-actions">
+      <LangSwitch L={L} lang={lang} setLang={setLang} />
+      <button type="button" className="icon-btn" aria-label={open ? E.close : L.menu} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}><Icon name="menu" size={20} /></button>
+    </div>
+    {open && <nav id="mobile-nav" className="mobile-nav" aria-label="Bookinator" onKeyDown={(e) => { if (e.key === "Escape") { setOpen(false); e.currentTarget.parentElement?.querySelector<HTMLButtonElement>("[aria-controls]")?.focus(); } }}>
+      <button type="button" onClick={() => go(onHome)}>{E.home}</button>
+      <button type="button" onClick={() => go(onStart)}>{E.find}</button>
+      <button type="button" onClick={() => go(onCatalog)}>{E.catalog}</button>
+    </nav>}
+  </header>;
 }
 
-export function MobileHeader({ L, lang, setLang, onHome }: HeaderProps) {
-  return (
-    <header className="mobile-header mobile-only">
-      <Logo L={L} onHome={onHome} size={20} />
-      <div className="header-actions">
-        <LangSwitch L={L} lang={lang} setLang={setLang} />
-        <button type="button" className="icon-btn" aria-label={L.search} title={L.comingSoon} disabled>
-          <Icon name="search" size={20} />
-        </button>
-        <button type="button" className="icon-btn" aria-label={L.menu} title={L.comingSoon} disabled>
-          <Icon name="menu" size={20} />
-        </button>
-      </div>
-    </header>
-  );
-}
-
-/** One footer for both sizes (the Mobile Footer frame has the same content, stacked). */
-export function Footer({ L, address, children }: { L: LibraryStrings; address: string; children?: ReactNode }) {
-  return (
-    <footer className="footer">
-      <div className="footer-top">
-        <div className="footer-brand">
-          <p className="footer-logo">Bookinator</p>
-          <p>{L.footerTag}</p>
-          <p>{address}</p>
-        </div>
-        <div className="footer-cols">
-          {L.footerCols.map((col) => (
-            <ul key={col[0]}>
-              {col.map((x, i) => <li key={x} className={i === 0 ? "footer-col-head" : undefined}>{x}</li>)}
-            </ul>
-          ))}
-        </div>
-      </div>
-      <hr />
-      {children && <div className="footer-notes">{children}</div>}
-      <div className="footer-bottom">
-        <p>{L.copyright}</p>
-        <p>{L.legal}</p>
-      </div>
-    </footer>
-  );
+export function Footer({ L, onHome, onCatalog, children }: { L: LibraryStrings; onHome: () => void; onCatalog: () => void; children?: ReactNode }) {
+  return <footer className="footer">
+    <div className="footer-top"><div className="footer-brand"><p className="footer-logo">Bookinator</p><p>{L.footerTag}</p></div>
+      <nav className="footer-links" aria-label="Bookinator"><button type="button" onClick={onHome}>{L.home}</button><button type="button" onClick={onCatalog}>{L.colAll}</button></nav>
+    </div>
+    <hr />{children && <div className="footer-notes">{children}</div>}
+    <div className="footer-bottom"><p>{L.copyright}</p></div>
+  </footer>;
 }
 
 export function Breadcrumb({ items, children }: { items: string[]; children?: ReactNode }) {

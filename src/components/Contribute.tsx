@@ -21,9 +21,9 @@ import type { Session, SessionState } from "../engine/session.ts";
 import { CC } from "../game.ts";
 import { bookTitles, type Lang, type Strings } from "../i18n/index.ts";
 import type { LibraryStrings } from "../i18n/library.ts";
-import { fetchPhoto } from "../bookInfo.ts";
-import { LIBRARY } from "../i18n/library.ts";
-import { Button, Icon, UnsplashImage, useLoaded } from "./ui.tsx";
+import { EXPERIENCE } from "../i18n/experience.ts";
+import { clueNote } from "../clueNote.ts";
+import { Button, Icon } from "./ui.tsx";
 
 // ---------------------------------------------------------------- sign-in + CAPTCHA
 
@@ -165,6 +165,8 @@ export function AddBookScreen({
   onPlayAgain: () => void;
   onUndo: () => void;
 }) {
+  const E = EXPERIENCE[lang];
+  const [unknownTitle, setUnknownTitle] = useState(false);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [memory, setMemory] = useState("");
@@ -184,7 +186,7 @@ export function AddBookScreen({
   // Server-side duplicate search (published books from every release + open submissions).
   useEffect(() => {
     setConfirmDup(false);
-    if (!contributionsEnabled || title.trim().length < 2) {
+    if (unknownTitle || !contributionsEnabled || title.trim().length < 2) {
       setRemote([]);
       return;
     }
@@ -196,7 +198,7 @@ export function AddBookScreen({
       );
     }, 350);
     return () => clearTimeout(timer);
-  }, [title, author]);
+  }, [title, author, unknownTitle]);
 
   const reason = state.action.kind === "no_match" ? state.action.reason : "user_exit";
   const busy = status.kind === "sending";
@@ -240,6 +242,16 @@ export function AddBookScreen({
 
   const add = async (e: FormEvent) => {
     e.preventDefault();
+    if (unknownTitle) {
+      if (!memory.trim()) { setStatus({ kind: "error", msg: E.memoryRequired }); return; }
+      const url = URL.createObjectURL(new Blob([clueNote(memory, CC, state, lang)], { type: "text/plain;charset=utf-8" }));
+      const link = document.createElement("a");
+      link.href = url; link.download = "bookinator-clues.txt";
+      document.body.appendChild(link); link.click(); link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setStatus({ kind: "idle", msg: E.clueSaved });
+      return;
+    }
     const cleanTitle = cleanText(title);
     const cleanAuthor = cleanText(author);
     if (!cleanTitle) {
@@ -302,13 +314,11 @@ export function AddBookScreen({
       );
     }
   };
-  const nfPhoto = useLoaded(() => fetchPhoto(LIBRARY.en.nfImage), "not-found");
   const toggleKind = (i: number) => setKinds((k) => (k.includes(i) ? k.filter((x) => x !== i) : [...k, i]));
 
   return (
     <>
       <section className="nf-hero">
-        <UnsplashImage photo={nfPhoto} caption={L.nfImage} className="nf-photo" />
         <p className="eyebrow">{L.nfEyebrow}</p>
         <h1 ref={headingRef} tabIndex={-1}>{L.nfTitle}</h1>
         <p className="lead-sm">{reason === "all_rejected" ? t.allRejectedLine : L.nfLead}</p>
@@ -362,10 +372,12 @@ export function AddBookScreen({
           <span className="tile-icon"><Icon name="tileRequest" size={22} /></span>
           <h2>{L.tellTitle}</h2>
           <p className="muted">{L.tellLead}</p>
-          <div className="field-row">
+          <label className="check"><input type="checkbox" checked={unknownTitle} onChange={(e) => { setUnknownTitle(e.target.checked); setStatus({ kind: "idle" }); }} disabled={done} /><span>{E.unknownTitle}</span></label>
+          <p className="hint">{unknownTitle ? E.clueLead : E.titleHelp}</p>
+          <div className="field-row" hidden={unknownTitle}>
             <div className="form-field">
               <label htmlFor="bk-title">{t.title} <span aria-hidden="true">*</span></label>
-              <input id="bk-title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} disabled={done} autoComplete="off" maxLength={300} required />
+              <input id="bk-title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} disabled={done} autoComplete="off" maxLength={300} required={!unknownTitle} />
             </div>
             <div className="form-field">
               <label htmlFor="bk-author">{t.author}</label>
@@ -373,7 +385,7 @@ export function AddBookScreen({
             </div>
           </div>
 
-          {hasSimilar && !done && (
+          {hasSimilar && !done && !unknownTitle && (
             <div className="dup" aria-live="polite">
               <p className="dup-head"><Icon name="info" />{L.dupHead}</p>
               {local.map(({ book }) => (
@@ -394,25 +406,25 @@ export function AddBookScreen({
           )}
 
           <div className="form-field">
-            <label htmlFor="bk-memory">{L.memory}</label>
-            <textarea id="bk-memory" value={memory} onChange={(e) => setMemory(e.target.value)} disabled={done} maxLength={1500} placeholder={L.memoryPlaceholder} />
+            <label htmlFor="bk-memory">{L.memory}{unknownTitle ? " *" : ""}</label>
+            <textarea id="bk-memory" value={memory} onChange={(e) => setMemory(e.target.value)} disabled={done} required={unknownTitle} maxLength={1500} placeholder={L.memoryPlaceholder} />
           </div>
 
-          <fieldset className="form-field kinds" disabled={done}>
+          <fieldset className="form-field kinds" disabled={done} hidden={unknownTitle}>
             <legend>{L.kind}</legend>
             {L.kinds.map((k, i) => (
               <button key={k} type="button" className="chip chip-toggle" aria-pressed={kinds.includes(i)} onClick={() => toggleKind(i)}>{k}</button>
             ))}
           </fieldset>
 
-          {contributionsEnabled && !done && (
+          {contributionsEnabled && !done && !unknownTitle && (
             <label className="check consent">
               <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
               <span><b>{t.sendAnswersToo}</b><small>{t.sendAnswersHelp}</small></span>
             </label>
           )}
-          {!contributionsEnabled && <p className="hint">{t.contributionsOff}</p>}
-          {who.needsCaptcha && !done && <Captcha onToken={who.setToken} lang={lang} />}
+          {!contributionsEnabled && !unknownTitle && <p className="hint">{t.contributionsOff}</p>}
+          {who.needsCaptcha && !done && !unknownTitle && <Captcha onToken={who.setToken} lang={lang} />}
           {status.msg && <p className={status.kind === "error" ? "form-error" : "form-note"} role="status">{status.msg}</p>}
 
           <div className="submit-row">
@@ -420,8 +432,8 @@ export function AddBookScreen({
             {done ? (
               <Button onClick={onPlayAgain}>{t.playAgain}</Button>
             ) : (
-              <button type="submit" className="btn btn-primary" disabled={!contributionsEnabled || !who.ready || busy}>
-                <span>{busy ? t.sending : confirmDup ? L.submitAnyway : L.submitRequest}</span>
+              <button type="submit" className="btn btn-primary" disabled={!unknownTitle && (!contributionsEnabled || !who.ready || busy)}>
+                <span>{unknownTitle ? E.saveClues : busy ? t.sending : confirmDup ? L.submitAnyway : L.submitRequest}</span>
                 <Icon name="arrowRightWhite" />
               </button>
             )}

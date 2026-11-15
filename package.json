@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "typecheck:engine": "tsc -p tsconfig.engine.json --noEmit",
-    "test": "tsx --test \"tests/*.test.ts\"",
+    "test": "tsx --test \"tests/*.test.ts\" \"browser-tests/*.test.ts\"",
     "simulate": "tsx scripts/simulate.ts",
     "validate": "node scripts/py.mjs scripts/validate_catalog.py src/data/fixture.catalog.json --bank data/question_bank.json",
     "test:py": "node scripts/py.mjs -m unittest discover -s tests -p \"test_*.py\"",

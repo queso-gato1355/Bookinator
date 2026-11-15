@@ -14,13 +14,13 @@ function csp(env: Record<string, string>): Plugin {
       return null;
     }
   };
-  const connect = ["'self'", origin(env.VITE_SUPABASE_URL), origin(env.VITE_LIBRARY_PROXY_URL), "https://openlibrary.org", "https://en.wikipedia.org"];
+  const connect = ["'self'", origin(env.VITE_SUPABASE_URL), origin(env.VITE_LIBRARY_PROXY_URL), "https://openlibrary.org", "https://en.wikipedia.org", "https://ko.wikipedia.org"];
   const policy = [
     "default-src 'self'",
     "script-src 'self' https://challenges.cloudflare.com",
     "style-src 'self' https://fonts.googleapis.com",
     "font-src 'self' https://fonts.gstatic.com",
-    "img-src 'self' data: https://images.unsplash.com",
+    "img-src 'self' data: https://images.unsplash.com https://covers.openlibrary.org https://archive.org https://*.archive.org",
     `connect-src ${connect.filter(Boolean).join(" ")}`,
     "frame-src https://challenges.cloudflare.com",
     "object-src 'none'",
