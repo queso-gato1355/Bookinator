@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 
 import { asCatalogBook, factsFor, findEntry, LIBRARY_BOOKS, PAGE_SIZE, queryLibrary } from "../src/data/library.ts";
-import { parseRoute, href } from "../src/router.ts";
+import { href, parseRoute } from "../src/route.ts";
 
 const base = { q: "", tag: "", status: "all" as const, sort: "rank" as const, page: 1 };
 
