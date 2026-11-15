@@ -11,8 +11,8 @@
     { "id": "s08", "target": "series:percy-jackson-and-the-olympians", "text": "Is the hero the son of a Greek god?", "ko": "주인공이 그리스 신의 아들인가요?", "definition": "The main character is a demigod, the child of a Greek god.", "unknown_for": ["series:the-heroes-of-olympus"] },
     { "id": "s09", "target": "cmu:enwiki:57766", "text": "Do children win golden tickets to tour a factory?", "ko": "아이들이 황금 티켓을 얻어 공장을 구경하나요?", "definition": "Golden tickets give a few children a tour of a factory.", "unknown_for": [] },
     { "id": "s10", "target": "cmu:enwiki:19859", "text": "Does a ship's captain hunt a white whale?", "ko": "배의 선장이 흰 고래를 쫓나요?", "definition": "A captain pursues a white whale.", "unknown_for": [] },
-    { "id": "s11", "target": "cmu:enwiki:54436", "text": "Does a girl follow a yellow brick road?", "ko": "소녀가 노란 벽돌 길을 따라가나요?", "definition": "A girl travels along a road paved with yellow bricks.", "unknown_for": ["cmu:enwiki:1240426"] },
-    { "id": "s12", "target": "cmu:enwiki:5326809", "text": "Are dinosaurs brought back to life?", "ko": "공룡이 되살아나나요?", "definition": "Dinosaurs are recreated or revived in the story.", "unknown_for": [] }
+    { "id": "s11", "target": "cmu:enwiki:54436", "text": "Does a girl follow a yellow brick road?", "ko": "소녀가 노란 벽돌 길을 따라가나요?", "definition": "A girl travels along a road paved with yellow bricks.", "unknown_for": ["cmu:enwiki:1240426"], "unknown_for_title": "\\bOz\\b" },
+    { "id": "s12", "target": "cmu:enwiki:5326809", "text": "Are dinosaurs brought back to life?", "ko": "공룡이 되살아나나요?", "definition": "Dinosaurs are recreated or revived in the story.", "unknown_for": [], "unknown_for_title": "dinosaur|^The Lost World$" }
   ],
   "corrections": {
     "notice": "Cells that contradict how readers remember the book, found while analysing why the Harry Potter series was hard to find (a 0.9 label vs a reader's 'No' costs the book about x5 each). They are set to unknown (no cell), never flipped.",

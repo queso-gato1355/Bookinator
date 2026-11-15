@@ -1,11 +1,11 @@
 {
- "catalog_version": "cmu-priority500-v4",
+ "catalog_version": "cmu-priority500-v5",
  "labellers": {
   "claude": {
-   "answers_on_playable_books": 8231,
-   "agree_with_sourced": 1587,
-   "conflict_with_sourced": 74,
-   "agreement_with_sourced": 0.955
+   "answers_on_playable_books": 8336,
+   "agree_with_sourced": 1633,
+   "conflict_with_sourced": 75,
+   "agreement_with_sourced": 0.956
   },
   "gemini": {
    "answers_on_playable_books": 1038,
@@ -27,12 +27,12 @@
   }
  },
  "between_labellers": {
-  "agree": 8847,
-  "disagree_dropped": 1308
+  "agree": 8916,
+  "disagree_dropped": 1314
  },
- "cells_added": 24078,
- "checked_against_sourced_labels": 4719,
- "agree": 4663,
+ "cells_added": 24082,
+ "checked_against_sourced_labels": 4718,
+ "agree": 4662,
  "conflict_set_to_unknown": 56,
  "scope": "single-book targets of the shipped catalog (scripts/apply_ai_recall.ts); series targets unchanged"
 }

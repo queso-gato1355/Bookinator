@@ -38,6 +38,9 @@ function main() {
   const report = JSON.parse(readFileSync(reportPath, "utf8")) as { counts: Record<string, number>; status_breakdown: Record<string, number>; gate: Record<string, unknown>; records: CoverageRow[] };
   const config = makeConfig();
   const rank = new Map(report.records.map((r) => [r.id, r.rank]));
+  // Books added from teammates' AI files (scripts/add_extra_books.ts) have no pool rank: lowest priority, so they
+  // never push out a pool book or series target.
+  for (const b of catalog.books) if (b.id.startsWith("ai:")) rank.set(b.id, Number.MAX_SAFE_INTEGER);
 
   const featuresOf = new Map<string, Catalog["features"]>();
   for (const f of catalog.features) {

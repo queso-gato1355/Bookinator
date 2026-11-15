@@ -13,7 +13,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const at = process.argv.indexOf("--catalog");
 const catalogPath = resolve(ROOT, at > 0 ? process.argv[at + 1] : "src/data/cmu.catalog.json");
 
-interface Signature { id: string; target: string; also?: string[]; text: string; ko: string; definition: string; unknown_for: string[] }
+interface Signature { id: string; target: string; also?: string[]; text: string; ko: string; definition: string; unknown_for: string[]; unknown_for_title?: string }
 const spec = JSON.parse(readFileSync(resolve(ROOT, "data/signature/signature_questions.json"), "utf8")) as {
   questions: Signature[];
   corrections: Record<string, string[] | string>;
@@ -50,7 +50,7 @@ for (const s of spec.questions) {
   const yes = new Set([s.target, ...(s.also ?? [])]);
   const unknown = new Set(s.unknown_for);
   for (const b of catalog.books) {
-    if (unknown.has(b.id)) continue;
+    if (unknown.has(b.id) || (s.unknown_for_title && !yes.has(b.id) && new RegExp(s.unknown_for_title, "i").test(b.title_en))) continue;
     catalog.features.push(cell(b.id, s.id, yes.has(b.id) ? 0.9 : 0.1));
   }
 }

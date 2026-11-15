@@ -189,8 +189,9 @@ export function fetchLibraryPopular(limit = 5): Promise<LibraryLoan[] | null> {
   });
 }
 
-export function fetchPopular(catalogVersion: string, limit = 5): Promise<PopularBook[] | null> {
-  return once(`popular:${catalogVersion}`, async () => {
+/** Books readers found most often (one vote per reader). `null` = every release: book ids are stable across releases. */
+export function fetchPopular(catalogVersion: string | null, limit = 5): Promise<PopularBook[] | null> {
+  return once(`popular:${catalogVersion ?? "all"}:${limit}`, async () => {
     if (!contributionsEnabled) return null;
     const rows = (await getJson(
       `${SUPABASE_CONFIG.url}/rest/v1/rpc/popular_books`,

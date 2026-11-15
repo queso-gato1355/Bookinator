@@ -14,7 +14,7 @@ import { type LibraryStrings } from "../i18n/library.ts";
 import { EXPERIENCE } from "../i18n/experience.ts";
 import { searchLocal } from "../community/search.ts";
 import { conflictingAnswers, leadingMatchCount } from "../engine/reader.ts";
-import { LibraryHome } from "./LibraryHome.tsx";
+import { Leaderboard, LibraryHome } from "./LibraryHome.tsx";
 import { CatalogGallery } from "./CatalogGallery.tsx";
 import { LibraryNextStep } from "./LibraryNextStep.tsx";
 import { HACKATHON } from "../i18n/hackathon.ts";
@@ -106,6 +106,7 @@ function ChallengeHomeScreen({ headingRef, onStart, t, L, lang }: { headingRef: 
       <SectionHead eyebrow={L.howEyebrow} title={L.howTitle} />
       <ol className="steps">{L.steps.map(([title, body], i) => <li key={title}><span className="step-no">{String(i + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{body}</p></li>)}</ol>
     </section>
+    <Leaderboard L={L} lang={lang} />
     <section className="section" id="catalog">
       <SectionHead eyebrow={L.colEyebrow} title={`${shelfName[ACTIVE_COLLECTION]} · ${t.booksCount(titleCount(CC.catalog))}`} lead={E.catalogLead} />
       <label className="field field-pill catalog-search"><Icon name="search" /><span className="sr-only">{E.catalogPlaceholder}</span><input id="catalog-search" type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={E.catalogPlaceholder} maxLength={200} /></label>

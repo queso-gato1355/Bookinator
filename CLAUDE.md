@@ -260,13 +260,16 @@ links only). D3–D6 and D8–D13 are still open in the design doc — don't har
   back byte-for-byte equal (tested). `VITE_CATALOG_SOURCE=supabase` makes `main.tsx` play the DB copy of the same
   release, falling back to the bundle on any problem — the engine never depends on the server.
 
-### Teammate labels + demo signature questions (15 Nov 2026, catalog `cmu-priority500-v4`, not yet synced)
+### Teammate labels + demo signature questions (15 Nov 2026, catalog `cmu-priority500-v5`; v4 in Supabase is the teammate's `305475f`)
 
 - Teammate files (raw copies in `data/ai_recall/teammates/`) imported with `scripts/import_ai_labels.ts`: 준영's Gemini run
   (658 books: 18 in the pool merged into `gemini.txt`, 640 outside → `extra/gemini_new_books.json`) and 주원's file as its own
   labeller `juwon` (288 lines, 14 exact repeats → 274 books: 52 in the pool → `juwon.txt`, 222 outside → `extra/juwon_new_books.json`;
-  AI used unknown — rename if it was GPT/Claude/Gemini). Applied with `apply_ai_recall.ts --version cmu-priority500-v4`, gate: 388 / 488.
-  Books outside the pool are still NOT in the game (needs the Core pack build).
+  AI used unknown — rename if it was GPT/Claude/Gemini). v5 = teammate v4 + `apply_ai_recall.ts --version cmu-priority500-v5` + signature questions, gate: 388 / 488.
+  Books outside the pool are NOT in the game yet: `scripts/add_extra_books.ts` adds 752 of them (106 by series authors skipped),
+  but `gate_catalog.ts` on ~1,140 targets did not finish in 16 min (forward pass is O(removed × targets)); run it offline.
+- Leaderboard ("Most found with Bookinator") counts `popular_books(null)` = every release, so a new catalog version no longer
+  resets it to sample data; also shown on the live-challenge home. Counts only games the reader chose to share (D2).
 - Why famous books (Harry Potter) were hard to find: the series target held strong 0.9 labels readers answer "No" to
   (detective central, village, crime-solving plot, talking animals, drugs, music, circus); each costs ×5. Those cells are now unknown.
 - `data/signature/signature_questions.json` + `scripts/add_signature_questions.ts`: 12 book-specific demo questions (s01–s12, e.g.

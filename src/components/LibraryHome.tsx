@@ -40,19 +40,20 @@ function CollectionCard({ item, query, L }: { item: (typeof DESIGN_MOCK)["ko"]["
 
 const TILE_ICONS: IconName[] = ["tileStart", "tileSearch", "tileRequest", "tileCard", "tileGuide"];
 
-function Leaderboard({ L, lang }: { L: LibraryStrings; lang: Lang }) {
-  const version = CC.catalog.catalog_version;
-  const live = useLoaded<PopularBook[]>(() => fetchPopular(version, 8), version);
-  const liveEntries: LeaderboardEntry[] = (live ?? []).flatMap((r, i) => {
+export function Leaderboard({ L, lang }: { L: LibraryStrings; lang: Lang }) {
+  // Counted over every release (not only the one being played), so a new catalog version does not reset the
+  // board to sample data; books that are not on the current shelf are left out and the ranks closed up.
+  const live = useLoaded<PopularBook[]>(() => fetchPopular(null, 20), "popular-all");
+  const liveBooks = (live ?? []).flatMap((r) => {
     const idx = CC.bookIndex.get(r.book_id);
-    if (idx === undefined || !(r.found_count > 0)) return [];
-    const book = CC.books[idx];
-    return [{ rank: i + 1, title: bookTitles(book, lang).main, author: authorLine(book), count: r.found_count, trend: null }];
-  });
+    return idx === undefined || !(r.found_count > 0) ? [] : [{ book: CC.books[idx], count: r.found_count }];
+  }).slice(0, 8);
+  const liveEntries: LeaderboardEntry[] = liveBooks.map(({ book, count }, i) =>
+    ({ rank: i + 1, title: bookTitles(book, lang).main, author: authorLine(book), count, trend: null }));
   const isLive = liveEntries.length > 0;
   const entries = isLive ? liveEntries : DESIGN_MOCK[lang].leaderboard;
   const [top, ...rest] = entries;
-  const topBook = isLive ? CC.books[CC.bookIndex.get(live![0].book_id)!] : null;
+  const topBook = isLive ? liveBooks[0].book : null;
   const sampleQuery = DESIGN_MOCK.en.leaderboard[0].imageCaption ?? "";
   const photo = useLoaded(() => (topBook ? fetchImage(topBook) : fetchPhoto(sampleQuery)), topBook?.id ?? "sample");
   return (
