@@ -1,5 +1,5 @@
 {
- "catalog_version": "cmu-priority500-v3",
+ "catalog_version": "cmu-priority500-v4",
  "source": "priority_500.jsonl (first 500 records)",
  "counts": {
   "imported_source_records": 500,
@@ -9,8 +9,8 @@
   "series_targets": 35,
   "titles_reachable": 488
  },
- "supported_cells_total": 31371,
- "supported_cells_per_labelled_book_mean": 62.74,
+ "supported_cells_total": 31375,
+ "supported_cells_per_labelled_book_mean": 62.75,
  "books_meeting_handoff_heuristic_12_supported": 394,
  "gate": {
   "min_supported": 6,
@@ -26,9 +26,9 @@
  "ai_recall": {
   "labellers": {
    "claude": {
-    "answers": 10345,
-    "agree_with_sourced": 2200,
-    "conflict_with_sourced": 154,
+    "answers": 10450,
+    "agree_with_sourced": 2246,
+    "conflict_with_sourced": 156,
     "agreement_with_sourced": 0.935
    },
    "gemini": {
@@ -46,7 +46,7 @@
   },
   "unreliable_questions": {
    "m12": {
-    "agree": 42,
+    "agree": 43,
     "disagree": 21,
     "rule": "single-labeller answers dropped; agreed answers kept"
    },
@@ -81,7 +81,7 @@
     "rule": "single-labeller answers dropped; agreed answers kept"
    },
    "q29": {
-    "agree": 51,
+    "agree": 52,
     "disagree": 25,
     "rule": "single-labeller answers dropped; agreed answers kept"
    },
@@ -91,14 +91,14 @@
     "rule": "single-labeller answers dropped; agreed answers kept"
    }
   },
-  "cells_added": 29002,
+  "cells_added": 29006,
   "checked_against_sourced_labels": 6469,
   "agree": 6330,
   "conflict": 139,
   "agreement_rate": 0.979,
   "between_labellers": {
-   "agree": 8271,
-   "disagree_dropped": 787,
+   "agree": 8358,
+   "disagree_dropped": 794,
    "single_labeller_on_unreliable_question_dropped": 2498
   },
   "conflicts": [
@@ -790,6 +790,7 @@
     "question_id": "q08",
     "sourced": 0.7,
     "ai_recall": {
+     "claude": 0.1,
      "gpt": 0.3
     },
     "resolution": "set to unknown (0.5)"
@@ -2822,7 +2823,7 @@
     "Ken Kesey"
    ],
    "labelled": true,
-   "supported_cells": 81,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2874,7 +2875,7 @@
     "Frank Herbert"
    ],
    "labelled": true,
-   "supported_cells": 83,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2917,7 +2918,7 @@
    "supported_cells": 22,
    "reviewed_cells": 0,
    "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 40 questions) when answering from its own labels"
+   "reason": "engine gate: engine never became confident (shortlist after 102 questions) when answering from its own labels"
   },
   {
    "rank": 92,
@@ -2927,7 +2928,7 @@
     "Jay Asher"
    ],
    "labelled": true,
-   "supported_cells": 78,
+   "supported_cells": 79,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -2971,7 +2972,7 @@
     "John Green"
    ],
    "labelled": true,
-   "supported_cells": 81,
+   "supported_cells": 82,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3122,7 +3123,7 @@
     "Margaret Stohl"
    ],
    "labelled": true,
-   "supported_cells": 72,
+   "supported_cells": 71,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -3550,7 +3551,7 @@
     "Chuck Palahniuk"
    ],
    "labelled": true,
-   "supported_cells": 85,
+   "supported_cells": 84,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4310,7 +4311,7 @@
     "Robert Louis Stevenson"
    ],
    "labelled": true,
-   "supported_cells": 86,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -4326,7 +4327,7 @@
    "supported_cells": 23,
    "reviewed_cells": 0,
    "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 40 questions) when answering from its own labels"
+   "reason": "engine gate: engine never became confident (shortlist after 101 questions) when answering from its own labels"
   },
   {
    "rank": 178,
@@ -4575,7 +4576,7 @@
    "supported_cells": 30,
    "reviewed_cells": 0,
    "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 40 questions) when answering from its own labels"
+   "reason": "engine gate: engine never became confident (shortlist after 98 questions) when answering from its own labels"
   },
   {
    "rank": 192,
@@ -4878,7 +4879,7 @@
    "supported_cells": 40,
    "reviewed_cells": 0,
    "playable": false,
-   "reason": "engine gate: engine never became confident (shortlist after 40 questions) when answering from its own labels"
+   "reason": "engine gate: engine never became confident (shortlist after 83 questions) when answering from its own labels"
   },
   {
    "rank": 215,
@@ -5178,7 +5179,7 @@
     "Sarah Dessen"
    ],
    "labelled": true,
-   "supported_cells": 89,
+   "supported_cells": 90,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -5643,7 +5644,7 @@
     "Daniel Defoe"
    ],
    "labelled": true,
-   "supported_cells": 84,
+   "supported_cells": 85,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6044,7 +6045,7 @@
     "Junot Díaz"
    ],
    "labelled": true,
-   "supported_cells": 94,
+   "supported_cells": 96,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -6863,7 +6864,7 @@
     "Stephen King"
    ],
    "labelled": true,
-   "supported_cells": 81,
+   "supported_cells": 80,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7140,7 +7141,7 @@
     "William Faulkner"
    ],
    "labelled": true,
-   "supported_cells": 82,
+   "supported_cells": 83,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7285,7 +7286,7 @@
     "Victor Hugo"
    ],
    "labelled": true,
-   "supported_cells": 85,
+   "supported_cells": 84,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7404,7 +7405,7 @@
     "Sue Grafton"
    ],
    "labelled": true,
-   "supported_cells": 68,
+   "supported_cells": 69,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null
@@ -7484,7 +7485,7 @@
     "Kate DiCamillo"
    ],
    "labelled": true,
-   "supported_cells": 71,
+   "supported_cells": 72,
    "reviewed_cells": 0,
    "playable": true,
    "reason": null

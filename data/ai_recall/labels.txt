@@ -229,3 +229,36 @@
 2224493 | The Secret Life of Bees | 01Y 02Y 03n 04N 05N 06N 07N 08N 09N 10N 11Y 12N 13N 14Y 15N 16N 17N 18N 19Y 20N 21N 22N 23N 24N 25N 26n 27y 28N 29Y 31N 32N 33N 34N 35N 36N 37N 38Y 39N 40N 41N 42N 43Y 44Y 45Y 47Y 49Y 50N 51N 52N 53N 55N 57N 58Y 59N 60N 61Y 62Y 64N m01N m02N m03N m04N m05N m06N m07N m08N m09N m10N m11N m12N m13N m14N m15N m16N m17N m18Y m21N m22N m23N m24N m25N m26N m27N m28N m29N m31N m32N m33N m34N m35N m36N m37N m38N m39N m40N m41N m42N m43N m44N m46N m48N m49N m50N m52N
 31879966 | Clockwork Angel | 01Y 02Y 03Y 05N 06N 07N 08Y 09N 10Y 11N 12N 13Y 14N 15N 16N 17Y 18N 19N 20N 21N 22N 23N 24N 26Y 27N 28Y 30N 31N 32Y 33N 34N 35N 36N 40N 43Y 49N 53Y 54Y 55N 57N 58Y 59N 60N 61Y 62N 63N 64N m01N m02Y m03Y m04Y m05Y m07N m08N m09Y m10Y m11N m12Y m13N m14N m16N m17Y m18N m19N m20N m21N m22N m23N m25N m26N m27N m28N m29N m30N m31N m32Y m33N m36N m39N m40N m42N m43N m45N m46N m47N m48N m49N m50N m51N m52Y
 27979753 | The Red Pyramid | 01Y 02Y 03Y 06N 07N 08Y 09N 10Y 11N 12N 15N 16N 17N 18N 19N 20Y 21N 22N 23N 24N 25N 27Y 28Y 30N 31N 32Y 33N 34N 41N 42Y 43Y 49Y 50Y 51N 53Y 54Y 57N 58Y 59N 60N 61Y 62N 63N 64N m01N m02N m03N m04Y m06N m07Y m08N m09N m12Y m17N m18N m23N m24N m25Y m26N m29y m33N m35N m36N m40N m42N m43N m44N m49N m51N m52Y
+# Added 15 Nov 2026 (Claude, general knowledge) to separate the book pairs the v3 simulation confused most
+# (reports/simulation_research.json topConfusions). Only codes not already answered for that book.
+229593 | The Sound and the Fury | 02Y 03Y 06Y 11y 14Y 18Y 19N 29Y 47Y 49Y 50Y 52Y 55Y m19N
+1827695 | The Bluest Eye | 01Y 02Y 06Y 14Y 18Y 19N 43Y 44Y 49Y 50Y m19Y
+71416 | Dune | 04N 22N
+2931456 | The Tale of Despereaux | 05Y 15Y 16N 36Y 42y m12Y m34Y m35Y
+3681524 | The Princess Bride | 05N
+10917506 | The History of Love | 01Y 02Y 03Y 10Y 14Y 40Y 46Y 50Y 52Y m46Y
+1779024 | Extremely Loud and Incredibly Close | 47Y m31Y
+23869776 | Thirteen Reasons Why | m45N
+11651402 | Just Listen | 02Y 03Y 47N 49Y m45Y
+944096 | Digital Fortress | 38Y
+167963 | Treasure Island | 46N
+55483 | Robinson Crusoe | m40N
+34890405 | Beautiful Creatures | m05N
+1240426 | Wicked: The Life and Times of the Wicked Witch of the West | 02Y 09y 14N 15Y 36Y m04Y
+23986473 | The Magicians | 06Y 09Y 14Y m04Y
+61489 | Les Misérables | 13N m33Y
+1674879 | Hyperion | 04Y 33Y 50Y
+13726089 | The Brief Wondrous Life of Oscar Wao | 08N 14Y 35n 40Y 42Y
+1195051 | The House of the Spirits | 08Y 14N 35Y 55Y
+18451040 | Paper Towns | 38N
+2040458 | Tales of a Fourth Grade Nothing | 01Y 02N 03Y m35N
+10178524 | The Princess Diaries | 01Y 02Y m35Y
+23854860 | Fight Club | 37N
+2531453 | One Flew Over the Cuckoo's Nest | m52N
+26476 | Rendezvous with Rama | 22N
+50376 | Dragonflight | 02Y m01Y
+10902339 | The Dead Zone | 08Y m37N
+3434631 | Thinner | 08N m37Y
+1282996 | "A" is for Alibi | 02Y m11N
+4533526 | Postmortem | 02Y m11Y m48Y
+52803 | The Hunchback of Notre Dame | m45n
