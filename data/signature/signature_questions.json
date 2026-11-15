@@ -1,0 +1,21 @@
+{
+  "notice": "Signature questions for the hackathon demo: one memorable, book-specific detail per famous target, so a reader who remembers it can confirm the book quickly. Answers are AI general knowledge (status ai_recall, no source, reviewed=false), NOT a person's review. The named target gets p_yes 0.9; books listed in 'unknown_for' could plausibly match and stay unknown; every other single-book or series target of the research catalog gets 0.1 (p_yes stays > 0, so a 'Yes' never hard-eliminates them). Applied by scripts/add_signature_questions.ts, re-run after every catalog rebuild.",
+  "questions": [
+    { "id": "s01", "target": "series:harry-potter", "text": "Does the hero have a lightning-bolt scar on the forehead?", "ko": "주인공의 이마에 번개 모양 흉터가 있나요?", "definition": "The main character carries a lightning-bolt-shaped scar on the forehead.", "unknown_for": [] },
+    { "id": "s02", "target": "series:harry-potter", "text": "Is the main setting a boarding school for witches and wizards?", "ko": "마법사들이 다니는 기숙학교가 주 무대인가요?", "definition": "Much of the story happens at a residential school that teaches magic.", "unknown_for": ["cmu:enwiki:2890", "cmu:enwiki:23986473"] },
+    { "id": "s03", "target": "series:harry-potter", "text": "Is a sport played on flying broomsticks part of it?", "ko": "빗자루를 타고 날며 하는 운동 경기가 나오나요?", "definition": "Characters play a team sport while flying on broomsticks.", "unknown_for": [] },
+    { "id": "s04", "target": "series:the-hunger-games", "text": "Are teenagers forced to fight to the death in a televised contest?", "ko": "청소년들이 TV로 중계되는 죽음의 경기에서 싸워야 하나요?", "definition": "Young people are made to kill each other in a broadcast competition.", "unknown_for": [] },
+    { "id": "s05", "target": "series:twilight", "text": "Does a girl fall in love with a vampire whose skin sparkles in sunlight?", "ko": "햇빛을 받으면 피부가 반짝이는 뱀파이어와 소녀가 사랑에 빠지나요?", "definition": "A romance between a girl and a vampire whose skin glitters in the sun.", "unknown_for": [] },
+    { "id": "s06", "target": "series:chronicles-of-narnia", "text": "Do children reach a magical land through a wardrobe?", "ko": "아이들이 옷장을 통해 마법의 나라로 가나요?", "definition": "Children step through a wardrobe into another world.", "unknown_for": [] },
+    { "id": "s07", "target": "cmu:enwiki:29798", "also": ["cmu:enwiki:63750"], "text": "Must a powerful ring be destroyed?", "ko": "강력한 반지를 파괴해야 하나요?", "definition": "The quest is to destroy a ring of great power.", "unknown_for": [] },
+    { "id": "s08", "target": "series:percy-jackson-and-the-olympians", "text": "Is the hero the son of a Greek god?", "ko": "주인공이 그리스 신의 아들인가요?", "definition": "The main character is a demigod, the child of a Greek god.", "unknown_for": ["series:the-heroes-of-olympus"] },
+    { "id": "s09", "target": "cmu:enwiki:57766", "text": "Do children win golden tickets to tour a factory?", "ko": "아이들이 황금 티켓을 얻어 공장을 구경하나요?", "definition": "Golden tickets give a few children a tour of a factory.", "unknown_for": [] },
+    { "id": "s10", "target": "cmu:enwiki:19859", "text": "Does a ship's captain hunt a white whale?", "ko": "배의 선장이 흰 고래를 쫓나요?", "definition": "A captain pursues a white whale.", "unknown_for": [] },
+    { "id": "s11", "target": "cmu:enwiki:54436", "text": "Does a girl follow a yellow brick road?", "ko": "소녀가 노란 벽돌 길을 따라가나요?", "definition": "A girl travels along a road paved with yellow bricks.", "unknown_for": ["cmu:enwiki:1240426"] },
+    { "id": "s12", "target": "cmu:enwiki:5326809", "text": "Are dinosaurs brought back to life?", "ko": "공룡이 되살아나나요?", "definition": "Dinosaurs are recreated or revived in the story.", "unknown_for": [] }
+  ],
+  "corrections": {
+    "notice": "Cells that contradict how readers remember the book, found while analysing why the Harry Potter series was hard to find (a 0.9 label vs a reader's 'No' costs the book about x5 each). They are set to unknown (no cell), never flipped.",
+    "series:harry-potter": ["q07", "q11", "q25", "q36", "m44", "m45", "m50"]
+  }
+}

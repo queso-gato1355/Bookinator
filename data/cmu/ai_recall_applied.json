@@ -1,32 +1,38 @@
 {
- "catalog_version": "cmu-priority500-v2",
+ "catalog_version": "cmu-priority500-v4",
  "labellers": {
   "claude": {
-   "answers_on_playable_books": 7464,
-   "agree_with_sourced": 1452,
-   "conflict_with_sourced": 12,
-   "agreement_with_sourced": 0.992
+   "answers_on_playable_books": 8231,
+   "agree_with_sourced": 1587,
+   "conflict_with_sourced": 74,
+   "agreement_with_sourced": 0.955
   },
   "gemini": {
-   "answers_on_playable_books": 294,
-   "agree_with_sourced": 40,
-   "conflict_with_sourced": 1,
-   "agreement_with_sourced": 0.976
+   "answers_on_playable_books": 1038,
+   "agree_with_sourced": 159,
+   "conflict_with_sourced": 9,
+   "agreement_with_sourced": 0.946
   },
   "gpt": {
-   "answers_on_playable_books": 383,
-   "agree_with_sourced": 116,
-   "conflict_with_sourced": 3,
-   "agreement_with_sourced": 0.975
+   "answers_on_playable_books": 27378,
+   "agree_with_sourced": 4648,
+   "conflict_with_sourced": 14,
+   "agreement_with_sourced": 0.997
+  },
+  "juwon": {
+   "answers_on_playable_books": 5610,
+   "agree_with_sourced": 711,
+   "conflict_with_sourced": 96,
+   "agreement_with_sourced": 0.881
   }
  },
  "between_labellers": {
-  "agree": 443,
-  "disagree_dropped": 33
+  "agree": 8847,
+  "disagree_dropped": 1308
  },
- "cells_added": 6148,
- "checked_against_sourced_labels": 1474,
- "agree": 1466,
- "conflict_set_to_unknown": 8,
+ "cells_added": 24078,
+ "checked_against_sourced_labels": 4719,
+ "agree": 4663,
+ "conflict_set_to_unknown": 56,
  "scope": "single-book targets of the shipped catalog (scripts/apply_ai_recall.ts); series targets unchanged"
 }
