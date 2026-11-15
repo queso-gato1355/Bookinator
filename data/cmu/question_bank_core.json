@@ -6,7 +6,7 @@
    "text": "Is a child or teenager a central character?",
    "definition": "A principal viewpoint or focal character is under 20 during the main story; childhood flashbacks alone do not count.",
    "category": "Protagonists",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -15,7 +15,7 @@
    "text": "Is a woman or girl a central character?",
    "definition": "At least one principal viewpoint or focal character is female. This is not the complement of q03.",
    "category": "Protagonists",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -24,7 +24,7 @@
    "text": "Is a man or boy a central character?",
    "definition": "At least one principal viewpoint or focal character is male. This is not the complement of q02.",
    "category": "Protagonists",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -33,7 +33,7 @@
    "text": "Does the story follow several equally important characters?",
    "definition": "The narrative has multiple principal characters rather than one dominant protagonist.",
    "category": "Protagonists",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -42,7 +42,7 @@
    "text": "Is a nonhuman character central to the story?",
    "definition": "A principal focal character is an animal, artificial intelligence, or other nonhuman being; an incidental creature does not count.",
    "category": "Protagonists",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -51,7 +51,7 @@
    "text": "Is a student a central character?",
    "definition": "A principal focal character attends a school or university during the main story.",
    "category": "Protagonists",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -60,7 +60,7 @@
    "text": "Is a detective or investigator a central character?",
    "definition": "A principal focal character performs sustained crime investigation; an incidental mystery does not count.",
    "category": "Protagonists",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -69,7 +69,7 @@
    "text": "Does a central character have supernatural abilities openly established in the premise?",
    "definition": "Abilities must be established in the premise, not revealed in a later twist.",
    "category": "Protagonists",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -78,7 +78,7 @@
    "text": "Is a school a major setting?",
    "definition": "A substantial part of the main story takes place at a school or university.",
    "category": "Setting",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -87,7 +87,7 @@
    "text": "Does much of it take place in a large city?",
    "definition": "An urban setting dominates a substantial part of the main narrative.",
    "category": "Setting",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -96,7 +96,7 @@
    "text": "Does much of it take place in a village or rural area?",
    "definition": "A village, farm, or countryside dominates a substantial part of the main narrative.",
    "category": "Setting",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -105,7 +105,7 @@
    "text": "Does much of it take place in Korea?",
    "definition": "A substantial part of the story is geographically set on the Korean peninsula; author nationality is irrelevant.",
    "category": "Setting",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -114,7 +114,7 @@
    "text": "Does much of it take place in Britain?",
    "definition": "A substantial part of the story is set in Great Britain; author nationality is irrelevant.",
    "category": "Setting",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -123,7 +123,7 @@
    "text": "Does much of it take place in the United States?",
    "definition": "A substantial part of the story is set in the USA; author nationality is irrelevant.",
    "category": "Setting",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -132,7 +132,7 @@
    "text": "Is it mainly set in an invented world?",
    "definition": "An invented secondary world, rather than recognizable real-world Earth, is the primary setting.",
    "category": "Setting",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -141,7 +141,7 @@
    "text": "Does a major part take place aboard a ship or at sea?",
    "definition": "A substantial part of the narrative takes place at sea or aboard a waterborne ship.",
    "category": "Setting",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -150,7 +150,7 @@
    "text": "Is most of the story set before 1900?",
    "definition": "More than half of the main narrative is set before 1900. Publication year is not setting year.",
    "category": "Era",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -159,7 +159,7 @@
    "text": "Is most of it set between 1900 and 1945?",
    "definition": "More than half of the main narrative is set in 1900 through 1945 inclusive.",
    "category": "Era",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -168,7 +168,7 @@
    "text": "Is most of it set between 1946 and 1999?",
    "definition": "More than half of the main narrative is set in 1946 through 1999 inclusive.",
    "category": "Era",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -177,7 +177,7 @@
    "text": "Is most of it set in the 2000s or later, excluding an imagined future?",
    "definition": "Most of the main narrative is set in real-world 2000 or later and is not speculative future fiction.",
    "category": "Era",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -186,7 +186,7 @@
    "text": "Is it set in an imagined future?",
    "definition": "A speculative future society or future era is the primary setting, relative to the work when written.",
    "category": "Era",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -195,7 +195,7 @@
    "text": "Does it take place across multiple historical periods?",
    "definition": "Substantial narrative spans distinctly different historical periods, not merely a brief flashback.",
    "category": "Era",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -204,7 +204,7 @@
    "text": "Has a large disaster already changed society when the story begins?",
    "definition": "The main story starts after a society-altering disaster; a disaster late in the story does not count.",
    "category": "Era",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -213,7 +213,7 @@
    "text": "Is a real historical war a major part of the setting?",
    "definition": "An identifiable real historical war substantially shapes the main setting.",
    "category": "Era",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -222,7 +222,7 @@
    "text": "Is solving a crime a main storyline?",
    "definition": "Crime investigation is a central ongoing plot, rather than an incidental event.",
    "category": "Plot",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -231,7 +231,7 @@
    "text": "Is a romantic relationship a main storyline?",
    "definition": "Developing or sustaining a romantic relationship is a central plot.",
    "category": "Plot",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -240,7 +240,7 @@
    "text": "Is a long journey a main storyline?",
    "definition": "A sustained journey or quest drives a substantial part of the plot.",
    "category": "Plot",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -249,7 +249,7 @@
    "text": "Is surviving physical danger a main storyline?",
    "definition": "Survival under ongoing physical threat is a central plot.",
    "category": "Plot",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -258,7 +258,7 @@
    "text": "Is conflict within a family a main storyline?",
    "definition": "Relationships or conflict among family members drive a main plot.",
    "category": "Plot",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -267,7 +267,7 @@
    "text": "Is resisting a government or authority a main storyline?",
    "definition": "Opposition to a governing or institutional power is central to the premise.",
    "category": "Plot",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -276,7 +276,7 @@
    "text": "Is a competition or tournament central to the premise?",
    "definition": "An organized contest, tournament, or competitive selection is central to the advertised premise.",
    "category": "Plot",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -285,7 +285,7 @@
    "text": "Does the story prominently involve magic?",
    "definition": "Overt magic materially shapes the main narrative; a metaphor alone does not count.",
    "category": "Plot",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -294,7 +294,7 @@
    "text": "Is time travel part of the premise?",
    "definition": "Literal movement through time is established in the premise; ordinary flashbacks do not count.",
    "category": "Motifs",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -303,7 +303,7 @@
    "text": "Is space travel part of the premise?",
    "definition": "Travel beyond Earth is established in the premise.",
    "category": "Motifs",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -312,7 +312,7 @@
    "text": "Are ghosts or spirits openly part of the premise?",
    "definition": "Ghosts or spirits are openly established, rather than a concealed ending or figurative reference.",
    "category": "Motifs",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -321,7 +321,7 @@
    "text": "Are animals that speak or behave like people prominent?",
    "definition": "Anthropomorphized animals are prominent characters, not a single incidental pet.",
    "category": "Motifs",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -330,7 +330,7 @@
    "text": "Is a prison or confinement a major setting?",
    "definition": "Prison, detention, captivity, or comparable forced confinement is a substantial setting.",
    "category": "Motifs",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -339,7 +339,7 @@
    "text": "Is a shop or workplace a major setting?",
    "definition": "A shop, office, factory, or comparable workplace is a substantial setting.",
    "category": "Motifs",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -348,7 +348,7 @@
    "text": "Is illness a major part of the premise?",
    "definition": "An illness or epidemic is openly central to the premise.",
    "category": "Motifs",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -357,7 +357,7 @@
    "text": "Does the story prominently involve moving to another country?",
    "definition": "Immigration, exile, or relocation across countries is substantial; tourism alone is insufficient.",
    "category": "Motifs",
-   "recallability": 1.0,
+   "recallability": 1,
    "spoiler_policy": "Premise-level evidence only. Unknown if established only by a late twist.",
    "source_coverage_warning": false
   },
@@ -1148,6 +1148,114 @@
    "definition": "A secret society, cult, order or brotherhood is part of the story.",
    "spoiler_policy": "Concrete story element; twist-revealing motifs are not asked.",
    "evidence_rule": "Positive only: an explicit mention in the plot synopsis or the article's premise paragraph. Absence is unknown, not No."
+  },
+  {
+   "id": "s01",
+   "category": "signature",
+   "group": "signature_s01",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Does the hero have a lightning-bolt scar on the forehead?",
+   "definition": "The main character carries a lightning-bolt-shaped scar on the forehead."
+  },
+  {
+   "id": "s02",
+   "category": "signature",
+   "group": "signature_s02",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Is the main setting a boarding school for witches and wizards?",
+   "definition": "Much of the story happens at a residential school that teaches magic."
+  },
+  {
+   "id": "s03",
+   "category": "signature",
+   "group": "signature_s03",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Is a sport played on flying broomsticks part of it?",
+   "definition": "Characters play a team sport while flying on broomsticks."
+  },
+  {
+   "id": "s04",
+   "category": "signature",
+   "group": "signature_s04",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Are teenagers forced to fight to the death in a televised contest?",
+   "definition": "Young people are made to kill each other in a broadcast competition."
+  },
+  {
+   "id": "s05",
+   "category": "signature",
+   "group": "signature_s05",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Does a girl fall in love with a vampire whose skin sparkles in sunlight?",
+   "definition": "A romance between a girl and a vampire whose skin glitters in the sun."
+  },
+  {
+   "id": "s06",
+   "category": "signature",
+   "group": "signature_s06",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Do children reach a magical land through a wardrobe?",
+   "definition": "Children step through a wardrobe into another world."
+  },
+  {
+   "id": "s07",
+   "category": "signature",
+   "group": "signature_s07",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Must a powerful ring be destroyed?",
+   "definition": "The quest is to destroy a ring of great power."
+  },
+  {
+   "id": "s08",
+   "category": "signature",
+   "group": "signature_s08",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Is the hero the son of a Greek god?",
+   "definition": "The main character is a demigod, the child of a Greek god."
+  },
+  {
+   "id": "s09",
+   "category": "signature",
+   "group": "signature_s09",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Do children win golden tickets to tour a factory?",
+   "definition": "Golden tickets give a few children a tour of a factory."
+  },
+  {
+   "id": "s10",
+   "category": "signature",
+   "group": "signature_s10",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Does a ship's captain hunt a white whale?",
+   "definition": "A captain pursues a white whale."
+  },
+  {
+   "id": "s11",
+   "category": "signature",
+   "group": "signature_s11",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Does a girl follow a yellow brick road?",
+   "definition": "A girl travels along a road paved with yellow bricks."
+  },
+  {
+   "id": "s12",
+   "category": "signature",
+   "group": "signature_s12",
+   "recallability": 1,
+   "adaptation_sensitive": false,
+   "text": "Are dinosaurs brought back to life?",
+   "definition": "Dinosaurs are recreated or revived in the story."
   }
  ]
 }

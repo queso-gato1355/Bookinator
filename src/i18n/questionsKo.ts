@@ -119,4 +119,17 @@ export const QUESTIONS_KO: Record<string, string> = {
   "Is there a circus, theatre or show?": "서커스, 연극, 공연이 나오나요?",
   "Is there a farm?": "농장이 나오나요?",
   "Is there a secret society or cult?": "비밀 결사나 사이비 집단이 나오나요?",
+  // Demo signature questions (data/signature/signature_questions.json)
+  "Does the hero have a lightning-bolt scar on the forehead?": "주인공의 이마에 번개 모양 흉터가 있나요?",
+  "Is the main setting a boarding school for witches and wizards?": "마법사들이 다니는 기숙학교가 주 무대인가요?",
+  "Is a sport played on flying broomsticks part of it?": "빗자루를 타고 날며 하는 운동 경기가 나오나요?",
+  "Are teenagers forced to fight to the death in a televised contest?": "청소년들이 TV로 중계되는 죽음의 경기에서 싸워야 하나요?",
+  "Does a girl fall in love with a vampire whose skin sparkles in sunlight?": "햇빛을 받으면 피부가 반짝이는 뱀파이어와 소녀가 사랑에 빠지나요?",
+  "Do children reach a magical land through a wardrobe?": "아이들이 옷장을 통해 마법의 나라로 가나요?",
+  "Must a powerful ring be destroyed?": "강력한 반지를 파괴해야 하나요?",
+  "Is the hero the son of a Greek god?": "주인공이 그리스 신의 아들인가요?",
+  "Do children win golden tickets to tour a factory?": "아이들이 황금 티켓을 얻어 공장을 구경하나요?",
+  "Does a ship's captain hunt a white whale?": "배의 선장이 흰 고래를 쫓나요?",
+  "Does a girl follow a yellow brick road?": "소녀가 노란 벽돌 길을 따라가나요?",
+  "Are dinosaurs brought back to life?": "공룡이 되살아나나요?",
 };
