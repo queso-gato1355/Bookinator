@@ -237,7 +237,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:73408",
-"evidence_quote": "Scout Finch, who lives with her older brother Jem and their widowed father Atticus, a middle-aged lawyer. Jem and Scout befriend a boy named Dill who visits Maycomb to stay with his aunt each summer. The three",
+"evidence_quote": "Atticus' and Tom's points of view. Because Atticus does not want them to be present at Tom Robinson's trial, Scout, Jem and Dill watch in secret from the colored balcony. Atticus establishes that the",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -744,17 +744,6 @@
 "status": "supported",
 "source_id": "cmu:14975869",
 "evidence_quote": "eventually becomes his lover. Blomkvist and Salander soon realise that they are on the trail of a serial killer who has been preying on women for decades. When looking through old photographs, Blomkvist realises",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:14975869",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:14975869",
-"evidence_quote": "guardian, Holger Palmgren, the only person she trusts. When he suffers a stroke, he is replaced by lawyer Nils Bjurman, who takes advantage of his position to sexually abuse her. After using a hidden camera to",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -1597,17 +1586,6 @@
 },
 {
 "book_id": "cmu:enwiki:55438",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:55438",
-"evidence_quote": "on the part of Grace Poole, one of his servants. During the wedding ceremony, Mr. Mason and a lawyer declare that Mr. Rochester cannot marry because he is still married to Mr. Mason’s sister Bertha. Mr.",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:55438",
 "question_id": "m17",
 "p_yes": 0.9,
 "status": "supported",
@@ -2312,17 +2290,6 @@
 },
 {
 "book_id": "cmu:enwiki:2224493",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:2224493",
-"evidence_quote": "impossible to meet, but still encourage each other to attempt them. Zach wants to be the \"ass-busting lawyer\", which means he would be the first black lawyer in the area.Lily wants to be a short story writer. Zach",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:2224493",
 "question_id": "m17",
 "p_yes": 0.9,
 "status": "supported",
@@ -2613,7 +2580,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:2449650",
-"evidence_quote": "could have a serious impact on Anna's life. Anna petitions for medical emancipation with the help of lawyer Campbell Alexander, so that she will be able to make her own decisions regarding her medical treatment",
+"evidence_quote": "him, and by the end of the book, he has reformed and graduated from the police academy. During the trial, it is revealed that Kate asked Anna to sue for emancipation because she did not want Anna to have to",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -2768,17 +2735,6 @@
 "status": "supported",
 "source_id": "cmu:13116455",
 "evidence_quote": "is disturbed by the realization that the humans have not given up on reclaiming those the Souls have enslaved; by experimenting with ways of removing Souls from their hosts, both always die in the process.",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:959366",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:959366",
-"evidence_quote": "Unable to leave the hole they occupy, they remain in place until the next morning, during which an attorney arrives requesting Stanley’s release. When the warden demands the suitcase, Zero indicates the name",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -3841,17 +3797,6 @@
 },
 {
 "book_id": "cmu:enwiki:3012644",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:3012644",
-"evidence_quote": "the Jacobite cause. This is all overseen by the elderly but surprisingly lucid Ned Gowan, an English lawyer who is sympathetic to the Scottish cause. Also during the trip, Claire and Jamie begin to develop a",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:3012644",
 "question_id": "m14",
 "p_yes": 0.9,
 "status": "supported",
@@ -4138,17 +4083,6 @@
 },
 {
 "book_id": "cmu:enwiki:61489",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:61489",
-"evidence_quote": "at the barricade, the \"revolution\" has already started. When he stoops down to pick up a powder keg, a soldier comes up to shoot Marius. After, a man covers the muzzle of the soldier's gun with his hand. The",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:61489",
 "question_id": "m49",
 "p_yes": 0.9,
 "status": "supported",
@@ -4396,17 +4330,6 @@
 "status": "supported",
 "source_id": "cmu:1240426",
 "evidence_quote": "a year, and then a mute for six more years, Elphaba goes to the Vinkus, the land where Fiyero was prince, and meets his wife and children. Elphaba brings along a boy named Liir, to whom she claims no relation,",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:1240426",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:1240426",
-"evidence_quote": "help). When she returns to Kiamo Ko, she finds everyone gone except Nanny. Nanny explains that the soldiers who were staying in the house made everyone because Nor lets slip that Elphaba is not there to protect",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -4802,7 +4725,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:71416",
-"evidence_quote": "Of the Houses' principal retainers, mentat Thufir Hawat is captured by the Sardaukar; the troubador-soldier Gurney Halleck escapes with the aid of smugglers, whom he joins; and military commander Duncan Idaho is",
+"evidence_quote": "to watch his movements. Hawat explains the Emperor's suspicions: the Sardaukar, nearly invincible in battle, are trained on the prison planet Salusa Secundus, whose inhospitable conditions allow only the best to",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -5176,18 +5099,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:1196343",
-"evidence_quote": "park called Ruby Pier. Eddie is able to perform this job despite leg injuries he received as a soldier during World War II. On Eddie's birthday, one of the amusement park rides malfunctions because of a",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:5326809",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:5326809",
-"evidence_quote": "They stand in counterbalance to a well-known mathematician and chaos theorist Ian Malcolm and a lawyer representing the investors, Donald Gennaro. Both are pessimistic about the park's prospects. Malcolm,",
+"evidence_quote": "all people are connected in some way. The second person that Eddie meets is his former captain from the army who Eddie finds sitting in a tree in a Philippine rainforest. The captain reminds Eddie of their time",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -5363,7 +5275,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:23404033",
-"evidence_quote": "is moved to an intensive care ward under guard, accessible only to police, doctors, nurses, and her lawyer, Annika Giannini (who is also Mikael Blomkvist's sister). Zalachenko, whom Salander injured with an axe,",
+"evidence_quote": "a false psychiatric examination and recommends that she be reinstitutionalized, preferably without a trial. Gullberg, who has terminal cancer, murders Zalachenko in his hospital bed and then commits suicide.",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -5715,7 +5627,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:796676",
-"evidence_quote": "to realize that this is only trading one problem for another, as now that the Faith has armed soldiers at its command it feels less compelled to accept her authority. Hoping to weaken the Tyrell influence",
+"evidence_quote": "influence over the court, the masses, and King Tommen, Cersei dispatches Ser Loras Tyrell to lead an army and force a quick (and she hopes foolhardy) end to the siege of Stannis Baratheon's forces on",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -5980,17 +5892,6 @@
 "status": "supported",
 "source_id": "cmu:18949410",
 "evidence_quote": "the latter telling only the former). The guests realize they have been tricked into coming to the island, each of them lured with something special to them, like a job opportunity or mention of a mutual",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:18949410",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:18949410",
-"evidence_quote": "out and hanged himself and then there were none. |} After dinner that evening, the guests notice ten soldier boy figurines on the dining room table. During coffee, a gramophone record, unknowingly turned on by Mr",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -7482,17 +7383,6 @@
 },
 {
 "book_id": "cmu:enwiki:1804983",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:1804983",
-"evidence_quote": "The story opens as two Nazi soldiers stop Annemarie Johansen and her friend Ellen Rosen and ask them both questions on the streets of Copenhagen. That night, Annemarie reminisces about her older sister Lise, who was",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:1804983",
 "question_id": "m44",
 "p_yes": 0.9,
 "status": "supported",
@@ -8043,17 +7933,6 @@
 },
 {
 "book_id": "cmu:enwiki:159941",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:159941",
-"evidence_quote": "in her affair with Vronsky. When Anna and Vronsky continue seeing each other, Karenin consults with a lawyer about obtaining a divorce. During the time period, a divorce in Russia could only be requested by the",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:159941",
 "question_id": "m17",
 "p_yes": 0.9,
 "status": "supported",
@@ -8384,17 +8263,6 @@
 },
 {
 "book_id": "cmu:enwiki:1364178",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:1364178",
-"evidence_quote": "high school student, but fails the college's entrance exams. A brief encounter with Lee Rhynor, a soldier about to ship out to France, leads to heartbreak after he pretends to be in love with Francie when he",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:1364178",
 "question_id": "m38",
 "p_yes": 0.9,
 "status": "supported",
@@ -8432,7 +8300,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:543142",
-"evidence_quote": "professor/mentor/lover, Thomas Callahan, who shows it to his Washington-based friend, Gavin Verheek, a lawyer working for the FBI. Both men are killed soon after. Afraid that she will become the next target, Darby",
+"evidence_quote": "drill for oil on Louisiana marshland which is a major habitat of an endangered species of pelican. A court case on appeal, filed on his behalf to gain access to the land, is expected to make its way to the Supreme",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -8477,17 +8345,6 @@
 "status": "supported",
 "source_id": "cmu:543142",
 "evidence_quote": "to rule in his favor. Darby shows the brief, which becomes known as the 'Pelican Brief', to her law professor/mentor/lover, Thomas Callahan, who shows it to his Washington-based friend, Gavin Verheek, a lawyer",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:5205080",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:5205080",
-"evidence_quote": "his father to take them back to Berlin (after what is presumed to be an romance between a young soldier called Lieutenant Kotler and Bruno's sister is broken up by the father) after a year at their new home,",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -9605,17 +9462,6 @@
 },
 {
 "book_id": "cmu:enwiki:381491",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:381491",
-"evidence_quote": "Mary's plan and, although he weeps and calls her \"a disgusting old spider\" he takes the new will to her lawyer without delay. The lawyer, scandalised, urges Ralph to destroy the will, but to no avail. The bequest of",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:381491",
 "question_id": "m18",
 "p_yes": 0.9,
 "status": "supported",
@@ -9807,7 +9653,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:242128",
-"evidence_quote": "many centuries have passed in Narnia. That same day, they intervene to rescue Trumpkin the dwarf from soldiers who have brought him to the ruins to drown him. Trumpkin tells the children that since their",
+"evidence_quote": "at midnight on Dancing Lawn. Doctor Cornelius arrives to warn them of the approach of King Miraz and his army; he urges them to flee to Aslan's How in the great woods near Cair Paravel. But the Telmarines follow the",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -9895,7 +9741,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:711958",
-"evidence_quote": "Sloan the butcher. While the village is at peace, they are all of a sudden attacked by Galabatorix's soldiers and the Ra'zac, the strangers who had killed Roran's father, Garrow. The village smithy, Horst, equips",
+"evidence_quote": "Nasuada later attends a meeting with key figures in Surda's government to discuss a potential upcoming battle against the Empire. They learn that the conflict is coming sooner than they initially suspected, and",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -9928,7 +9774,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:2152",
-"evidence_quote": "The book tells the story of Paul Bäumer, a German soldier who—urged on by his school teacher—joins the German army shortly after the start of World War I. Bäumer arrives at the Western Front with his friends and",
+"evidence_quote": "tells the story of Paul Bäumer, a German soldier who—urged on by his school teacher—joins the German army shortly after the start of World War I. Bäumer arrives at the Western Front with his friends and",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -10116,17 +9962,6 @@
 "status": "supported",
 "source_id": "cmu:54436",
 "evidence_quote": "and Toto home. Dorothy, Toto, the Scarecrow, the Tin Woodman, and the Cowardly Lion journey to Glinda's palace in the Quadling Country. Together they escape the Fighting Trees, tread carefully through the China",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:54436",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:54436",
-"evidence_quote": "them while the bees try to sting the Tin Woodman. * Then the Wicked Witch of the West uses her Winkie soldiers to attack them. They are scared off by the Cowardly Lion. * Using the power of the Golden Cap, the",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -10369,17 +10204,6 @@
 "status": "supported",
 "source_id": "cmu:594829",
 "evidence_quote": "the oleander poison to be absorbed into skin. As a result, Barry dies and Ingrid is charged with his murder. Sentenced to life in prison, she promises her daughter that she will come back, but Astrid is sent to a",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:594829",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:594829",
-"evidence_quote": "to build up a group of fans and admirers from prison, who all believe she is innocent. Ingrid and her lawyer begin to build a case to get Ingrid released from prison. However, their case depends on Astrid — if she",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -10980,17 +10804,6 @@
 },
 {
 "book_id": "cmu:enwiki:5842145",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:5842145",
-"evidence_quote": "the characters. The basic synopsis revolves around journalist Raoul Duke (Hunter S. Thompson), and his attorney, Dr. Gonzo (Oscar Zeta Acosta), as they arrive in 1970s Las Vegas to report on the Mint 400 motorcycle",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:5842145",
 "question_id": "m29",
 "p_yes": 0.9,
 "status": "supported",
@@ -11172,17 +10985,6 @@
 "status": "supported",
 "source_id": "cmu:412654",
 "evidence_quote": "about his absent father apart from the fact that he was someone his mother \"met on the Boston & Maine railroad\". Tabitha never had any intention of marrying John’s father and cheerfully refuses to reveal his",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:412654",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:412654",
-"evidence_quote": "to get into Vietnam, Owen ends up in Arizona as a casualty officer, bringing bodies of Arizona soldiers home from California. He later explains to John that he has had a recurring dream in which he saves",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -11398,17 +11200,6 @@
 },
 {
 "book_id": "cmu:enwiki:33701149",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:33701149",
-"evidence_quote": "to plant a device in WICKED's headquarters, which is just outside Denver, which will disable their soldiers' weapons (pistols and Launchers), allowing the Right Arm, trained heavily in CQC with traditional",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:33701149",
 "question_id": "m38",
 "p_yes": 0.9,
 "status": "supported",
@@ -11424,7 +11215,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:752068",
-"evidence_quote": "Wendall Rohr and a legal team of successful tort lawyers have filed suit on behalf of plaintiff Celeste Wood, whose husband died of lung cancer. The trial is to be held in Biloxi, Mississippi, a state thought to",
+"evidence_quote": "tort lawyers have filed suit on behalf of plaintiff Celeste Wood, whose husband died of lung cancer. The trial is to be held in Biloxi, Mississippi, a state thought to have favorable tort laws and sympathetic",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -11546,17 +11337,6 @@
 "status": "supported",
 "source_id": "cmu:53595",
 "evidence_quote": "expedition to the planet Mars. Orphaned after the crew died, Smith was raised in the culture of the Martian natives, who possess full control over their minds and bodies (learned skills which Smith acquires). A",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:53595",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:53595",
-"evidence_quote": "Gillian, remembering Ben's reference to Jubal Harshaw, a famous author who is also a physician and a lawyer, conveys Smith to the latter. Smith continues to demonstrate psychic abilities and superhuman",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -11776,7 +11556,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:6216269",
-"evidence_quote": "by assassinating powerful nobles, and Dockson, Ham and Breeze manage to recruit some seven thousand soldiers with which to attack the Luthadel garrison. However, Yeden, the man who originally hired the crew for",
+"evidence_quote": "However, Yeden, the man who originally hired the crew for the job, makes a foolish move leaving the army exposed and majority of it gets slaughtered. The rest covertly moves to Luthadel. House Renoux, the front",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -12179,17 +11959,6 @@
 },
 {
 "book_id": "cmu:enwiki:1164368",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:1164368",
-"evidence_quote": "treats Sara to a very luxurious eleventh birthday party per Captain Crewe's request. Captain Crewe's lawyer arrives unexpectedly and tells Miss Minchin that Captain Crewe has died of jungle fever and his partner",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:1164368",
 "question_id": "m17",
 "p_yes": 0.9,
 "status": "supported",
@@ -12454,17 +12223,6 @@
 },
 {
 "book_id": "cmu:enwiki:77652",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:77652",
-"evidence_quote": "an offer from another fighter to be shot and lies in agony, hoping to kill an enemy officer and a few soldiers before being captured and executed. The narration ends right before Jordan launches his ambush. The",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:77652",
 "question_id": "m46",
 "p_yes": 0.9,
 "status": "supported",
@@ -12689,7 +12447,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:530285",
-"evidence_quote": "Will refuses to go until Lyra is rescued, to which the two assent. However, they are attacked by a soldier of the archangel Metatron, and Will uses the knife to cut a window into another world to escape. Baruch",
+"evidence_quote": "as a result of the upheavals regarding Dust. Three forces — Will, Iorek, and Balthamos; Lord Asriel's army; and the army of the Magisterium — converge on Mrs. Coulter's cave, where Will is able to wake Lyra from",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -13207,17 +12965,6 @@
 "status": "supported",
 "source_id": "cmu:21725",
 "evidence_quote": "program. At the same time, Riviera is to obtain the password to the Turing lock from Lady 3Jane Marie-France Tessier-Ashpool, an unfrozen daughter clone and the current leader of Tessier-Ashpool SA. Wintermute",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:21725",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "enwiki:21725:1384220887",
-"evidence_quote": "a computer hacker enlisted into a crew by a powerful artificial intelligence and a traumatised former soldier to complete a high-stakes heist. It was Gibson's debut novel and, after its success, served as the",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -14423,17 +14170,6 @@
 },
 {
 "book_id": "cmu:enwiki:18619336",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:18619336",
-"evidence_quote": "Caroline) and stepmother Sydelle (who resents them both). Rose is a thirty-year old single, successful lawyer who struggles with her weight, and who resents her younger sister's beauty and success with men. Maggie,",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:18619336",
 "question_id": "m23",
 "p_yes": 0.9,
 "status": "supported",
@@ -14450,17 +14186,6 @@
 "status": "supported",
 "source_id": "cmu:4533526",
 "evidence_quote": "She meets him at the scene of a woman's gruesome strangling, the latest in a string of unsolved murders in Richmond. The killer leaves behind few clues; among them are a mysterious substance which fluoresces",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:4533526",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:4533526",
-"evidence_quote": "ten-year-old niece, Lucy, as well as an uncertain romantic relationship with the local Commonwealth's attorney. During the investigation, a series of news leaks about the murders appear to be coming from a source",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -14494,17 +14219,6 @@
 "status": "supported",
 "source_id": "cmu:163629",
 "evidence_quote": "necrophilia, and the separation between his two lives begins to blur. He introduces stories about serial killers into casual conversations and on several occasions openly confesses his murderous activities to his",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:163629",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:163629",
-"evidence_quote": "being dispatched in a helicopter. Bateman flees on foot and hides in his office, where he phones his attorney, Harold Carnes, and confesses all his crimes to the answering machine. Later, Bateman confronts Carnes",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -15373,7 +15087,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:607536",
-"evidence_quote": "sewed up the rest in a cloth, intending to give it back to Katerina in the name of honor, he says. The lawyers are not convinced by this. All of the evidence points against Dmitri; the only other person in the",
+"evidence_quote": "evidence against him, Dmitri is formally charged with the patricide and taken away to prison to await trial. Book Ten: Boys Boys continues the story of the schoolboys and Ilyusha last referred to in Book Four.",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -15561,17 +15275,6 @@
 "status": "supported",
 "source_id": "cmu:30280",
 "evidence_quote": "to an old account, over two centuries ago Hugo Baskerville was infatuated with a farmer's daughter. He kidnapped her and imprisoned her in his bedroom. She escaped and the furious Baskerville offered his soul to",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:30280",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:30280",
-"evidence_quote": "interested, despite her brother’s intrusions. Watson meets another neighbour, Mr. Frankland, an elderly lawyer. Barrymore draws increasing suspicion, as Watson and Sir Henry see him late at night walk with a candle",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -16199,17 +15902,6 @@
 "status": "supported",
 "source_id": "cmu:12067316",
 "evidence_quote": "unusually important case of wealthy Los Angeles realtor Louis Roulet accused of assault and attempted murder. At first, he appears to be innocent and set up by the female \"victim.\" However, Roulet's lies and many",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:12067316",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:12067316",
-"evidence_quote": "Moderately successful criminal defense attorney Mickey Haller operates around Los Angeles County out of a Lincoln Town Car (hence the title) driven by a former client working off his legal fees. While most clients",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -17056,7 +16748,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:162770",
-"evidence_quote": "Ratchett/Cassetti's secretary, devoted to Sonia Armstrong; MacQueen's father was the district attorney for the kidnapping case. He knew from his father the details of Cassetti's escape from justice.",
+"evidence_quote": "know who delivered the fatal blow. Twelve of the conspirators participated to allow for a \"twelve-person jury\", with Count Andrenyi acting for his wife, as she&ndash;Daisy's aunt&ndash;would have been the most",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -17265,7 +16957,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:2644402",
-"evidence_quote": "to Deck Shifflet, a less-than-ethical former insurance assessor who received a law degree but is not a lawyer because he has failed to pass the bar examination six times. Rudy signs two clients. One is his new",
+"evidence_quote": "denied the claim. Rudy, having just passed the bar exam, has never argued a case before a judge or jury but now finds himself up against experienced and ruthless lawyers from a large firm, headed by Leo F.",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -17403,17 +17095,6 @@
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
 },
 {
-"book_id": "cmu:enwiki:28426",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:28426",
-"evidence_quote": "personified in this case by Rasczak and Sergeant Jelal. Eventually, Rico decides to become a career soldier, and one of his fellow troopers claims he is officer material and should consider volunteering for",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
 "book_id": "cmu:enwiki:24015984",
 "question_id": "m10",
 "p_yes": 0.9,
@@ -17486,17 +17167,6 @@
 "status": "supported",
 "source_id": "cmu:160046",
 "evidence_quote": "Rob Fleming is a London record store owner in his mid-thirties whose girlfriend, Laura, has just left him. At the record shop — named Championship Vinyl — Rob and his employees Dick and Barry spend their free",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:2620725",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:2620725",
-"evidence_quote": "The prologue is a letter from Mrs. Basil E. Frankweiler, \"To my lawyer, Saxonberg\", accompanied by a drawing of her writing at her office desk. It is the cover letter for the 158&#8209;page narrative, which provides",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -17980,7 +17650,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:10861",
-"evidence_quote": "he becomes concerned K. is underestimating the seriousness of the case. The uncle introduces K. to a lawyer, who is attended by Leni, a nurse, who K.'s uncle suspects is the advocate's mistress. During the",
+"evidence_quote": "K. is surprised by one of his bank clients, who tells K. that he is aware that K. is dealing with a trial. The client learned of K.'s case from Titorelli, a painter, who told the client about K.'s case and has",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -18046,7 +17716,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:191173",
-"evidence_quote": "of a truth drug and started to tell all truth, which was driving everybody there mad. They go to the courtroom in the hope of learning the question of Life, the Universe and everything is from him. They discover",
+"evidence_quote": "'quiet and idyllic planet' when the come across a half-mad journalist. He tells them that he was at a court case and a witness there was given too much of a truth drug and started to tell all truth, which was",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -18212,17 +17882,6 @@
 "status": "supported",
 "source_id": "cmu:1898130",
 "evidence_quote": "in destroying her bones, ending the curse. Upon returning to the house, Mike discovers that Rogette has kidnapped Kyra. He follows them to the lake, where Mattie's ghost appears and knocks Rogette into the water.",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:1898130",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:1898130",
-"evidence_quote": "gain custody of his granddaughter, Kyra. Drawn to Kyra and Mattie, Mike hires John Storrow, a custody lawyer, for Mattie, and things start looking up. Mike begins to write again, and realizes that Jo's ghost is",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -18519,7 +18178,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:3433133",
-"evidence_quote": "Amish girl, Katie Fisher, is charged with murder of her new-born son. Ellie Hathaway, a top defense lawyer and a distant relative of Katie, reluctantly accepts the case after a confrontation with her aunt (the",
+"evidence_quote": "aunt (the relative who connects her with Katie by marriage). As part of the bail conditions of the pre-trial hearing, Ellie has to remain on the farm with Katie prior to the trial--a period that lasts several",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -18674,17 +18333,6 @@
 "status": "supported",
 "source_id": "enwiki:27722629:1384350369",
 "evidence_quote": "is a novel by Justin Cronin, published in 2010 by Ballantine Books, a division of Random House, Inc., New York. The Passage debuted at #3 on the New York Times hardcover fiction best seller list, and remained on",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:27722629",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:27722629",
-"evidence_quote": "row inmates to a secret military compound in Colorado for the purposes of modifying them into super-soldiers for the U.S. Army. These genetic experiments originate from patient zero Fanning - one of two surviving",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -19296,17 +18944,6 @@
 },
 {
 "book_id": "cmu:enwiki:1195051",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:1195051",
-"evidence_quote": "military men relish their power and grow out of control. Esteban's son Jaime is killed by power-driven soldiers along with other supporters of the government. After the coup, people are regularly kidnapped and",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:1195051",
 "question_id": "m37",
 "p_yes": 0.9,
 "status": "supported",
@@ -19758,17 +19395,6 @@
 },
 {
 "book_id": "cmu:enwiki:42609",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:42609",
-"evidence_quote": "from the carriages, Passepartout is kidnapped by the Indians, but Fogg rescues him after some American soldiers volunteer to help. They continue by a wind powered sledge over the snowy prairie to Omaha, where they",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:42609",
 "question_id": "m44",
 "p_yes": 0.9,
 "status": "supported",
@@ -19817,7 +19443,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:1282996",
-"evidence_quote": "of Kinsey Millhone as she looks into through the facts surrounding the death of prominent divorce lawyer Laurence Fife, whose murder eight years previously was blamed on his wife, Nikki Fife. After being",
+"evidence_quote": "(somewhat belligerently) of Lieutenant Dolan, Kinsey discovers something which never came up at Nikki's trial: that Laurence's death has been linked by police to that of an accountant in Los Angeles, Libby Glass.",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -20286,17 +19912,6 @@
 },
 {
 "book_id": "cmu:enwiki:42906",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:42906",
-"evidence_quote": "comes to the witches' cell and turns them too. The three flee together, but are caught by Akasha's soldiers. Khayman escapes, but Maharet and Mekare are further punished. The witches are put into two separate",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:42906",
 "question_id": "m37",
 "p_yes": 0.9,
 "status": "supported",
@@ -20521,7 +20136,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:21341823",
-"evidence_quote": "been named Lord Gyre. Logan forces him to spar, and Solon humiliates him. He tells him that Logan's soldiers have been losing to him on purpose, which infuriates Logan. He tells his men to treat him as no more",
+"evidence_quote": "to join his father at Screaming Winds, and if they truly love him, they should be preparing him for the battles there. He apologizes to Solon, who is impressed with Logan and decides to stay with him, at least for",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -20566,17 +20181,6 @@
 "status": "supported",
 "source_id": "cmu:375359",
 "evidence_quote": "inhabitants of Fantastica and grants all of the boy's wishes, Bastian explores the Desert of Colors, battles the evil witch Xayide, and meets the three Deep Thinkers. Bastian and Atreyu become friends. However,",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:2295010",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:2295010",
-"evidence_quote": "doughnuts. Months later, Corrine suddenly returns and happily announces that she married her father's attorney, Bart Winslow, and was away on her honeymoon. Cathy and Chris are angry that their mother was on",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -20918,17 +20522,6 @@
 "status": "supported",
 "source_id": "cmu:55737",
 "evidence_quote": "the Attorney General of Colombia. Cortez delivers this information to the cartel, which orders Jacobs' assassination as retaliation for the U.S. seizure of cartel money. During his visit, Jacobs and several other",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:55737",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:55737",
-"evidence_quote": "are interrogated for information regarding the cartel. *Operation SHOWBOAT involves four teams of soldiers infiltrating Colombia to stake-out airstrips used by drug-trafficking aircraft. They report departure",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -21397,17 +20990,6 @@
 },
 {
 "book_id": "cmu:enwiki:528860",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:528860",
-"evidence_quote": "Newland Archer, gentleman lawyer and heir to one of New York City's best families, is happily anticipating a highly desirable marriage to the sheltered and beautiful May Welland. Yet he finds reason to doubt his",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:528860",
 "question_id": "m19",
 "p_yes": 0.9,
 "status": "supported",
@@ -21683,17 +21265,6 @@
 },
 {
 "book_id": "cmu:enwiki:3134572",
-"question_id": "m36",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:3134572",
-"evidence_quote": "50s, Bell has spent most of his life attempting to make up for the incident when he was a 21-year-old soldier. He makes it his quest to resolve the case and save Moss. Complicating things is the arrival of Anton",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:3134572",
 "question_id": "m44",
 "p_yes": 0.9,
 "status": "supported",
@@ -21787,17 +21358,6 @@
 "status": "supported",
 "source_id": "cmu:64025",
 "evidence_quote": "slow but very meaningful. One of the passages in the letter revolves around a serial necrophiliac and murderer named Raymond Andrew Joubert making his way through Maine; it turns out he was the Space Cowboy,",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:64025",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:64025",
-"evidence_quote": "cabin in western Maine, where they have gone for an off-beat romantic weekend. Gerald, a successful lawyer with an aggressive personality, has been able to reinvigorate the couple's sex life by handcuffing",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -21946,17 +21506,6 @@
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
 },
 {
-"book_id": "cmu:enwiki:14607140",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:14607140",
-"evidence_quote": "stay out of the woods: He really runs a preserve full of endangered, poisonous animals. Seth goes into lawyer mode and manages to worm out of trouble. Since they have disobeyed his orders, they have to stay inside",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
 "book_id": "cmu:enwiki:3766194",
 "question_id": "m23",
 "p_yes": 0.9,
@@ -22072,7 +21621,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:901697",
-"evidence_quote": "guard the asylum and look after the well-being of the internees become increasingly antipathetic as one soldier after another becomes infected. The military refuse to allow in basic medicines, so that a simple",
+"evidence_quote": "their fellow internees and exposing them to rape and deprivation. Faced with starvation, internees do battle and burn down the asylum, only to find that the army has abandoned the asylum, after which the",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"
@@ -23179,17 +22728,6 @@
 },
 {
 "book_id": "cmu:enwiki:5257205",
-"question_id": "m13",
-"p_yes": 0.9,
-"status": "supported",
-"source_id": "cmu:5257205",
-"evidence_quote": "that Glyde was responsible for shutting Anne in the asylum. Despite the misgivings of the Fairlie's lawyer over the financial terms of the marriage settlement, Laura and Glyde marry in December 1849 and travel",
-"premise_safe": true,
-"reviewed": false,
-"method": "explicit_mention_in_story_text (keyword match, AI-checked)"
-},
-{
-"book_id": "cmu:enwiki:5257205",
 "question_id": "m30",
 "p_yes": 0.9,
 "status": "supported",
@@ -23326,7 +22864,7 @@
 "p_yes": 0.9,
 "status": "supported",
 "source_id": "cmu:5428409",
-"evidence_quote": "object. Rusty Sabich is a prosecutor and co-worker of Carolyn and is assigned her case by the district attorney. Everything is complicated by the fact that Rusty is an ex-lover of Carolyn's. The novel follows the",
+"evidence_quote": "Rusty is an ex-lover of Carolyn's. The novel follows the eventual discovery of their affair and Rusty's trial for her murder. Many of the minor characters in Presumed Innocent also appear in Turow's later novels,",
 "premise_safe": true,
 "reviewed": false,
 "method": "explicit_mention_in_story_text (keyword match, AI-checked)"

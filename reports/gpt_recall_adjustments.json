@@ -1,0 +1,338 @@
+[
+  {
+    "book_id": "cmu:enwiki:2224493",
+    "title": "The Secret Life of Bees",
+    "code": "m49",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:17271493",
+    "title": "Snow Flower and the Secret Fan",
+    "code": "39",
+    "old": "N",
+    "new": "Y",
+    "reason": "An epidemic substantially affects the story; illness is not absent."
+  },
+  {
+    "book_id": "cmu:enwiki:10125728",
+    "title": "Neverwhere",
+    "code": "m20",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:42573",
+    "title": "The Great Hunt",
+    "code": "05",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:42573",
+    "title": "The Great Hunt",
+    "code": "36",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:42573",
+    "title": "The Great Hunt",
+    "code": "m42",
+    "old": "N",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:353210",
+    "title": "The Last Battle",
+    "code": "m14",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:421473",
+    "title": "The Mists of Avalon",
+    "code": "54",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:661719",
+    "title": "A Separate Peace",
+    "code": "m13",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:549558",
+    "title": "The Dragon Reborn",
+    "code": "05",
+    "old": "N",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:549558",
+    "title": "The Dragon Reborn",
+    "code": "m42",
+    "old": "N",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:537049",
+    "title": "Oryx and Crake",
+    "code": "05",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:367519",
+    "title": "Prey",
+    "code": "21",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:549687",
+    "title": "The Shadow Rising",
+    "code": "05",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:549687",
+    "title": "The Shadow Rising",
+    "code": "m42",
+    "old": "N",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:1674879",
+    "title": "Hyperion",
+    "code": "05",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:4910784",
+    "title": "Watchers",
+    "code": "m11",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:2595361",
+    "title": "Eleven Minutes",
+    "code": "01",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:2595361",
+    "title": "Eleven Minutes",
+    "code": "19",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:3134572",
+    "title": "No Country for Old Men",
+    "code": "m11",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:22361419",
+    "title": "The Gathering Storm",
+    "code": "05",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:22361419",
+    "title": "The Gathering Storm",
+    "code": "m42",
+    "old": "N",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:760079",
+    "title": "Eye of the Needle",
+    "code": "m11",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:549608",
+    "title": "The Fires of Heaven",
+    "code": "05",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:549608",
+    "title": "The Fires of Heaven",
+    "code": "m42",
+    "old": "N",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:562243",
+    "title": "Lord of Chaos",
+    "code": "05",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:562243",
+    "title": "Lord of Chaos",
+    "code": "m42",
+    "old": "N",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:19859",
+    "title": "Moby-Dick; or, The Whale",
+    "code": "05",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:32903764",
+    "title": "Ready Player One",
+    "code": "05",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:32903764",
+    "title": "Ready Player One",
+    "code": "32",
+    "old": "n",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:17253525",
+    "title": "Flowers for Algernon",
+    "code": "05",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:42572",
+    "title": "The Eye of the World",
+    "code": "05",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:42572",
+    "title": "The Eye of the World",
+    "code": "m42",
+    "old": "N",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:32688947",
+    "title": "The War of the Worlds",
+    "code": "17",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:797758",
+    "title": "Sophie's World",
+    "code": "08",
+    "old": "n",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:797758",
+    "title": "Sophie's World",
+    "code": "22",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:797758",
+    "title": "Sophie's World",
+    "code": "32",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:797758",
+    "title": "Sophie's World",
+    "code": "35",
+    "old": "n",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:797758",
+    "title": "Sophie's World",
+    "code": "36",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:797758",
+    "title": "Sophie's World",
+    "code": "52",
+    "old": "y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:375359",
+    "title": "The Neverending Story",
+    "code": "m17",
+    "old": "N",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  },
+  {
+    "book_id": "cmu:enwiki:26476",
+    "title": "Rendezvous with Rama",
+    "code": "15",
+    "old": "Y",
+    "new": null,
+    "reason": "Removed during conservative definition/recall audit; leave unknown."
+  }
+]

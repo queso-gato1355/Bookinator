@@ -67,6 +67,10 @@ def advantage(a: dict[str, float], b: dict[str, float], group: dict[str, str]) -
 # ------------------------------------------------------------------ AI-recall labels
 AI_RECALL = ROOT / "data" / "ai_recall" / "labels.txt"
 RECALL_VALUE = {"Y": 0.9, "y": 0.7, "n": 0.3, "N": 0.1}
+# A question is "unreliable" when labellers answering the same books agree on it less than this often
+# (over at least RELIABILITY_MIN_N shared cells). This is a data-quality rule, not an engine threshold.
+RELIABILITY_MIN_AGREE = 0.75
+RELIABILITY_MIN_N = 30
 
 
 def read_recall_file(path: Path, qids: set[str], books: set[str]) -> dict[tuple[str, str], float]:
@@ -104,6 +108,20 @@ def merge_ai_recall(cells: dict[str, list[dict]], qids: set[str]) -> dict | None
     per = {("claude" if f.name == "labels.txt" else f.stem): read_recall_file(f, qids, books) for f in files}
     stats: dict = {"labellers": {name: {"answers": len(v), "agree_with_sourced": 0, "conflict_with_sourced": 0}
                                  for name, v in per.items()}}
+    # Question-level reliability: where labellers answer the same cells, how often do they agree per question?
+    # A question they often disagree on is being read differently, so a lone labeller's answer is not trusted.
+    pair_agree: dict[str, list[int]] = {}
+    if len(per) > 1:
+        for key in {k for v in per.values() for k in v}:
+            vals = [v[key] for v in per.values() if key in v]
+            if len(vals) > 1:
+                same = not (any(x > 0.5 for x in vals) and any(x < 0.5 for x in vals))
+                pair_agree.setdefault(key[1], [0, 0])[0 if same else 1] += 1
+    unreliable = {q for q, (a, d) in pair_agree.items() if a + d >= RELIABILITY_MIN_N and a / (a + d) < RELIABILITY_MIN_AGREE}
+    stats["unreliable_questions"] = {q: {"agree": pair_agree[q][0], "disagree": pair_agree[q][1],
+                                         "rule": "single-labeller answers dropped; agreed answers kept"}
+                                     for q in sorted(unreliable)}
+    single_dropped = 0
     cross_agree = cross_conflict = added = agree = conflict = 0
     conflicts = []
     keys = sorted({k for v in per.values() for k in v})
@@ -119,6 +137,9 @@ def merge_ai_recall(cells: dict[str, list[dict]], qids: set[str]) -> dict | None
                 cross_conflict += 1
                 continue  # the labellers disagree: no recall answer for this cell
             cross_agree += 1
+        elif qid in unreliable:
+            single_dropped += 1
+            continue  # only one labeller answered a question the labellers read differently
         v = max(vals.values(), key=lambda x: abs(x - 0.5))
         if known is not None:
             if (known - 0.5) * (v - 0.5) > 0:
@@ -138,7 +159,8 @@ def merge_ai_recall(cells: dict[str, list[dict]], qids: set[str]) -> dict | None
     checked = agree + conflict
     stats.update({"cells_added": added, "checked_against_sourced_labels": checked, "agree": agree, "conflict": conflict,
                   "agreement_rate": round(agree / checked, 3) if checked else None,
-                  "between_labellers": {"agree": cross_agree, "disagree_dropped": cross_conflict},
+                  "between_labellers": {"agree": cross_agree, "disagree_dropped": cross_conflict,
+                                        "single_labeller_on_unreliable_question_dropped": single_dropped},
                   "conflicts": conflicts,
                   "note": "Recall vs sourced: on conflict the cell becomes unknown. Labellers disagreeing: no recall "
                           "answer. Agreement is with AI-drafted sourced labels, not a human check."})

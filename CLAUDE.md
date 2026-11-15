@@ -178,6 +178,34 @@ photo, label-derived mood words and facts), `#/leaderboard`, `#/programs`, `#/gu
 labels, ranks are goodbooks-10k popularity. Library wording/content: `src/i18n/pages.ts`, always marked fictional.
 Unsplash results are cached for every visitor in `public.photo_cache` by the `book-image` Edge Function (demo key: 50/h).
 
+### Second labeller: GPT recall pass (15 Nov 2026)
+
+`data/ai_recall/gpt.txt` (GPT, independent of Claude's file; see `docs/GPT_RECALL_HANDOFF.md`): 488 books,
+37,168 answers, 4 skipped; imported unchanged as a second labeller. Checks from the rebuild:
+
+| Check | Result |
+| --- | ---: |
+| Claude recall vs sourced labels | 2083/2226 agree (93.6%) |
+| GPT recall vs sourced labels | 6618/6757 agree (97.9%) |
+| Claude vs GPT on the same cells | 7783 agree, 692 disagree → unknown (91.8% agreement) |
+| Recall cells added to the catalog | 29,581 |
+
+**Disagreement review.** Disagreements cluster on a few questions where the written definition was broader than
+the question players see (e.g. "Is there a courtroom trial?" was defined as "a trial, lawyer or court case", so a
+solicitor in *Dracula* counted). Rule added (`RELIABILITY_MIN_AGREE` = 0.75 in `build_cmu_catalog.py`, a data
+rule, not an engine threshold): on questions where the two labellers agree < 75% of the time, an answer from only
+one labeller is dropped and only agreed answers are kept. Affected: m12 (40/59), m13 (18/59), m27 (33/49), m34 (23/31), m36 (43/77), m49 (32/50), q22 (21/31); 1,742 single-labeller answers
+dropped. The trial, battle and train definitions (and their keyword patterns) now match the question text.
+Two AIs agreeing is not measured factual accuracy; every cell stays `ai_recall`, no source, `reviewed=false`.
+
+**Catalog state after the merge of 15 Nov 2026:** the 341-target / 440-title build from that rebuild (commit
+`f76ae8b`, still versioned `cmu-priority500-v1`) was replaced by `cmu-priority500-v2` (179 targets / 266 titles,
+`scripts/apply_ai_recall.ts`) when main was merged in `460bfe6`. The shipped `src/data/cmu.catalog.json` and the
+Supabase releases are v2. To ship the GPT rebuild: rebuild with the Core pack (now with gemini.txt and the extra
+Claude lines too), give it a NEW version (v3; v1 is already a Supabase release), then `npm run library:index`,
+`npm run verify` and `npm run community -- sync`.
+
+
 ## Known open items (not errors — need people or keys)
 
 - Fixture: 171/589 labels AI-checked against cited sources; 414 unchecked; **no human review**.

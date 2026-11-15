@@ -716,7 +716,7 @@
    "recallability": 0.9,
    "adaptation_sensitive": false,
    "text": "Is there a courtroom trial?",
-   "definition": "A trial, lawyer or court case is part of the story.",
+   "definition": "A trial or court case takes place in the story (a lawyer character alone does not count).",
    "spoiler_policy": "Concrete story element; twist-revealing motifs are not asked.",
    "evidence_rule": "Positive only: an explicit mention in the plot synopsis or the article's premise paragraph. Absence is unknown, not No."
   },
@@ -870,7 +870,7 @@
    "recallability": 0.9,
    "adaptation_sensitive": false,
    "text": "Is a train journey part of it?",
-   "definition": "Trains or a railway play a part in the story.",
+   "definition": "Characters travel by train during the story (a railway merely mentioned does not count).",
    "spoiler_policy": "Concrete story element; twist-revealing motifs are not asked.",
    "evidence_rule": "Positive only: an explicit mention in the plot synopsis or the article's premise paragraph. Absence is unknown, not No."
   },
@@ -969,7 +969,7 @@
    "recallability": 0.9,
    "adaptation_sensitive": false,
    "text": "Is there a battle or an army?",
-   "definition": "Battles, armies or soldiers are part of the story.",
+   "definition": "A battle is fought or an army takes part in the story (soldiers merely present do not count).",
    "spoiler_policy": "Concrete story element; twist-revealing motifs are not asked.",
    "evidence_rule": "Positive only: an explicit mention in the plot synopsis or the article's premise paragraph. Absence is unknown, not No."
   },

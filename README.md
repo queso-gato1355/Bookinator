@@ -233,6 +233,26 @@ that disagree on a cell leave it unknown, and per-labeller agreement is reported
 Simulated readers answer from the same labels (internal consistency, not accuracy). More books means more to
 confuse, so per-game rates drop while coverage grows tenfold.
 
+### Second labeller: GPT recall pass (15 Nov 2026)
+
+`data/ai_recall/gpt.txt` (GPT, independent of Claude's file; see `docs/GPT_RECALL_HANDOFF.md`): 488 books,
+37,168 answers, 4 skipped; imported unchanged as a second labeller. Checks from the rebuild:
+
+| Check | Result |
+| --- | ---: |
+| Claude recall vs sourced labels | 2083/2226 agree (93.6%) |
+| GPT recall vs sourced labels | 6618/6757 agree (97.9%) |
+| Claude vs GPT on the same cells | 7783 agree, 692 disagree → unknown (91.8% agreement) |
+| Recall cells added to the catalog | 29,581 |
+
+**Disagreement review.** Disagreements cluster on a few questions where the written definition was broader than
+the question players see (e.g. "Is there a courtroom trial?" was defined as "a trial, lawyer or court case", so a
+solicitor in *Dracula* counted). Rule added (`RELIABILITY_MIN_AGREE` = 0.75 in `build_cmu_catalog.py`, a data
+rule, not an engine threshold): on questions where the two labellers agree < 75% of the time, an answer from only
+one labeller is dropped and only agreed answers are kept. Affected: m12 (40/59), m13 (18/59), m27 (33/49), m34 (23/31), m36 (43/77), m49 (32/50), q22 (21/31); 1,742 single-labeller answers
+dropped. The trial, battle and train definitions (and their keyword patterns) now match the question text.
+Two AIs agreeing is not measured factual accuracy; every cell stays `ai_recall`, no source, `reviewed=false`.
+
 ## Front end: the seagull, the clouds and the sea
 
 The interface follows the design canvas *북키네이터 (Bookinator) 프론트엔드 디자인*: a seagull in a pale sky asks
