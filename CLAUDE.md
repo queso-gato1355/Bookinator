@@ -44,7 +44,7 @@ When fixing, run `npm run verify` until green. Don't "fix" errors by deleting te
 - `src/engine/` — pure TS, shared by UI, tests and `scripts/simulate.ts`. Never import React here.
   - `model.ts` types + channel + `compileCatalog`; `config.ts` **all thresholds**; `posterior.ts` log-space replay;
     `selectQuestion.ts` expected information gain × recallability; `session.ts` event log, Undo, rejection,
-    40-question cap (Akinator-style; DB setting `max_session_answers` must match), shortlist, no-match; `explain.ts` clues; `links.ts` catalog links.
+    active-question-bank cap (Akinator-style; session submission limits follow the release), shortlist, no-match; `explain.ts` clues; `links.ts` catalog links.
 - `src/components/` UI in the "Sea Library" Figma design (file `2y03ZMj6rMWmPFT4GwYa0n`): `ui.tsx` = reusable Header, MobileHeader, Footer,
   Button, AnswerButton, BookCard, LeaderboardRow, UnsplashImage; `screens.tsx` = Home, Question, Book (guess + found), Similar;
   `Contribute.tsx` = Not Found / add-a-book + opt-in answers. Colours only as CSS variables in `src/styles.css`; design wording in
@@ -67,6 +67,7 @@ When fixing, run `npm run verify` until green. Don't "fix" errors by deleting te
 - Simulations must use the same engine module as the UI.
 - Secrets server-side only. Every external integration must fail gracefully (show catalog link, not a guess).
 - Don't add accounts, vector databases, online learning or a live LLM chatbot.
+- User-requested hackathon exception: apply reader-supplied books, questions and answers immediately in the separate demo overlay, without admin review. Keep labels visibly unreviewed and other books' unknown answers unknown. See `docs/demo-contributions.md` for shared publishing and local fallback.
 - UI must not show raw posterior percentages as accuracy.
 
 ## Research catalog (500 imported records → 388 targets, 488 titles)
@@ -171,20 +172,7 @@ title/alias + author), merges duplicates (same direction → stronger, opposite 
 before the shortlist); seeded question variety (`questionSpread`/`questionTopK`, seed per UI game in
 `session.options.seed`; no seed = fixed order, which the engine gate uses). All in `src/engine/config.ts`.
 
-<<<<<<< HEAD
-### Library pages (fictional "Sea Library" on Pohang's Yeongildae beach)
-
-Hash routes (`src/router.ts`): `#/catalog` (505 novels from the research pool + classic shelf, 24 per page, tag/status
-filters, generated covers — no cover images), `#/book/<id>` (own page: Wikipedia/Open Library story, Unsplash mood
-photo, label-derived mood words and facts), `#/leaderboard`, `#/programs`, `#/guide`, `#/about`. Data:
-`src/data/library_index.json` from `npm run library:index` (re-run after the catalogs change); tags are derived from
-labels, ranks are goodbooks-10k popularity. Library wording/content: `src/i18n/pages.ts`, always marked fictional.
-Unsplash results are cached for every visitor in `public.photo_cache` by the `book-image` Edge Function (demo key: 50/h).
-
-### Second labeller: GPT recall pass (15 Nov 2026)
-=======
 ### Second labeller: GPT recall pass, rebuilt as catalog `cmu-priority500-v3` (15 Nov 2026)
->>>>>>> 8096e18c100e2f084ed0de38a7f3e47c2fbadffc
 
 `data/ai_recall/gpt.txt` (GPT, independent of Claude's file; see `docs/GPT_RECALL_HANDOFF.md`): 488 books, 37,168
 answers, 4 skipped; imported unchanged. Full rebuild (`merge_research` → `motif_labels` → `build_cmu_catalog
@@ -232,14 +220,6 @@ this is internal consistency, not accuracy):
 
 Not comparable with the v1 table above (18-question cap, 2 rejections): the longer games and check-ins account for
 much of the rise from 20.4% / 73.3% (clear memory, v1).
-
-
-**Catalog state after the merge of 15 Nov 2026:** the 341-target / 440-title build from that rebuild (commit
-`f76ae8b`, still versioned `cmu-priority500-v1`) was replaced by `cmu-priority500-v2` (179 targets / 266 titles,
-`scripts/apply_ai_recall.ts`) when main was merged in `460bfe6`. The shipped `src/data/cmu.catalog.json` and the
-Supabase releases are v2. To ship the GPT rebuild: rebuild with the Core pack (now with gemini.txt and the extra
-Claude lines too), give it a NEW version (v3; v1 is already a Supabase release), then `npm run library:index`,
-`npm run verify` and `npm run community -- sync`.
 
 
 ## Known open items (not errors — need people or keys)

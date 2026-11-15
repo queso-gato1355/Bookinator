@@ -41,8 +41,8 @@ interface DesignMock {
 
 export const DESIGN_MOCK: Record<Lang, DesignMock> = {
   ko: {
-    hours: "오늘 운영 09:00 – 21:00  ·  매주 월요일 휴관",
-    address: "포항 영일대 해변 산책로 끝 (가상 도서관)  ·  054-000-0000 (데모)",
+    hours: "오늘 운영 09:00 – 21:00  ·  [휴관일 안내]",
+    address: "[도서관 주소]  ·  [대표 전화]",
     leaderboard: [
       { rank: 1, title: "노인과 바다", author: "어니스트 헤밍웨이 · 1952", count: 412, trend: 1, avgQuestions: 9, imageCaption: "새벽 바다 위 작은 돛배",
         description: "84일 동안 고기를 잡지 못한 늙은 어부가 홀로 먼바다에 나가 거대한 청새치와 사흘 밤낮을 싸운다." },
@@ -63,17 +63,17 @@ export const DESIGN_MOCK: Record<Lang, DesignMock> = {
         description: "고기잡이 나간 남편을 바다에 잃은 해순이 갯마을을 떠났다가 다시 바다로 돌아온다." },
     ],
     programs: [
-      { date: "11월 21일 (토) 14:00", audience: "모두", title: "북키네이터 처음 쓰는 법",
+      { date: "[날짜] · [시간]", audience: "모두", title: "북키네이터 처음 쓰는 법",
         description: "기억만으로 책을 찾는 요령을 사서와 함께 알아봐요. 답을 모를 때 고르는 법까지 다뤄요." },
-      { date: "11월 25일 (수) 19:00", audience: "청소년", title: "수능 문학 다시 읽기",
+      { date: "[날짜] · [시간]", audience: "청소년", title: "수능 문학 다시 읽기",
         description: "시험지 속 한 장면으로만 만났던 소설을 처음부터 끝까지 함께 읽어요." },
-      { date: "11월 22일 (일) 16:30", audience: "성인", title: "파도 소리 낭독회",
+      { date: "[날짜] · [시간]", audience: "성인", title: "파도 소리 낭독회",
         description: "바다가 나오는 소설의 한 대목을 창가 열람실에서 소리 내어 읽어요." },
     ],
   },
   en: {
-    hours: "Open today 9 AM – 9 PM  ·  Closed Mondays",
-    address: "End of Yeongildae Beach, Pohang (fictional library)  ·  054-000-0000 (demo)",
+    hours: "Open today 9 AM – 9 PM  ·  [Closure notice]",
+    address: "[Library address]  ·  [Main phone]",
     leaderboard: [
       { rank: 1, title: "The Old Man and the Sea", author: "Ernest Hemingway · 1952", count: 412, trend: 1, avgQuestions: 9, imageCaption: "A small sailboat on the dawn sea",
         description: "After 84 days without a catch, an old fisherman sails out alone and battles a giant marlin for three days and nights." },
@@ -94,11 +94,11 @@ export const DESIGN_MOCK: Record<Lang, DesignMock> = {
         description: "Haesun, who lost her husband to the sea, leaves her fishing village — and finds her way back to the sea." },
     ],
     programs: [
-      { date: "Sat 21 Nov, 14:00", audience: "All ages", title: "Bookinator for beginners",
+      { date: "[Date] · [Time]", audience: "All ages", title: "Bookinator for beginners",
         description: "Learn with a librarian how to find a book from memory alone — including what to pick when you’re unsure." },
-      { date: "Wed 25 Nov, 19:00", audience: "Teens", title: "Rereading exam literature",
+      { date: "[Date] · [Time]", audience: "Teens", title: "Rereading exam literature",
         description: "Read, start to finish, the novels you only met as a single excerpt on an exam." },
-      { date: "Sun 22 Nov, 16:30", audience: "Adults", title: "Sound of the Waves reading",
+      { date: "[Date] · [Time]", audience: "Adults", title: "Sound of the Waves reading",
         description: "Read aloud passages from sea novels in the window reading room." },
     ],
   },

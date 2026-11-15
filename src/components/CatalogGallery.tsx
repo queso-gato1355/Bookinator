@@ -9,6 +9,7 @@ import { CC, LINK_OPTIONS } from "../game.ts";
 import { bookTitles, type Lang, type Strings } from "../i18n/index.ts";
 import type { LibraryStrings } from "../i18n/library.ts";
 import { EXPERIENCE } from "../i18n/experience.ts";
+import { CONTRIBUTION } from "../i18n/contribution.ts";
 import { HACKATHON } from "../i18n/hackathon.ts";
 import { demoHref } from "../demo.ts";
 import { Button, Icon } from "./ui.tsx";
@@ -66,7 +67,7 @@ function CatalogBookCard({ book, lang, L }: { book: CatalogBook; lang: Lang; L: 
   </li>;
 }
 
-export function CatalogGallery({ t, L, lang }: { t: Strings; L: LibraryStrings; lang: Lang }) {
+export function CatalogGallery({ t, L, lang, onAddBook }: { t: Strings; L: LibraryStrings; lang: Lang; onAddBook: () => void }) {
   const [query, setQuery] = useState("");
   const [limit, setLimit] = useState(PAGE_SIZE);
   const E = EXPERIENCE[lang];
@@ -85,7 +86,7 @@ export function CatalogGallery({ t, L, lang }: { t: Strings; L: LibraryStrings; 
       <p className="eyebrow">{L.colEyebrow}</p>
       <h2>{ACTIVE_COLLECTION === "classic" ? t.classicShelf : t.researchShelf}</h2>
       <p className="lead-sm">{E.catalogLead}</p>
-    </div><span className="catalog-count">{t.booksCount(titleCount(CC.catalog))}</span></div>
+    </div><div className="catalog-heading-actions"><span className="catalog-count">{t.booksCount(titleCount(CC.catalog))}</span><Button variant="secondary" arrow={false} onClick={onAddBook}>{CONTRIBUTION[lang].heading}</Button></div></div>
     <div className="catalog-toolbar">
       <div className="field field-pill catalog-search">
         <Icon name="search" /><label className="sr-only" htmlFor="catalog-search">{E.catalogPlaceholder}</label>

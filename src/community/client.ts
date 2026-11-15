@@ -8,6 +8,7 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Catalog } from "../engine/model.ts";
 import type { SessionPayload } from "./payload.ts";
+import { DEMO_REMOTE_KEY, storeDemoContribution, validDemoContribution, type DemoContribution } from "./demo.ts";
 
 type Env = Record<string, string | undefined>;
 const env: Env = ((import.meta as unknown as { env?: Env }).env ?? {}) as Env;
@@ -110,6 +111,55 @@ export function submitFeatureAnswers(p: {
   answers: { question_id: string; answer: string }[];
 }): Promise<number> {
   return rpc<number>("submit_feature_answers", { p });
+}
+
+/** Demo additions go straight to a playable overlay, never the review queue. */
+export async function saveDemoContribution(entry: DemoContribution, captchaToken?: string): Promise<"shared" | "local"> {
+  if (!validDemoContribution(entry)) throw new Error("Invalid demo contribution");
+  let shared = false;
+  if (contributionsEnabled) {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    try {
+      await Promise.race([
+        (async () => {
+          await ensureSignedIn(captchaToken);
+          // A device-local demo book may not exist on the shared server yet. Resolve it by title.
+          const { book_id, ...metadata } = entry;
+          const published = book_id?.startsWith("demo-book:") ? metadata : entry;
+          await rpc("submit_demo_contribution", { p: published });
+        })(),
+        new Promise<never>((_, reject) => { timer = setTimeout(() => reject(new Error("Shared demo timed out")), 8000); }),
+      ]);
+      shared = true;
+    } catch (error) {
+      // Auth/connection/missing migration: a demo can still learn on this device.
+      // Explicit validation, blocked-user and quota errors must not be bypassed.
+      if (["rate_limit", "blocked", "invalid"].includes(errorKind(error))) throw error;
+    } finally { clearTimeout(timer); }
+  }
+  try { storeDemoContribution(entry); }
+  catch (error) { if (!shared) throw error; }
+  const globals = globalThis as Record<string, unknown>;
+  const previous = globals[DEMO_REMOTE_KEY];
+  globals[DEMO_REMOTE_KEY] = [...(Array.isArray(previous) ? previous.filter((item) => item.id !== entry.id) : []), entry];
+  return shared ? "shared" : "local";
+}
+
+export async function fetchDemoContributions(version: string): Promise<DemoContribution[]> {
+  if (!contributionsEnabled) return [];
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 3000);
+  try {
+    const response = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/rpc/get_demo_contributions`, {
+      method: "POST", signal: controller.signal,
+      headers: { apikey: SUPABASE_CONFIG.anonKey!, "Content-Type": "application/json" },
+      body: JSON.stringify({ release_version: version }),
+    });
+    if (!response.ok) return [];
+    const entries: unknown = await response.json();
+    return Array.isArray(entries) ? entries.filter(validDemoContribution) : [];
+  } catch { return []; }
+  finally { clearTimeout(timer); }
 }
 
 /**

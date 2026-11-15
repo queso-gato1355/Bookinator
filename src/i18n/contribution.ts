@@ -1,0 +1,28 @@
+export const CONTRIBUTION = {
+  en: {
+    heading: "Add a book & questions", lead: "Know the title? Teach Bookinator the story with your own questions and answers.",
+    help: "Demo mode: your book and clues become playable immediately, without admin review. Submitting saves the details below.",
+    questions: "Your questions & answers", questionHelp: "Write yes/no questions about the story, then choose the answers for this book. Other books keep an unknown answer until someone supplies one.",
+    question: "Question", answer: "Answer for this book", placeholder: "Does the story take place on a spaceship?",
+    addQuestion: "Add another question", removeQuestion: "Remove question", include: (n: number) => `Include my ${n} answers from this game`,
+    shared: "Added to the demo for everyone. Your book and answers are ready for the next game — no review needed.",
+    local: "Added to this browser’s demo. Your book and answers are ready for the next game. Shared publishing is currently unavailable.",
+    invalidQuestion: "Complete each question (5–500 characters) and choose its answer, or remove the row.",
+    savedDetails: "Book details and supplied answers are saved when you submit. Leave uncertain answers as ‘Not sure’.",
+    save: "Add to Bookinator", saving: "Adding…", noStorage: "Couldn’t save the book. Allow browser storage or try again when the shared demo is available.",
+    searchLead: "If the book is already here, select it to apply your answers directly.", unknownAuthor: "Author not provided",
+  },
+  ko: {
+    heading: "책과 질문 추가하기", lead: "제목을 알고 있나요? 직접 쓴 질문과 답변으로 북키네이터에게 이야기를 알려 주세요.",
+    help: "데모 모드에서는 관리자 검토 없이 책과 단서가 바로 게임에 반영돼요. 등록하면 아래 정보가 저장돼요.",
+    questions: "직접 쓴 질문과 답변", questionHelp: "이야기에 관한 예·아니요 질문을 쓰고 이 책에 맞는 답을 골라 주세요. 다른 책의 답은 누군가 알려 줄 때까지 모르는 상태로 남아요.",
+    question: "질문", answer: "이 책의 답변", placeholder: "이야기의 배경이 우주선인가요?",
+    addQuestion: "질문 더 추가하기", removeQuestion: "질문 삭제", include: (n: number) => `이번 게임의 답변 ${n}개도 함께 반영하기`,
+    shared: "모두가 사용할 수 있는 데모에 추가했어요. 검토 없이 다음 게임부터 책과 답변이 반영돼요.",
+    local: "이 브라우저의 데모에 추가했어요. 다음 게임부터 책과 답변이 반영돼요. 지금은 다른 사용자와 공유할 수 없어요.",
+    invalidQuestion: "각 질문을 5~500자로 쓰고 답을 선택하거나, 빈 질문을 삭제해 주세요.",
+    savedDetails: "등록하면 책 정보와 입력한 답변이 저장돼요. 확실하지 않은 답은 ‘모르겠어요’로 남겨 주세요.",
+    save: "북키네이터에 추가", saving: "추가 중…", noStorage: "책을 저장하지 못했어요. 브라우저 저장소를 허용하거나 공유 데모 연결이 복구되면 다시 시도해 주세요.",
+    searchLead: "이미 있는 책이라면 선택해 답변을 바로 반영하세요.", unknownAuthor: "작가 정보 없음",
+  },
+};

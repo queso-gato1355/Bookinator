@@ -1,12 +1,18 @@
 // Wires the active catalog + config into a compiled engine for the UI.
-import { ACTIVE_CATALOG } from "./data/index.ts";
-import { makeConfig } from "./engine/config.ts";
+import { ACTIVE_CATALOG, refreshActiveCatalog } from "./data/index.ts";
+import { makeConfig, questionBankSize } from "./engine/config.ts";
 import { compileCatalog } from "./engine/model.ts";
 import { isDemoMode } from "./demo.ts";
 import type { Session } from "./engine/session.ts";
 
-export const CONFIG = makeConfig();
-export const CC = compileCatalog(ACTIVE_CATALOG, CONFIG.channel, CONFIG.unknownPYes);
+export let CONFIG = makeConfig({ maxQuestions: questionBankSize(ACTIVE_CATALOG) });
+export let CC = compileCatalog(ACTIVE_CATALOG, CONFIG.channel, CONFIG.unknownPYes);
+
+export function refreshGameCatalog(): void {
+  const catalog = refreshActiveCatalog();
+  CONFIG = makeConfig({ maxQuestions: questionBankSize(catalog) });
+  CC = compileCatalog(catalog, CONFIG.channel, CONFIG.unknownPYes);
+}
 
 type Env = Record<string, string | undefined>;
 const env: Env = ((import.meta as unknown as { env?: Env }).env ?? {}) as Env;

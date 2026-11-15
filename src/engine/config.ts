@@ -68,9 +68,8 @@ export const DEFAULT_CONFIG: EngineConfig = {
   minInformativeAnswers: 6,
   guessMinProbability: 0.8,
   guessMinRatio: 4,
-  // Akinator-style long games. Simulated on the research shelf (seed 7, 4 games/book, 15 Nov 2026):
-  // cap 18 → clear memory first guess 23% / found 75%; cap 40 → 69% / 94% (avg 28 questions).
-  maxQuestions: 40,
+  // No fixed 40-question ceiling: the active bank bounds the game. Explicit overrides still work.
+  maxQuestions: Number.MAX_SAFE_INTEGER,
   minScore: 0.01,
   maxRejections: 4,
   checkpointQuestions: [15, 25, 35],
@@ -87,4 +86,8 @@ export const DEFAULT_CONFIG: EngineConfig = {
 
 export function makeConfig(overrides: Partial<EngineConfig> = {}): EngineConfig {
   return { ...DEFAULT_CONFIG, ...overrides };
+}
+
+export function questionBankSize(catalog: { questions: { active?: boolean }[] }): number {
+  return catalog.questions.filter((question) => question.active !== false).length;
 }

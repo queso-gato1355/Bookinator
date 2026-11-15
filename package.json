@@ -24,11 +24,7 @@
     "test:research": "node scripts/py.mjs -m unittest discover -s research/chatgpt_source/scripts -p \"test_*.py\" && node scripts/py.mjs -m unittest discover -s research/chatgpt_source/core_tools -p \"test_*.py\" && node research/chatgpt_source/five_book_demo/test-engine.cjs",
     "test:db": "tsx --test \"tests/db/*.test.ts\"",
     "community": "tsx scripts/community.ts",
-<<<<<<< HEAD
-    "library:index": "tsx scripts/build_library_index.ts"
-=======
     "rehearse": "tsx scripts/demo_rehearsal.ts"
->>>>>>> 8096e18c100e2f084ed0de38a7f3e47c2fbadffc
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

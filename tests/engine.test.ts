@@ -327,10 +327,10 @@ describe("session flow", () => {
 
   it("stops at the question cap (config.maxQuestions) with a shortlist", () => {
     // More weak, uninformative-ish questions than the cap → never confident
-    const w0 = setup([[0.5]]);
-    const n = w0.config.maxQuestions + 20;
+    const cap = 40; // Explicit custom caps still work; the default now uses the entire bank.
+    const n = cap + 20;
     const weak = Array.from({ length: 6 }, (_, b) => Array.from({ length: n }, (_, q) => ((b + q) % 2 ? 0.7 : 0.3)));
-    const w = setup(weak);
+    const w = setup(weak, {}, { maxQuestions: cap });
     const s = play(w.cc, w.config, () => "dont_know");
     const st = deriveState(w.cc, w.config, s);
     assert.equal(st.answers.length, w.config.maxQuestions);

@@ -2,7 +2,6 @@
 // Footer, Button, Answer, Book Card, Leaderboard Row and Image / Unsplash. Icons are the SVGs
 // exported from the design file (src/assets/icons), used as-is.
 import { useEffect, useState, type ButtonHTMLAttributes, type ReactNode } from "react";
-import { href, type Page } from "../router.ts";
 import arrowLeft from "../assets/icons/arrow-left.svg";
 import arrowRight from "../assets/icons/arrow-right.svg";
 import arrowRightSm from "../assets/icons/arrow-right-sm.svg";
@@ -31,6 +30,7 @@ import waves from "../assets/icons/waves.svg";
 import type { Lang } from "../i18n/index.ts";
 import { EXPERIENCE } from "../i18n/experience.ts";
 import type { LibraryStrings } from "../i18n/library.ts";
+import { Creators } from "./Creators.tsx";
 
 const ICONS = {
   arrowLeft, arrowRight, arrowRightSm, arrowRightWhite, bookmark, calendar, check, checkClue, checkWhite, checkWhiteLg,
@@ -94,10 +94,8 @@ export function Button({ variant = "primary", arrow = true, checkMark = false, h
     </>
   );
   if (href) {
-    // In-app hash links open in place; anything else opens in a new tab.
-    const external = !href.startsWith("#");
     return (
-      <a className={cls} href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+      <a className={cls} href={href} target="_blank" rel="noopener noreferrer">
         {body}
       </a>
     );
@@ -231,21 +229,11 @@ interface HeaderProps {
   lang: Lang;
   setLang: (l: Lang) => void;
   onHome: () => void;
-<<<<<<< HEAD
-  /** The page being shown, for aria-current in the menus. */
-  active: Page;
-=======
   onStart: () => void;
   onCatalog: () => void;
   onSection: (id: string) => void;
   hours: string;
->>>>>>> 8096e18c100e2f084ed0de38a7f3e47c2fbadffc
 }
-
-/** Main menu: label index in L.nav → page. */
-const NAV_PAGES: Page[] = ["home", "catalog", "leaderboard", "programs", "guide", "about"];
-/** Footer links, by column and row (row 0 is the column title). */
-const FOOTER_PAGES: Page[][] = [["home", "catalog", "leaderboard"], ["about", "programs", "guide"], ["guide", "home", "guide"]];
 
 function Logo({ L, onHome, size }: { L: LibraryStrings; onHome: () => void; size: number }) {
   return (
@@ -273,70 +261,6 @@ function navigationActions(onStart: () => void, onCatalog: () => void, onSection
   return [onStart, onCatalog, () => onSection("leaderboard"), () => onSection("programs"), () => onSection("visit"), () => onSection("about")];
 }
 
-<<<<<<< HEAD
-function NavLinks({ L, active }: { L: LibraryStrings; active: Page }) {
-  return (
-    <>
-      {L.nav.map((x, i) => (
-        <a key={x} href={href(NAV_PAGES[i])} aria-current={NAV_PAGES[i] === active || (active === "book" && NAV_PAGES[i] === "catalog") ? "page" : undefined}>{x}</a>
-      ))}
-    </>
-  );
-}
-
-export function Header({ L, lang, setLang, hours, onHome, active }: HeaderProps) {
-  return (
-    <header className="header desktop-only">
-      <div className="utility">
-        <p>{hours}</p>
-        <div className="utility-links">
-          <Soon label={L.utilLinks[0]} hint={L.comingSoon} />
-          <a href={href("guide")}>{L.utilLinks[1]}</a>
-          <a href={href("guide")}>{L.utilLinks[2]}</a>
-          <LangSwitch L={L} lang={lang} setLang={setLang} />
-        </div>
-      </div>
-      <div className="mainbar">
-        <Logo L={L} onHome={onHome} size={24} />
-        <nav className="nav" aria-label="Bookinator">
-          <NavLinks L={L} active={active} />
-        </nav>
-        <div className="header-actions">
-          <a className="icon-btn" href={href("catalog")} aria-label={L.search}>
-            <Icon name="search" size={20} />
-          </a>
-          <Button variant="secondary" arrow={false} disabled title={L.comingSoon}>{L.login}</Button>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-export function MobileHeader({ L, lang, setLang, onHome, active }: HeaderProps) {
-  const [open, setOpen] = useState(false);
-  useEffect(() => setOpen(false), [active]);
-  return (
-    <header className="mobile-header mobile-only">
-      <div className="mobile-header-bar">
-        <Logo L={L} onHome={onHome} size={20} />
-        <div className="header-actions">
-          <LangSwitch L={L} lang={lang} setLang={setLang} />
-          <a className="icon-btn" href={href("catalog")} aria-label={L.search}>
-            <Icon name="search" size={20} />
-          </a>
-          <button type="button" className="icon-btn" aria-label={L.menu} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((o) => !o)}>
-            <Icon name="menu" size={20} />
-          </button>
-        </div>
-      </div>
-      {open && (
-        <nav id="mobile-menu" className="mobile-menu" aria-label="Bookinator">
-          <NavLinks L={L} active={active} />
-        </nav>
-      )}
-    </header>
-  );
-=======
 export function Header({ L, lang, setLang, hours, onHome, onStart, onCatalog, onSection }: HeaderProps) {
   const actions = navigationActions(onStart, onCatalog, onSection);
   return <header className="header desktop-only">
@@ -361,55 +285,14 @@ export function MobileHeader({ L, lang, setLang, onHome, onStart, onCatalog, onS
     </div>
     {open && <nav id="mobile-nav" className="mobile-nav" aria-label="Bookinator" onKeyDown={(event) => { if (event.key === "Escape") { setOpen(false); event.currentTarget.parentElement?.querySelector<HTMLButtonElement>("[aria-controls]")?.focus(); } }}>{L.nav.map((label, i) => <button key={label} type="button" onClick={() => go(actions[i])}>{label}</button>)}</nav>}
   </header>;
->>>>>>> 8096e18c100e2f084ed0de38a7f3e47c2fbadffc
 }
 
-export function Footer({ L, address, children }: { L: LibraryStrings; address: string; children?: ReactNode }) {
-<<<<<<< HEAD
-  return (
-    <footer className="footer">
-      <div className="footer-top">
-        <div className="footer-brand">
-          <p className="footer-logo">Bookinator</p>
-          <p>{L.footerTag}</p>
-          <p>{address}</p>
-        </div>
-        <div className="footer-cols">
-          {L.footerCols.map((col, c) => (
-            <ul key={col[0]}>
-              {col.map((x, i) => (i === 0 ? <li key={x} className="footer-col-head">{x}</li> : <li key={x}><a href={href(FOOTER_PAGES[c][i - 1])}>{x}</a></li>))}
-            </ul>
-          ))}
-        </div>
-      </div>
-      <hr />
-      {children && <div className="footer-notes">{children}</div>}
-      <div className="footer-bottom">
-        <p>{L.copyright}</p>
-        <p>{L.legal}</p>
-      </div>
-    </footer>
-  );
-=======
+export function Footer({ L, address, children, lang }: { L: LibraryStrings; address: string; children?: ReactNode; lang: Lang }) {
   return <footer className="footer" id="about" tabIndex={-1}>
     <div className="footer-top"><div className="footer-brand" id="visit"><p className="footer-logo">Bookinator</p><p>{L.footerTag}</p><p>{address}</p></div>
       <div className="footer-cols">{L.footerCols.map((col) => <ul key={col[0]}>{col.map((label, i) => <li key={label} className={i === 0 ? "footer-col-head" : undefined}>{label}</li>)}</ul>)}</div>
-    </div><hr />{children && <div className="footer-notes">{children}</div>}<div className="footer-bottom"><p>{L.copyright}</p><p>{L.legal}</p></div>
+    </div><Creators lang={lang} /><hr />{children && <div className="footer-notes">{children}</div>}<div className="footer-bottom"><p>{L.copyright}</p><p>{L.legal}</p></div>
   </footer>;
->>>>>>> 8096e18c100e2f084ed0de38a7f3e47c2fbadffc
-}
-
-/** A plain generated "cover" (no cover images, D7): a colour from the title, the title and author set in type. */
-export function GeneratedCover({ title, author, seed, large = false }: { title: string; author: string; seed: string; large?: boolean }) {
-  let h = 0;
-  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
-  return (
-    <span className={`gen-cover ${large ? "gen-cover-lg" : ""}`} style={{ ["--hue" as string]: (h % 360).toString() }} aria-hidden="true">
-      <span className="gen-cover-author">{author}</span>
-      <span className="gen-cover-title">{title}</span>
-      <span className="gen-cover-mark"><Icon name="waves" size={large ? 24 : 16} /></span>
-    </span>
-  );
 }
 
 export function Breadcrumb({ items, children }: { items: string[]; children?: ReactNode }) {
