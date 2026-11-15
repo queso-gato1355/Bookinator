@@ -2,6 +2,7 @@
 import { ACTIVE_CATALOG } from "./data/index.ts";
 import { makeConfig } from "./engine/config.ts";
 import { compileCatalog } from "./engine/model.ts";
+import { isDemoMode } from "./demo.ts";
 import type { Session } from "./engine/session.ts";
 
 export const CONFIG = makeConfig();
@@ -21,7 +22,7 @@ export const AVAILABILITY = {
 };
 
 // Session persistence is a light convenience only: it may be unavailable or empty.
-const STORAGE_KEY = `that-book-session:${ACTIVE_CATALOG.catalog_version}`;
+const STORAGE_KEY = `that-book-session:${ACTIVE_CATALOG.catalog_version}${isDemoMode() ? ":demo" : ""}`;
 
 export function loadSession(): Session | null {
   try {

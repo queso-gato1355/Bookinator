@@ -108,13 +108,13 @@ export function Button({ variant = "primary", arrow = true, checkMark = false, h
 
 // ---------------------------------------------------------------- Answer
 
-export function AnswerButton({ label, selected, onSelect, shortcut }: { label: string; selected: boolean; onSelect: () => void; shortcut?: string }) {
-  return (
-    <button type="button" className="answer" aria-pressed={selected} aria-keyshortcuts={shortcut} onClick={onSelect}>
-      {selected && <Icon name="checkWhite" />}
-      <span>{label}</span>
-    </button>
-  );
+export function AnswerButton({ label, onSelect, shortcut }: { label: string; onSelect: () => void; shortcut?: string }) {
+  return <button type="button" className="answer" aria-keyshortcuts={shortcut} onClick={(event) => {
+    // Ignore the second mouse/touch click of a double-click on a freshly rendered answer.
+    if (event.detail <= 1) onSelect();
+  }}>
+    <span>{label}</span>{shortcut && <kbd className="answer-shortcut" aria-hidden="true">{shortcut}</kbd>}
+  </button>;
 }
 
 // ---------------------------------------------------------------- Image / Unsplash
@@ -128,10 +128,10 @@ export interface Photo {
 }
 
 /** An image slot. Without a photo it shows the design's sea gradient; the caption pill is optional. */
-export function UnsplashImage({ photo, caption, className = "" }: { photo?: Photo | null; caption?: string; className?: string }) {
+export function UnsplashImage({ photo, caption, className = "", priority = false }: { photo?: Photo | null; caption?: string; className?: string; priority?: boolean }) {
   return (
     <div className={`photo ${className}`}>
-      {photo && <img className="photo-img" src={photo.url} alt={photo.alt ?? ""} loading="lazy" referrerPolicy="no-referrer" />}
+      {photo && <img className="photo-img" src={photo.url} alt={photo.alt ?? ""} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} referrerPolicy="no-referrer" />}
       {photo?.photographer ? (
         <p className="photo-caption">
           <Icon name="image" size={14} />

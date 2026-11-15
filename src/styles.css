@@ -557,3 +557,68 @@ h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
 .recognition-card .real-cover, .recognition-card .cover { height: 240px; }
 .recognition-card .cover-title { font-size: 30px; }
 .recognition-card .btn { align-self: flex-start; white-space: normal; }
+
+/* Hackathon: Library × Because I'm Lazy. */
+.theme-label { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; padding: 8px 14px; border: 1px solid var(--putty); border-radius: var(--pill); color: var(--sea-deep); font-size: 13px; font-weight: 600; }
+.effort-benefits { display: flex; gap: 12px 20px; flex-wrap: wrap; font-size: 13px; color: var(--sea-deep); }
+.effort-benefits li { display: inline-flex; align-items: center; gap: 6px; }
+.challenge-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; }
+.answer { position: relative; }
+.answer:not(:disabled):active { background: var(--sea-deep); color: var(--white); }
+.answer-shortcut { font-family: var(--sans); color: var(--ink-soft); font-size: 11px; border: 1px solid var(--putty); padding: 2px 5px; border-radius: 4px; }
+.answer:active .answer-shortcut { color: var(--white); }
+.question-nav { justify-content: flex-start; gap: 20px; }
+.question-nav .text-btn { font-weight: 600; }
+.live-challenge { background: var(--foam); scroll-margin-top: 24px; }
+.challenge-books { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.challenge-books li { display: flex; flex-direction: column; gap: 12px; padding: 24px; background: var(--paper); border: 1px solid var(--putty); border-radius: 8px; }
+.challenge-books b { font-family: var(--serif); font-size: 22px; font-weight: 500; }
+.challenge-books span { font-size: 14px; color: var(--ink-soft); }
+.challenge-actions { display: flex; align-items: center; gap: 24px; }
+.challenge-actions .hint { max-width: 480px; }
+.book-reveal .recognition-cover { transform-origin: center bottom; }
+.found-celebration { display: flex; align-items: center; gap: 20px; padding: 28px var(--gutter); background: var(--foam); color: var(--sea-deep); }
+.celebration-count { font-family: var(--serif); font-size: 32px; }
+.found-celebration p + p { margin-top: 6px; font-size: 14px; }
+.library-next { padding: 24px; display: flex; flex-direction: column; gap: 14px; background: var(--foam); border-color: var(--mist); }
+.library-next .eyebrow { display: flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: 1px; }
+.library-next h2 { font-size: 24px; }
+.library-next-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.library-next .btn { white-space: normal; text-align: center; }
+@media (max-width: 760px) {
+  .theme-label { font-size: 12px; }
+  .effort-benefits { gap: 8px 16px; }
+  .hero-actions .challenge-link { width: 100%; justify-content: center; }
+  .answer-shortcut, .keyboard-hint { display: none; }
+  .question-nav { padding-block: 4px; }
+  .challenge-books { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .challenge-books li { padding: 20px; }
+  .challenge-books b { font-size: 20px; }
+  .challenge-actions { flex-direction: column; align-items: stretch; gap: 16px; }
+  .challenge-actions .btn { white-space: normal; }
+  .celebration-count { font-size: 26px; }
+  .found-celebration { padding-block: 20px; gap: 12px; }
+  .library-next { padding: 20px; }
+  .library-next-actions { align-items: stretch; flex-direction: column; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .book-reveal .recognition-cover { animation: book-reveal 360ms ease-out both; }
+  .book-reveal .title-block { animation: title-reveal 300ms 80ms ease-out both; }
+  .found-celebration .icon { animation: found-check 380ms ease-out both; }
+  @keyframes book-reveal { from { opacity: 0; transform: translateY(18px) rotate(-3deg) scale(.96); } to { opacity: 1; transform: none; } }
+  @keyframes title-reveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes found-check { from { transform: scale(.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+}
+.hero-photo { flex: 0 0 43%; width: 43%; height: 580px; border-radius: 8px; }
+@media (max-width: 760px) {
+  .hero-photo { flex: none; width: 100%; height: 280px; }
+  .hero-actions .text-btn, .hero-actions .challenge-link { width: auto; flex: 1 1 auto; justify-content: center; }
+}
+.skip-link { visibility: hidden; }
+.skip-link:focus { visibility: visible; }
+.live-challenge:focus { outline: none; }
+.cover-title { overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .recognition-cover .cover-title { font-size: 16px; line-height: 1.2; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden; }
+}
+.celebration-count { word-break: keep-all; }

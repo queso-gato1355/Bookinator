@@ -1,7 +1,7 @@
 // Screens of the "Sea Library" design: 01 Home, 02 Question, 03 Book Found (also used to propose a
 // guess), 04 Similar Books. 05 Not Found lives in Contribute.tsx. The engine decides everything; these
 // components only show its state.
-import { useState, type RefObject } from "react";
+import { useEffect, useState, type RefObject } from "react";
 import { fetchBlurb, fetchCover, titleCount, volumeBook, displayLanguage } from "../bookInfo.ts";
 import { ACTIVE_COLLECTION, COLLECTIONS, collectionHref, type CollectionId } from "../data/index.ts";
 import { matchingClues, type MatchingClue } from "../engine/explain.ts";
@@ -14,9 +14,12 @@ import { type LibraryStrings } from "../i18n/library.ts";
 import { EXPERIENCE } from "../i18n/experience.ts";
 import { searchLocal } from "../community/search.ts";
 import { conflictingAnswers, leadingMatchCount } from "../engine/reader.ts";
-import { Availability } from "./Availability.tsx";
+import { LibraryNextStep } from "./LibraryNextStep.tsx";
+import { HACKATHON } from "../i18n/hackathon.ts";
+import { SEA_WINDOW_PHOTO } from "../assets/seaPhoto.ts";
+import { DEMO_BOOK_IDS, demoHref, isDemoMode } from "../demo.ts";
 import { ShareAnswers } from "./Contribute.tsx";
-import { AnswerButton, Breadcrumb, Button, Icon, useLoaded, useLoadedState } from "./ui.tsx";
+import { AnswerButton, Breadcrumb, Button, Icon, UnsplashImage, useLoaded, useLoadedState } from "./ui.tsx";
 
 type Heading = RefObject<HTMLHeadingElement | null>;
 type ActionOf<K extends Action["kind"]> = Extract<Action, { kind: K }>;
@@ -53,6 +56,8 @@ function SectionHead({ eyebrow, title, lead, children }: { eyebrow: string; titl
 
 export function HomeScreen({ headingRef, onStart, t, L, lang }: { headingRef: Heading; onStart: (film: boolean) => void; t: Strings; L: LibraryStrings; lang: Lang }) {
   const [film, setFilm] = useState(false);
+  const H = HACKATHON[lang];
+  const demo = isDemoMode();
   const [query, setQuery] = useState("");
   const E = EXPERIENCE[lang];
   const books = [...CC.books].sort((a, b) => bookTitles(a, lang).main.localeCompare(bookTitles(b, lang).main, lang));
@@ -66,9 +71,10 @@ export function HomeScreen({ headingRef, onStart, t, L, lang }: { headingRef: He
   return <>
     <section className="hero focused-hero">
       <div className="hero-copy">
-        <p className="eyebrow eyebrow-icon"><Icon name="eyebrow" size={20} />{L.heroEyebrow}</p>
+        <p className="theme-label"><Icon name="eyebrow" size={18} />{H.theme}</p>
         <h1 ref={headingRef} tabIndex={-1}>{L.heroTitle[0]}<br />{L.heroTitle[1]}</h1>
-        <p className="lead">{L.heroLead}</p>
+        <p className="lead">{H.pitch}</p>
+        <ul className="effort-benefits">{H.benefits.map((benefit) => <li key={benefit}><Icon name="checkClue" size={16} />{benefit}</li>)}</ul>
         <div className="shelf-setup">
           <h2>{L.shelfTitle}</h2>
           <nav className="shelf-switch" aria-label={t.collectionsLabel}>
@@ -77,15 +83,15 @@ export function HomeScreen({ headingRef, onStart, t, L, lang }: { headingRef: He
           <p className="hint">{E.shelfNote(titleCount(CC.catalog))} {E.scope}</p>
           <label className="check"><input type="checkbox" checked={film} onChange={(e) => setFilm(e.target.checked)} /><span>{t.filmMode}</span></label>
         </div>
-        <div className="hero-actions"><Button className="btn-hero" onClick={() => onStart(film)}>{E.find}</Button><a className="text-btn" href="#catalog">{E.catalog}</a></div>
+        <div className="hero-actions"><Button className="btn-hero" onClick={() => onStart(film)}>{E.find}</Button><a className="text-btn" href="#catalog">{E.catalog}</a>{!demo && <a className="challenge-link" href={demoHref()}>{H.challengeLink} <Icon name="arrowRightSm" size={16} /></a>}</div>
       </div>
-      <div className="demo-question card">
-        <span className="tile-icon"><Icon name="tileStart" size={30} /></span>
-        <p className="eyebrow">{E.example}</p><p className="demo-question-text">{E.exampleQuestion}</p>
-        <div className="demo-answers" aria-hidden="true"><span>{ANSWER_TEXT[lang].yes}</span><span>{ANSWER_TEXT[lang].dont_know}</span><span>{ANSWER_TEXT[lang].no}</span></div>
-        <p className="hint">{E.shelfHelp}</p>
-      </div>
+      <UnsplashImage photo={{ ...SEA_WINDOW_PHOTO, alt: lang === "ko" ? "창문 너머로 보이는 푸른 바다와 하늘" : SEA_WINDOW_PHOTO.alt }} priority className="hero-photo" />
     </section>
+    {demo && <section className="section live-challenge" id="live-challenge" tabIndex={-1} aria-label={H.challengeTitle}>
+      <SectionHead eyebrow={H.challengeEyebrow} title={H.challengeTitle} lead={H.challengeLead} />
+      <ul className="challenge-books">{DEMO_BOOK_IDS.map((id) => CC.books.find((book) => book.id === id)).filter((book): book is CatalogBook => Boolean(book)).map((book) => <li key={book.id}><Icon name="tileStart" size={28} /><b>{bookTitles(book, lang).main}</b><span>{book.author}</span></li>)}</ul>
+      <div className="challenge-actions"><Button onClick={() => onStart(false)}>{H.challengeStart}</Button><p className="hint">{H.challengeNote}</p></div>
+    </section>}
     <section className="section section-linen" id="how-it-works">
       <SectionHead eyebrow={L.howEyebrow} title={L.howTitle} />
       <ol className="steps">{L.steps.map(([title, body], i) => <li key={title}><span className="step-no">{String(i + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{body}</p></li>)}</ol>
@@ -119,7 +125,7 @@ function AnswerHistory({ state, t, lang, onEditAnswer }: Pick<Common, "state" | 
 export function QuestionScreen(props: Common & { action: ActionOf<"ask">; onAnswer: (a: Answer) => void; onBestGuess: () => void }) {
   const { action, headingRef, onAnswer, state, t, L, lang } = props;
   const E = EXPERIENCE[lang];
-  const [picked, setPicked] = useState<Answer | null>(null);
+  const H = HACKATHON[lang];
   const streak = streakWarning(CONFIG, state.answers);
   const [streakDismissed, setStreakDismissed] = useState(false);
   const n = action.number;
@@ -143,12 +149,12 @@ export function QuestionScreen(props: Common & { action: ActionOf<"ask">; onAnsw
             <div className="companion"><span className="tile-icon"><Icon name="tileStart" size={24} /></span><p>{state.answers.length === 0 ? E.beginning : state.answers.at(-1)?.answer === "dont_know" ? E.unsure : E.thinking}</p></div>
             <p className="eyebrow">{L.questionN(n)}<span className="mobile-only"> · {E.answered(state.answers.length)}</span></p>
             <h1 ref={headingRef} tabIndex={-1}>{questionText(action.question, lang)}</h1>
-            <p className="lead-sm">{L.notSureHint}</p>
+            <p className="lead-sm">{H.tapHint}</p>
             <p className="hint mobile-search-feedback" role="status">{narrowing}</p>
             <details className="definition"><summary>{t.whatCounts}</summary><p lang="en">{action.question.definition}</p></details>
             {streak && !streakDismissed && <div className="streak-alert" role="status"><p>{L.streakDontKnow}</p><button type="button" className="text-btn" onClick={() => setStreakDismissed(true)}>{L.streakContinue}</button></div>}
-            <div className="answers" role="group" aria-label={t.answersGroup}>{ANSWERS.map((a, i) => <AnswerButton key={a} label={ANSWER_TEXT[lang][a]} selected={picked === a} shortcut={String(i + 1)} onSelect={() => setPicked(a)} />)}</div>
-            <div className="question-nav"><button type="button" className="text-btn" onClick={props.onUndo} disabled={!props.canUndo} aria-keyshortcuts="U"><Icon name="arrowLeft" />{L.previous}</button><Button onClick={() => picked && onAnswer(picked)} disabled={!picked}>{L.next}</Button></div>
+            <div className="answers" role="group" aria-label={t.answersGroup}>{ANSWERS.map((a, i) => <AnswerButton key={a} label={ANSWER_TEXT[lang][a]} shortcut={String(i + 1)} onSelect={() => onAnswer(a)} />)}</div>
+            <div className="question-nav"><button type="button" className="text-btn" onClick={props.onUndo} disabled={!props.canUndo} aria-keyshortcuts="U"><Icon name="arrowLeft" />{t.undo}</button><p className="hint keyboard-hint">{H.keyboard}</p></div>
           </div>
         </div>
         {state.informativeAnswers > 0 && <div className="early-guess"><Button variant="secondary" onClick={props.onBestGuess}>{E.showGuess}</Button><p className="hint">{E.guessNote}</p></div>}
@@ -231,8 +237,11 @@ export function BookScreen(props: BookScreenProps) {
   const { main, alt } = bookTitles(book, lang);
   const { value: blurb, loading: blurbLoading } = useLoadedState(() => fetchBlurb(book, lang), `${book.id}:${lang}`);
   const E = EXPERIENCE[lang];
+  const H = HACKATHON[lang];
   const conflicts = conflictingAnswers(CC, action.bookIndex, state);
-  const links = catalogLinks(book, LINK_OPTIONS);
+  useEffect(() => {
+    if (volume) { headingRef.current?.focus({ preventScroll: true }); window.scrollTo({ top: 0 }); }
+  }, [volume, headingRef]);
   if (series && !guess && !volume) {
     return (
       <>
@@ -259,12 +268,12 @@ export function BookScreen(props: BookScreenProps) {
   }
   return (
     <>
-      <section className="banner">
+      <section className={`banner ${guess ? "reveal-banner" : "confirmed-banner"}`}>
         <div className="banner-msg">
           <span className="banner-check"><Icon name={guess ? "tileStart" : "checkWhiteLg"} size={24} /></span>
           <div>
             <h1 ref={headingRef} tabIndex={-1}>
-              {guess ? (tentative ? L.maybeBanner : series ? L.seriesBanner : state.rejected.size > 0 ? L.foundBannerAgain : L.foundBanner) : L.confirmedBanner}
+              {guess ? (tentative ? L.maybeBanner : series ? L.seriesBanner : H.reveal) : L.confirmedBanner}
               <span className="sr-only"> {main}</span>
             </h1>
             <p>{guess ? (tentative ? L.maybeSub(state.answers.length) : L.foundSub(state.answers.length, titleCount(CC.catalog))) : t.foundAfter(state.answers.length, action.kind === "found" && action.via === "guess")}</p>
@@ -285,10 +294,12 @@ export function BookScreen(props: BookScreenProps) {
         </div>
       </section>
 
-      <section className="detail">
+      {!guess && <section className="found-celebration" aria-label={L.confirmedBanner}>
+        <Icon name="checkClue" size={28} /><div><p className="celebration-count">{action.kind === "found" && action.via === "shortlist" ? H.identifiedIn(state.answers.length) : H.foundIn(state.answers.length)}</p><p>{H.success}</p></div>
+      </section>}
+      <section className={`detail book-reveal ${guess ? "guess-reveal" : "found-reveal"}`}>
         <div className="cover-col">
           <RecognitionCover key={book.id} book={book} lang={lang} />
-          {links[0] && <Button href={links[0].url} block>{E.openRecord}</Button>}
         </div>
         <div className="info-col">
           <div className="title-block">
@@ -316,25 +327,13 @@ export function BookScreen(props: BookScreenProps) {
           </div>
           <Clues bookIndex={action.bookIndex} state={state} t={t} L={L} lang={lang} />
           {conflicts.length > 0 && <details className="conflicts"><summary>{E.conflicts} · {conflicts.length}</summary><p className="hint">{E.conflictsHelp}</p><ul>{conflicts.map((a) => <li key={a.questionIndex}>{questionText(CC.questions[a.questionIndex], lang)} — {ANSWER_TEXT[lang][a.answer]}</li>)}</ul></details>}
+          <LibraryNextStep key={book.id} book={book} lang={lang} />
           <dl className="info-table">
             <div><dt>{L.infoOriginal}</dt><dd>{book.title_en}</dd></div>
             {book.first_publication_year && <div><dt>{L.infoPublished}</dt><dd>{L.infoYear(book.first_publication_year)}</dd></div>}
             <div><dt>{L.infoAuthor}</dt><dd>{book.author}</dd></div>
             <div><dt>{L.infoLanguage}</dt><dd>{displayLanguage(book.original_language, lang)}</dd></div>
           </dl>
-          <div className="links">
-            <h2>{t.findInCatalog}</h2>
-            <ul>
-              {links.map((l) => (
-                <li key={l.url}>
-                  <a href={l.url} target="_blank" rel="noopener noreferrer">{l.label} ↗</a>
-                  <span className="muted">{l.description}</span>
-                </li>
-              ))}
-            </ul>
-            <Availability book={book} />
-            <p className="footnote">{t.librarianTip}</p>
-          </div>
         </div>
       </section>
 

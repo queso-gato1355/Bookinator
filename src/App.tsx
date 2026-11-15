@@ -8,6 +8,7 @@ import { LIBRARY } from "./i18n/library.ts";
 import { rewindToAnswer } from "./engine/reader.ts";
 import { AddBookScreen } from "./components/Contribute.tsx";
 import { BookScreen, HomeScreen, QuestionScreen, SimilarScreen } from "./components/screens.tsx";
+import { DEMO_SEED, isDemoMode } from "./demo.ts";
 import { Footer, Header, MobileHeader } from "./components/ui.tsx";
 
 function safeDerive(session: Session) {
@@ -34,14 +35,13 @@ export default function App() {
 
   const dispatch = useCallback(
     (event: SessionEvent) => {
-      if (!session || !state) return;
-      try {
-        setSession(applyEvent(CC, CONFIG, session, event, state));
-      } catch {
-        /* stale double-click: ignore */
-      }
+      setSession((current) => {
+        if (!current) return current;
+        try { return applyEvent(CC, CONFIG, current, event); }
+        catch { return current; } // An event for an already-answered question is stale.
+      });
     },
-    [session, state],
+    [],
   );
   const onUndo = useCallback(() => setSession((s) => (s ? undo(s) : s)), []);
   const onRestart = useCallback(() => setSession(null), []);
@@ -57,7 +57,7 @@ export default function App() {
   }, [catalogRequested]);
   // Each game gets its own seed, so questions come in a different order from game to game.
   const onStart = useCallback(
-    (filmMemoryMode: boolean) => setSession(newSession({ filmMemoryMode, seed: Math.floor(Math.random() * 2 ** 31) })),
+    (filmMemoryMode: boolean) => setSession(newSession({ filmMemoryMode, seed: isDemoMode() ? DEMO_SEED : Math.floor(Math.random() * 2 ** 31) })),
     [],
   );
 
@@ -65,15 +65,16 @@ export default function App() {
   const kind = state ? state.action.kind : "start";
   const screenKey = `${kind}:${session?.events.length ?? 0}`;
   useEffect(() => {
-    headingRef.current?.focus({ preventScroll: true });
-    window.scrollTo({ top: 0 });
+    const challenge = kind === "start" && isDemoMode() ? document.getElementById("live-challenge") : null;
+    if (challenge) { challenge.focus({ preventScroll: true }); challenge.scrollIntoView({ block: "start" }); }
+    else { headingRef.current?.focus({ preventScroll: true }); window.scrollTo({ top: 0 }); }
   }, [screenKey]);
 
   // Global keyboard shortcuts: 1–5 answers, U undo, Y/N on a guess.
   useEffect(() => {
     if (!state) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      if (e.altKey || e.ctrlKey || e.metaKey || e.repeat) return;
       const target = e.target as HTMLElement | null;
       if (target && ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName)) return;
       const a = state.action;
@@ -107,7 +108,7 @@ export default function App() {
       case "guess":
         screen = (
           <BookScreen
-            key={a.book.id}
+            key={`${a.kind}:${a.book.id}`}
             {...common}
             action={a}
             onAccept={() => dispatch({ type: "accept", bookId: a.book.id })}
@@ -120,7 +121,7 @@ export default function App() {
         screen = <SimilarScreen {...common} action={a} onPick={(bookId) => dispatch({ type: "accept", bookId })} onExit={() => dispatch({ type: "exit" })} />;
         break;
       case "found":
-        screen = <BookScreen key={a.book.id} {...common} action={a} />;
+        screen = <BookScreen key={`${a.kind}:${a.book.id}`} {...common} action={a} />;
         break;
       case "no_match":
         // Keyed by the event count so the form starts empty after Undo + a new miss.

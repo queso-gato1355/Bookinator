@@ -8,6 +8,8 @@ A reader half-remembers a novel. Bookinator's seagull (북키네이터 갈매기
 
 Theme: **Library + "Because I'm Lazy"**: the system chooses the search questions, so the reader doesn't need an author, title, ISBN or a good search query. There are no LLM calls during play.
 
+**Hackathon demo:** [presentation guide](docs/hackathon-demo.md) · [rehearsal traces](docs/demo-rehearsal.md). Use **Try the live challenge** in the app (`?collection=classic&demo=1`) for a reproducible audience round. `npm run rehearse` checks three examples and a real early wrong-guess recovery with the normal engine.
+
 > ⚠ **Current data is a 10-book DEVELOPMENT FIXTURE.** Labels were first written from general knowledge by an AI assistant. **171 of 589 labels were then checked against cited Wikipedia and Open Library pages** (status `supported`), and several guesses were corrected. 4 are marked `ambiguous` with notes; the rest are still unchecked. **No human has reviewed any of it.** The app shows a banner saying so, and clues show whether they're source-checked.
 
 ---

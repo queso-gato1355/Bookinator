@@ -3,6 +3,7 @@
 import type { CatalogBook } from "./model.ts";
 
 export interface CatalogLink {
+  kind: "open_library" | "local";
   label: string;
   url: string;
   /** What exactly this link points at, shown to the user for honesty. */
@@ -24,6 +25,7 @@ export function catalogLinks(book: CatalogBook, opts: LinkOptions = {}): Catalog
   const links: CatalogLink[] = [];
   if (book.openlibrary_work_id && /^OL\d+W$/.test(book.openlibrary_work_id)) {
     links.push({
+      kind: "open_library",
       label: "Open Library record",
       url: `${OPEN_LIBRARY}/works/${book.openlibrary_work_id}`,
       description: "Work record on Open Library (all editions).",
@@ -31,6 +33,7 @@ export function catalogLinks(book: CatalogBook, opts: LinkOptions = {}): Catalog
   } else {
     const params = new URLSearchParams({ title: book.title_en, author: book.author });
     links.push({
+      kind: "open_library",
       label: "Search Open Library",
       url: `${OPEN_LIBRARY}/search?${params.toString()}`,
       description: "Title + author search on Open Library (no verified work ID stored yet).",
@@ -40,6 +43,7 @@ export function catalogLinks(book: CatalogBook, opts: LinkOptions = {}): Catalog
   if (template && template.includes("{query}") && /^https:\/\//.test(template)) {
     const query = book.title_ko ?? book.title_en;
     links.push({
+      kind: "local",
       label: opts.localSearchLabel?.trim() || "Search the library catalog",
       url: template.replace("{query}", encodeURIComponent(query)),
       description: `Catalog search for "${query}". Check which edition and language the library holds.`,
