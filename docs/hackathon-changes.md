@@ -1,5 +1,7 @@
 # Hackathon presentation and interaction improvements
 
+The original Sea Library home, navigation, service tiles, leaderboard, collection cards, Programs and footer are retained. Catalog search is a separate screen behind the original Catalog navigation entry. The themed challenge home is limited to the explicit demo route; game changes do not replace the library layout.
+
 - The homepage names **Library × Because I’m Lazy** and explains the forgotten-title problem. Its original Unsplash sea photograph is retained, including the photo and photographer links; the hero photo loads eagerly.
 - Answers advance with one tap. Undo and answer-history editing remain available. Keyboard shortcuts are visible on desktop; held keys and the second click of a double-click do not submit additional answers.
 - Book reveals use brief motion; confirmation celebrates the actual number of answered questions. Reduced-motion preferences disable the animation. Choosing a shortlist is labelled as identification rather than a successful guess.

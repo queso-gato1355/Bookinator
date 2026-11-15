@@ -157,7 +157,7 @@ The validator checks:
 ## Research catalog (500 imported records → 388 targets, 488 titles)
 
 Two catalogs ship, switchable on the start screen (live: https://wiseshrestha.github.io/Bookinator/). The **CMU /
-research catalog** ("Research shelf", 268 titles) is the **default**. The **10-book fixture** ("Classic shelf") is at
+research catalog** ("Research shelf", 488 titles, catalog v3) is the **default**. The **10-book fixture** ("Classic shelf") is at
 `?collection=classic`, `npm run dev:classic` or `VITE_CATALOG=classic`. Never report imported records as game coverage:
 
 | Measure (14 Nov 2026) | Count |
@@ -268,6 +268,22 @@ measured factual accuracy; every cell stays `ai_recall`, no source, `reviewed=fa
 Not playable: Divine Secrets of the Ya-Ya Sisterhood, The Lucky One, Good in Bed, Evermore (sparse labels). Browser playtests (en, 1440 and 390 px):
 *Harry Potter*, *Narnia* and *Twilight* series with volume pick; *To Kill a Mockingbird*, *Pride and Prejudice*,
 *The Wonderful Wizard of Oz*; *The Catcher in the Rye* with one wrong answer (found after 22): all found, no errors.
+
+**Simulation of v3** (`reports/simulation_research.json`: seed 42, 30 games per target per scenario = 11,640 games
+each, main's engine settings: 40-question cap, check-ins, 4 rejections; simulated answers come from the same labels, so
+this is internal consistency, not accuracy):
+
+| Simulated reader | First guess right | Found by any route | Mean questions |
+| --- | ---: | ---: | ---: |
+| Clear memory | 69.8% | 93.1% | 28.2 |
+| One wrong answer | 59.7% | 88.5% | 31.1 |
+| Half memory | 34.0% | 68.9% | 35.8 |
+| Engine's own answer noise | 26.4% | 59.1% | 36.5 |
+| Difficult memory | 10.1% | 40.9% | 39.0 |
+
+Not comparable with the v1 table above (18-question cap, 2 rejections): the longer games and check-ins account for
+much of the rise from 20.4% / 73.3% (clear memory, v1).
+
 
 ## Front end: the seagull, the clouds and the sea
 

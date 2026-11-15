@@ -4,10 +4,11 @@ import { ANSWERS, type Answer } from "./engine/model.ts";
 import { applyEvent, deriveState, newSession, undo, type Session, type SessionEvent } from "./engine/session.ts";
 import { CC, CONFIG, loadSession, saveSession } from "./game.ts";
 import { STRINGS, useLang } from "./i18n/index.ts";
+import { DESIGN_MOCK } from "./mock/design.ts";
 import { LIBRARY } from "./i18n/library.ts";
 import { rewindToAnswer } from "./engine/reader.ts";
 import { AddBookScreen } from "./components/Contribute.tsx";
-import { BookScreen, HomeScreen, QuestionScreen, SimilarScreen } from "./components/screens.tsx";
+import { BookScreen, CatalogScreen, HomeScreen, QuestionScreen, SimilarScreen } from "./components/screens.tsx";
 import { DEMO_SEED, isDemoMode } from "./demo.ts";
 import { Footer, Header, MobileHeader } from "./components/ui.tsx";
 
@@ -23,7 +24,8 @@ export default function App() {
   const [lang, setLang] = useLang();
   const t = STRINGS[lang];
   const L = LIBRARY[lang];
-  const [catalogRequested, setCatalogRequested] = useState(0);
+  const [catalogOpen, setCatalogOpen] = useState(false);
+  const [homeSection, setHomeSection] = useState<{ id: string; request: number } | null>(null);
   const [session, setSession] = useState<Session | null>(() => {
     const saved = loadSession();
     return saved && safeDerive(saved) ? saved : null;
@@ -44,25 +46,31 @@ export default function App() {
     [],
   );
   const onUndo = useCallback(() => setSession((s) => (s ? undo(s) : s)), []);
-  const onRestart = useCallback(() => setSession(null), []);
-  const onCatalog = useCallback(() => { setSession(null); setCatalogRequested((n) => n + 1); }, []);
+  const onRestart = useCallback(() => { setSession(null); setCatalogOpen(false); }, []);
+  const onSection = useCallback((id: string) => { setSession(null); setCatalogOpen(id === "catalog"); setHomeSection((previous) => ({ id, request: (previous?.request ?? 0) + 1 })); }, []);
+  const onCatalog = useCallback(() => onSection("catalog"), [onSection]);
   const onEditAnswer = useCallback((index: number) => setSession((s) => s ? rewindToAnswer(s, index) : s), []);
   useEffect(() => {
-    if (!catalogRequested) return;
+    if (!homeSection) return;
     const frame = requestAnimationFrame(() => {
-      document.getElementById("catalog")?.scrollIntoView({ block: "start" });
-      document.getElementById("catalog-search")?.focus({ preventScroll: true });
+      const target = document.getElementById(homeSection.id);
+      target?.scrollIntoView({ block: "start" });
+      if (homeSection.id === "catalog") document.getElementById("catalog-search")?.focus({ preventScroll: true });
+      else {
+        const heading = target?.querySelector<HTMLElement>("h2") ?? target;
+        heading?.setAttribute("tabindex", "-1"); heading?.focus({ preventScroll: true });
+      }
     });
     return () => cancelAnimationFrame(frame);
-  }, [catalogRequested]);
+  }, [homeSection]);
   // Each game gets its own seed, so questions come in a different order from game to game.
   const onStart = useCallback(
-    (filmMemoryMode: boolean) => setSession(newSession({ filmMemoryMode, seed: isDemoMode() ? DEMO_SEED : Math.floor(Math.random() * 2 ** 31) })),
+    (filmMemoryMode: boolean) => { setCatalogOpen(false); setSession(newSession({ filmMemoryMode, seed: isDemoMode() ? DEMO_SEED : Math.floor(Math.random() * 2 ** 31) })); },
     [],
   );
 
   // Move focus to the new heading whenever the screen or question changes (screen readers + keyboard).
-  const kind = state ? state.action.kind : "start";
+  const kind = state ? state.action.kind : catalogOpen ? "catalog" : "start";
   const screenKey = `${kind}:${session?.events.length ?? 0}`;
   useEffect(() => {
     const challenge = kind === "start" && isDemoMode() ? document.getElementById("live-challenge") : null;
@@ -96,7 +104,7 @@ export default function App() {
 
   let screen;
   if (!session || !state) {
-    screen = <HomeScreen headingRef={headingRef} onStart={onStart} t={t} L={L} lang={lang} />;
+    screen = catalogOpen ? <CatalogScreen headingRef={headingRef} t={t} L={L} lang={lang} /> : <HomeScreen headingRef={headingRef} onStart={onStart} t={t} L={L} lang={lang} libraryOnly={Boolean(homeSection && homeSection.id !== "catalog")} />;
   } else {
     const a = state.action;
     const common = { headingRef, state, session, t, L, lang, onUndo, onRestart, canUndo: session.events.length > 0, onEditAnswer };
@@ -132,7 +140,7 @@ export default function App() {
 
   const notice =
     ACTIVE_CATALOG.data_status === "production" ? null : ACTIVE_CATALOG.data_status === "machine_labelled_unreviewed" ? t.unreviewedData : t.devData;
-  const header = { L, lang, setLang, onHome: onRestart, onStart: () => onStart(false), onCatalog };
+  const header = { L, lang, setLang, onHome: onRestart, onStart: () => onStart(false), onCatalog, onSection, hours: DESIGN_MOCK[lang].hours };
 
   return (
     <div className={`app screen-${kind}`}>
@@ -140,7 +148,7 @@ export default function App() {
       <Header {...header} />
       <MobileHeader {...header} />
       <main id="main-content">{screen}</main>
-      <Footer L={L} onHome={onRestart} onCatalog={onCatalog}>
+      <Footer L={L} address={DESIGN_MOCK[lang].address}>
         {notice && (
           <p>
             <b>{notice}.</b> <span lang="en">{ACTIVE_CATALOG.notice}</span>

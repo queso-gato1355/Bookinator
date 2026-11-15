@@ -622,3 +622,22 @@ h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
   .recognition-cover .cover-title { font-size: 16px; line-height: 1.2; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden; }
 }
 .celebration-count { word-break: keep-all; }
+
+/* Preserve the original library home independently from the optional demo and game. */
+.library-home .hero-photo { flex: none; width: min(600px, 46%); height: 580px; border-radius: 4px; }
+.library-home .hero-actions .text-btn { width: auto; }
+.answer span { word-break: keep-all; overflow-wrap: break-word; }
+@media (max-width: 760px) {
+  .library-home .hero-photo { width: 100%; height: 280px; }
+  .mobile-header .logo-tag { max-width: 125px; overflow: hidden; text-overflow: ellipsis; }
+  .mobile-header .header-actions { flex: none; }
+}
+@media (max-width: 760px) {
+  .mobile-header .logo-word { max-width: 110px; }
+  .mobile-header .logo-tag { max-width: 100%; }
+}
+@media (max-width: 360px) {
+  .mobile-header .mobile-search { display: none; }
+  .mobile-header .logo-word { max-width: 95px; }
+  .mobile-header .lang-switch { max-width: 58px; text-align: center; }
+}

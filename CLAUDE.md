@@ -58,6 +58,8 @@ When fixing, run `npm run verify` until green. Don't "fix" errors by deleting te
 
 ## Rules (from the build brief — keep them)
 
+- Preserve the original Sea Library layout, library navigation (Catalog, Leaderboard, Programs, Visit, About), content sections and Unsplash imagery. Keep quiz and live-challenge improvements isolated unless the user explicitly asks to change the library pages.
+
 - **Never invent** book facts, ISBNs, Open Library IDs, Korean titles, citations, API parameters, availability,
   or benchmark numbers. Unknown = p_yes 0.5 / null. Fixture data stays visibly marked as development data.
 - Thresholds stay configurable in `config.ts`. Don't lower the guess threshold to make numbers look better.
@@ -70,7 +72,7 @@ When fixing, run `npm run verify` until green. Don't "fix" errors by deleting te
 ## Research catalog (500 imported records → 388 targets, 488 titles)
 
 Two catalogs ship, switchable on the start screen (live: https://wiseshrestha.github.io/Bookinator/). The **CMU /
-research catalog** ("Research shelf", 268 titles) is the **default**. The **10-book fixture** ("Classic shelf") is at
+research catalog** ("Research shelf", 488 titles, catalog v3) is the **default**. The **10-book fixture** ("Classic shelf") is at
 `?collection=classic`, `npm run dev:classic` or `VITE_CATALOG=classic`. Never report imported records as game coverage:
 
 | Measure (14 Nov 2026) | Count |
@@ -203,6 +205,22 @@ Not playable: Divine Secrets of the Ya-Ya Sisterhood, The Lucky One, Good in Bed
 *Harry Potter*, *Narnia* and *Twilight* series with volume pick; *To Kill a Mockingbird*, *Pride and Prejudice*,
 *The Wonderful Wizard of Oz*; *The Catcher in the Rye* with one wrong answer (found after 22): all found, no errors.
 
+**Simulation of v3** (`reports/simulation_research.json`: seed 42, 30 games per target per scenario = 11,640 games
+each, main's engine settings: 40-question cap, check-ins, 4 rejections; simulated answers come from the same labels, so
+this is internal consistency, not accuracy):
+
+| Simulated reader | First guess right | Found by any route | Mean questions |
+| --- | ---: | ---: | ---: |
+| Clear memory | 69.8% | 93.1% | 28.2 |
+| One wrong answer | 59.7% | 88.5% | 31.1 |
+| Half memory | 34.0% | 68.9% | 35.8 |
+| Engine's own answer noise | 26.4% | 59.1% | 36.5 |
+| Difficult memory | 10.1% | 40.9% | 39.0 |
+
+Not comparable with the v1 table above (18-question cap, 2 rejections): the longer games and check-ins account for
+much of the rise from 20.4% / 73.3% (clear memory, v1).
+
+
 ## Known open items (not errors — need people or keys)
 
 - Fixture: 171/589 labels AI-checked against cited sources; 414 unchecked; **no human review**.
@@ -215,8 +233,8 @@ Not playable: Divine Secrets of the Ya-Ya Sisterhood, The Lucky One, Good in Bed
 New requirement: Akinator-style reader contributions (new books after a miss, corrections, feature answers,
 question and cover proposals) stored in Supabase (project ref `jvfxqusmnfdvslrgbjyv`, MCP server in `.mcp.json`).
 Applied to the remote project on 15 Nov 2026: both migrations in `supabase/migrations/` and the `book-image` Edge
-Function (Unsplash proxy, `supabase/functions/`). Catalog releases in Supabase (checked 15 Nov 2026): `fixture-2026-11-14b`, `cmu-priority500-v1`, `-v2`, and **`cmu-priority500-v3`** (synced at commit `c20ee02`: 388 books, 116 questions, 31,188 features; reads back identical except 4 books whose `sources` keep one extra source from an earlier release, because books and their sources are shared across releases). Anonymous sign-ins are enabled. Still not done: `app_admins` rows. Not done yet (superseded): catalog `sync` (needs `SUPABASE_SERVICE_ROLE_KEY`),
-Anonymous sign-ins (off in the dashboard, so contributions fail until enabled), `app_admins` rows. Decided (14 Nov 2026): D1 Supabase anonymous sign-in + CAPTCHA,
+Function (Unsplash proxy, `supabase/functions/`). Catalog releases in Supabase (checked 15 Nov 2026): `fixture-2026-11-14b`, `cmu-priority500-v1`, `-v2`, and **`cmu-priority500-v3`** (synced at commit `c20ee02`: 388 books, 116 questions, 31,188 features; reads back identical except 4 books whose `sources` keep one extra source from an earlier release, because books and their sources are shared across releases). Anonymous sign-ins are enabled. Still not done: `app_admins` rows (maintainer account IDs needed).
+Decided (14 Nov 2026): D1 Supabase anonymous sign-in + CAPTCHA,
 D2 opt-in consent asked at the end of each game (send nothing on decline), D7 no cover uploads (Open Library cover
 links only). D3–D6 and D8–D13 are still open in the design doc — don't hard-code an answer to one of them.
 
