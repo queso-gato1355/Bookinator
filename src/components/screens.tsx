@@ -15,6 +15,7 @@ import { EXPERIENCE } from "../i18n/experience.ts";
 import { searchLocal } from "../community/search.ts";
 import { conflictingAnswers, leadingMatchCount } from "../engine/reader.ts";
 import { LibraryHome } from "./LibraryHome.tsx";
+import { CatalogGallery } from "./CatalogGallery.tsx";
 import { LibraryNextStep } from "./LibraryNextStep.tsx";
 import { HACKATHON } from "../i18n/hackathon.ts";
 import { SEA_WINDOW_PHOTO } from "../assets/seaPhoto.ts";
@@ -60,27 +61,7 @@ export function HomeScreen(props: { headingRef: Heading; onStart: (film: boolean
 }
 
 export function CatalogScreen(props: { headingRef: Heading; t: Strings; L: LibraryStrings; lang: Lang }) {
-  return <><Breadcrumb items={[props.L.home, props.L.nav[1]]} /><section className="intro"><h1 ref={props.headingRef} tabIndex={-1}>{props.L.nav[1]}</h1></section><CatalogSection t={props.t} L={props.L} lang={props.lang} /></>;
-}
-
-function CatalogSection({ t, L, lang }: { t: Strings; L: LibraryStrings; lang: Lang }) {
-  const [query, setQuery] = useState("");
-  const E = EXPERIENCE[lang];
-  const books = [...CC.books].sort((a, b) => bookTitles(a, lang).main.localeCompare(bookTitles(b, lang).main, lang));
-  const searchable = books.map((book) => ({ ...book, aliases: [...book.aliases, ...(book.volumes?.map((v) => v.title) ?? [])] }));
-  const ids = query.trim() ? new Set([...searchLocal(searchable, query, "", books.length), ...searchLocal(searchable, "", query, books.length)].map((hit) => hit.book.id)) : null;
-  const shown = ids ? books.filter((book) => ids.has(book.id)) : books;
-  return <section className="section" id="catalog">
-    <SectionHead eyebrow={L.colEyebrow} title={`${ACTIVE_COLLECTION === "classic" ? t.classicShelf : t.researchShelf} · ${t.booksCount(titleCount(CC.catalog))}`} lead={E.catalogLead} />
-    <label className="field field-pill catalog-search"><Icon name="search" /><span className="sr-only">{E.catalogPlaceholder}</span><input id="catalog-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={E.catalogPlaceholder} maxLength={200} /></label>
-    <p className="hint" role="status">{ids ? `${shown.length} / ${books.length}` : E.scope}</p>
-    {shown.length === 0 ? <p>{E.empty}</p> : <ul className="catalog-list">{shown.map((book) => <li key={book.id}>
-      <Icon name="tileStart" size={22} /><div><b>{bookTitles(book, lang).main}</b><p className="hint">{authorLine(book)}</p>
-      {book.volumes && <details><summary>{L.seriesVolumes} · {book.volumes.length}</summary><ol>{book.volumes.map((volume) => <li key={volume.id}>{volume.title}</li>)}</ol></details>}</div>
-      <a className="catalog-record" href={catalogLinks(book, LINK_OPTIONS)[0].url} target="_blank" rel="noopener noreferrer"><span className="sr-only">{bookTitles(book, lang).main}: </span>{E.openRecord} ↗</a>
-    </li>)}</ul>}
-    <a className="challenge-link" href={demoHref()}>{HACKATHON[lang].challengeLink} <Icon name="arrowRightSm" size={16} /></a>
-  </section>;
+  return <><Breadcrumb items={[props.L.home, props.L.nav[1]]} /><section className="intro"><h1 ref={props.headingRef} tabIndex={-1}>{props.L.nav[1]}</h1></section><CatalogGallery t={props.t} L={props.L} lang={props.lang} /></>;
 }
 
 function ChallengeHomeScreen({ headingRef, onStart, t, L, lang }: { headingRef: Heading; onStart: (film: boolean) => void; t: Strings; L: LibraryStrings; lang: Lang }) {

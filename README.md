@@ -291,10 +291,23 @@ The interface follows the design canvas *북키네이터 (Bookinator) 프론트�
 each question in a speech bubble under a hanging "Question N" sign, and the five answers are cloud buttons
 floating on the sea (keys 1–5). Korean and English (`src/i18n/`, Korean question wording keyed by the English
 text), PC layout from 900 px and a phone layout below it. Guesses hang from a rope as a book card with a generated
-cover (no cover images: their rights are not established). After a miss, "Which book was it?" searches the shelf
+cover. The current catalog cover sources and fallbacks are described below. After a miss, "Which book was it?" searches the shelf
 for a similar book and, when Supabase is configured, lets the reader add the book and — only if they tick the
 box — send their answers (`src/components/Contribute.tsx`, design: `docs/community/DESIGN.md`). Everything is CSS
 and inline SVG; animation stops under `prefers-reduced-motion`.
+
+The current Sea Library **Catalog** page uses book-shaped tiles with Open Library cover images,
+title-card fallbacks, title/author search, series volume lists and 20-item progressive loading. The
+library home, navigation and Unsplash imagery are preserved. Cover metadata lives separately from
+the game labels in `src/data/catalog-covers.json`; no cover search runs while browsing. To refresh it:
+
+```bash
+python3 scripts/catalog_covers.py --cache /tmp/bookinator-cover-lookups.json
+```
+
+The refresh uses stored work IDs when available, otherwise requires an exact normalized title/alias
+and sole author match. Series retain title cards. Images stay hosted by Open Library and may show a
+different edition; failed images fall back to a title card. Cover identity checks run in `npm run verify`.
 
 ## ChatGPT's research source code
 
@@ -309,4 +322,4 @@ Its large data directories are not committed; see the research catalog section a
 - "Source-checked" means an AI assistant read the cited page; treat it as a strong first pass, not review.
 - Simulations are stress scenarios, not human behavior.
 - `q56` (short novel) stays inactive until "short" is defined. Adaptation-sensitive flags are a judgment call.
-- Not built, per the brief: accounts, online learning, vector search, live LLM, covers, related books.
+- Not built, per the brief: accounts, online learning, vector search, live LLM, cover uploads, related books.
