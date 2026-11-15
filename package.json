@@ -23,7 +23,8 @@
     "dev:classic": "vite --mode classic",
     "test:research": "node scripts/py.mjs -m unittest discover -s research/chatgpt_source/scripts -p \"test_*.py\" && node scripts/py.mjs -m unittest discover -s research/chatgpt_source/core_tools -p \"test_*.py\" && node research/chatgpt_source/five_book_demo/test-engine.cjs",
     "test:db": "tsx --test \"tests/db/*.test.ts\"",
-    "community": "tsx scripts/community.ts"
+    "community": "tsx scripts/community.ts",
+    "library:index": "tsx scripts/build_library_index.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

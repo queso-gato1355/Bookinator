@@ -169,6 +169,15 @@ title/alias + author), merges duplicates (same direction → stronger, opposite 
 before the shortlist); seeded question variety (`questionSpread`/`questionTopK`, seed per UI game in
 `session.options.seed`; no seed = fixed order, which the engine gate uses). All in `src/engine/config.ts`.
 
+### Library pages (fictional "Sea Library" on Pohang's Yeongildae beach)
+
+Hash routes (`src/router.ts`): `#/catalog` (505 novels from the research pool + classic shelf, 24 per page, tag/status
+filters, generated covers — no cover images), `#/book/<id>` (own page: Wikipedia/Open Library story, Unsplash mood
+photo, label-derived mood words and facts), `#/leaderboard`, `#/programs`, `#/guide`, `#/about`. Data:
+`src/data/library_index.json` from `npm run library:index` (re-run after the catalogs change); tags are derived from
+labels, ranks are goodbooks-10k popularity. Library wording/content: `src/i18n/pages.ts`, always marked fictional.
+Unsplash results are cached for every visitor in `public.photo_cache` by the `book-image` Edge Function (demo key: 50/h).
+
 ## Known open items (not errors — need people or keys)
 
 - Fixture: 171/589 labels AI-checked against cited sources; 414 unchecked; **no human review**.

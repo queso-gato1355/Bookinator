@@ -2,6 +2,7 @@
 // Footer, Button, Answer, Book Card, Leaderboard Row and Image / Unsplash. Icons are the SVGs
 // exported from the design file (src/assets/icons), used as-is.
 import { useEffect, useState, type ButtonHTMLAttributes, type ReactNode } from "react";
+import { href, type Page } from "../router.ts";
 import arrowLeft from "../assets/icons/arrow-left.svg";
 import arrowRight from "../assets/icons/arrow-right.svg";
 import arrowRightSm from "../assets/icons/arrow-right-sm.svg";
@@ -87,8 +88,10 @@ export function Button({ variant = "primary", arrow = true, checkMark = false, h
     </>
   );
   if (href) {
+    // In-app hash links open in place; anything else opens in a new tab.
+    const external = !href.startsWith("#");
     return (
-      <a className={cls} href={href} target="_blank" rel="noopener noreferrer">
+      <a className={cls} href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
         {body}
       </a>
     );
@@ -225,8 +228,14 @@ interface HeaderProps {
   setLang: (l: Lang) => void;
   hours: string;
   onHome: () => void;
-  onStart: () => void;
+  /** The page being shown, for aria-current in the menus. */
+  active: Page;
 }
+
+/** Main menu: label index in L.nav → page. */
+const NAV_PAGES: Page[] = ["home", "catalog", "leaderboard", "programs", "guide", "about"];
+/** Footer links, by column and row (row 0 is the column title). */
+const FOOTER_PAGES: Page[][] = [["home", "catalog", "leaderboard"], ["about", "programs", "guide"], ["guide", "home", "guide"]];
 
 function Logo({ L, onHome, size }: { L: LibraryStrings; onHome: () => void; size: number }) {
   return (
@@ -255,26 +264,37 @@ function Soon({ label, hint }: { label: string; hint: string }) {
   return <span className="soon" title={hint}>{label}</span>;
 }
 
-export function Header({ L, lang, setLang, hours, onHome, onStart }: HeaderProps) {
+function NavLinks({ L, active }: { L: LibraryStrings; active: Page }) {
+  return (
+    <>
+      {L.nav.map((x, i) => (
+        <a key={x} href={href(NAV_PAGES[i])} aria-current={NAV_PAGES[i] === active || (active === "book" && NAV_PAGES[i] === "catalog") ? "page" : undefined}>{x}</a>
+      ))}
+    </>
+  );
+}
+
+export function Header({ L, lang, setLang, hours, onHome, active }: HeaderProps) {
   return (
     <header className="header desktop-only">
       <div className="utility">
         <p>{hours}</p>
         <div className="utility-links">
-          {L.utilLinks.map((x) => <Soon key={x} label={x} hint={L.comingSoon} />)}
+          <Soon label={L.utilLinks[0]} hint={L.comingSoon} />
+          <a href={href("guide")}>{L.utilLinks[1]}</a>
+          <a href={href("guide")}>{L.utilLinks[2]}</a>
           <LangSwitch L={L} lang={lang} setLang={setLang} />
         </div>
       </div>
       <div className="mainbar">
         <Logo L={L} onHome={onHome} size={24} />
         <nav className="nav" aria-label="Bookinator">
-          <button type="button" onClick={onStart}>{L.nav[0]}</button>
-          {L.nav.slice(1).map((x) => <Soon key={x} label={x} hint={L.comingSoon} />)}
+          <NavLinks L={L} active={active} />
         </nav>
         <div className="header-actions">
-          <button type="button" className="icon-btn" aria-label={L.search} title={L.comingSoon} disabled>
+          <a className="icon-btn" href={href("catalog")} aria-label={L.search}>
             <Icon name="search" size={20} />
-          </button>
+          </a>
           <Button variant="secondary" arrow={false} disabled title={L.comingSoon}>{L.login}</Button>
         </div>
       </div>
@@ -282,19 +302,28 @@ export function Header({ L, lang, setLang, hours, onHome, onStart }: HeaderProps
   );
 }
 
-export function MobileHeader({ L, lang, setLang, onHome }: HeaderProps) {
+export function MobileHeader({ L, lang, setLang, onHome, active }: HeaderProps) {
+  const [open, setOpen] = useState(false);
+  useEffect(() => setOpen(false), [active]);
   return (
     <header className="mobile-header mobile-only">
-      <Logo L={L} onHome={onHome} size={20} />
-      <div className="header-actions">
-        <LangSwitch L={L} lang={lang} setLang={setLang} />
-        <button type="button" className="icon-btn" aria-label={L.search} title={L.comingSoon} disabled>
-          <Icon name="search" size={20} />
-        </button>
-        <button type="button" className="icon-btn" aria-label={L.menu} title={L.comingSoon} disabled>
-          <Icon name="menu" size={20} />
-        </button>
+      <div className="mobile-header-bar">
+        <Logo L={L} onHome={onHome} size={20} />
+        <div className="header-actions">
+          <LangSwitch L={L} lang={lang} setLang={setLang} />
+          <a className="icon-btn" href={href("catalog")} aria-label={L.search}>
+            <Icon name="search" size={20} />
+          </a>
+          <button type="button" className="icon-btn" aria-label={L.menu} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((o) => !o)}>
+            <Icon name="menu" size={20} />
+          </button>
+        </div>
       </div>
+      {open && (
+        <nav id="mobile-menu" className="mobile-menu" aria-label="Bookinator">
+          <NavLinks L={L} active={active} />
+        </nav>
+      )}
     </header>
   );
 }
@@ -310,9 +339,9 @@ export function Footer({ L, address, children }: { L: LibraryStrings; address: s
           <p>{address}</p>
         </div>
         <div className="footer-cols">
-          {L.footerCols.map((col) => (
+          {L.footerCols.map((col, c) => (
             <ul key={col[0]}>
-              {col.map((x, i) => <li key={x} className={i === 0 ? "footer-col-head" : undefined}>{x}</li>)}
+              {col.map((x, i) => (i === 0 ? <li key={x} className="footer-col-head">{x}</li> : <li key={x}><a href={href(FOOTER_PAGES[c][i - 1])}>{x}</a></li>))}
             </ul>
           ))}
         </div>
@@ -324,6 +353,19 @@ export function Footer({ L, address, children }: { L: LibraryStrings; address: s
         <p>{L.legal}</p>
       </div>
     </footer>
+  );
+}
+
+/** A plain generated "cover" (no cover images, D7): a colour from the title, the title and author set in type. */
+export function GeneratedCover({ title, author, seed, large = false }: { title: string; author: string; seed: string; large?: boolean }) {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+  return (
+    <span className={`gen-cover ${large ? "gen-cover-lg" : ""}`} style={{ ["--hue" as string]: (h % 360).toString() }} aria-hidden="true">
+      <span className="gen-cover-author">{author}</span>
+      <span className="gen-cover-title">{title}</span>
+      <span className="gen-cover-mark"><Icon name="waves" size={large ? 24 : 16} /></span>
+    </span>
   );
 }
 

@@ -11,6 +11,9 @@ import { streakWarning, type Action, type Session, type SessionState } from "../
 import { CC, CONFIG, LINK_OPTIONS } from "../game.ts";
 import { ANSWER_TEXT, bookTitles, questionText, type Lang, type Strings } from "../i18n/index.ts";
 import { LIBRARY, type LibraryStrings } from "../i18n/library.ts";
+import { FAMOUS_BOOKS } from "../data/library.ts";
+import { href, navigate } from "../router.ts";
+import { FamousBooks } from "./pages.tsx";
 import { DESIGN_MOCK, type LeaderboardEntry } from "../mock/design.ts";
 import { Availability } from "./Availability.tsx";
 import { ShareAnswers } from "./Contribute.tsx";
@@ -52,13 +55,14 @@ function CollectionCard({ item, query, L }: { item: (typeof DESIGN_MOCK)["ko"]["
   const photo = useLoaded(() => fetchPhoto(query), query);
   return (
     <BookCard title={item.title} author={item.author} description={item.description} badge={L.colBadge} genre={item.genre}
-      photo={photo} imageCaption={item.imageCaption} actionLabel={L.colMore} saveLabel={L.saveShelf} soonLabel={L.comingSoon} />
+      photo={photo} imageCaption={item.imageCaption} actionLabel={L.colMore} saveLabel={L.saveShelf} soonLabel={L.comingSoon}
+      onAction={() => navigate(href("catalog", { params: { q: item.title } }))} />
   );
 }
 
 const TILE_ICONS: IconName[] = ["tileStart", "tileSearch", "tileRequest", "tileCard", "tileGuide"];
 
-function Leaderboard({ L, lang }: { L: LibraryStrings; lang: Lang }) {
+export function LeaderboardSection({ L, lang }: { L: LibraryStrings; lang: Lang }) {
   const version = CC.catalog.catalog_version;
   const live = useLoaded<PopularBook[]>(() => fetchPopular(version, 8), version);
   const liveEntries: LeaderboardEntry[] = (live ?? []).flatMap((r, i) => {
@@ -107,7 +111,7 @@ function Leaderboard({ L, lang }: { L: LibraryStrings; lang: Lang }) {
         </ol>
       </div>
       <div className="section-foot">
-        <Button variant="secondary" disabled title={L.comingSoon}>{L.lbAll}</Button>
+        <Button variant="secondary" href={href("leaderboard")} >{L.lbAll}</Button>
         {!isLive && <p className="footnote">{L.lbSample}</p>}
       </div>
     </section>
@@ -115,7 +119,7 @@ function Leaderboard({ L, lang }: { L: LibraryStrings; lang: Lang }) {
 }
 
 /** Most-borrowed literature from Data4Library; hidden until that API answers. */
-function LibraryLoans({ t }: { t: Strings }) {
+export function LibraryLoans({ t }: { t: Strings }) {
   const rows = useLoaded<LibraryLoan[]>(() => fetchLibraryPopular(7), "library-popular");
   if (!rows || rows.length === 0) return null;
   return (
@@ -159,15 +163,17 @@ export function HomeScreen({ headingRef, onStart, t, L, lang }: { headingRef: He
               <span className="tile-text"><b>{title}</b><span>{sub}</span></span>
             </>
           );
-          return i === 0 ? (
-            <button key={title} type="button" className="tile" onClick={start}>{body}</button>
+          // 0 start · 1 catalog · 2 "tell us a book" (it happens after a miss, so it starts a game) · 3 card · 4 visit
+          const to = [null, href("catalog"), null, href("guide"), href("guide")][i];
+          return to ? (
+            <a key={title} className="tile" href={to}>{body}</a>
           ) : (
-            <div key={title} className="tile tile-soon" title={L.comingSoon}>{body}</div>
+            <button key={title} type="button" className="tile" onClick={start}>{body}</button>
           );
         })}
       </section>
 
-      <Leaderboard L={L} lang={lang} />
+      <LeaderboardSection L={L} lang={lang} />
       <LibraryLoans t={t} />
 
       <section className="section">
@@ -185,7 +191,7 @@ export function HomeScreen({ headingRef, onStart, t, L, lang }: { headingRef: He
 
       <section className="section section-tight">
         <SectionHead eyebrow={L.colEyebrow} title={L.colTitle}>
-          <Button variant="ghost" disabled title={L.comingSoon}>{L.colAll}</Button>
+          <Button variant="ghost" href={href("catalog", { params: { tag: "sea" } })} >{L.colAll}</Button>
         </SectionHead>
         <div className="card-grid">
           {mock.collection.map((c, i) => (
@@ -218,7 +224,7 @@ export function HomeScreen({ headingRef, onStart, t, L, lang }: { headingRef: He
 
       <section className="section section-linen">
         <SectionHead eyebrow={L.progEyebrow} title={L.progTitle}>
-          <Button variant="ghost" disabled title={L.comingSoon}>{L.progAll}</Button>
+          <Button variant="ghost" href={href("programs")} >{L.progAll}</Button>
         </SectionHead>
         <div className="card-grid">
           {mock.programs.map((p) => (
@@ -234,6 +240,8 @@ export function HomeScreen({ headingRef, onStart, t, L, lang }: { headingRef: He
           ))}
         </div>
       </section>
+
+      <FamousBooks books={FAMOUS_BOOKS} L={L} lang={lang} />
     </>
   );
 }

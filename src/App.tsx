@@ -9,6 +9,8 @@ import { DESIGN_MOCK } from "./mock/design.ts";
 import { AddBookScreen } from "./components/Contribute.tsx";
 import { BookScreen, HomeScreen, QuestionScreen, SimilarScreen } from "./components/screens.tsx";
 import { Footer, Header, MobileHeader } from "./components/ui.tsx";
+import { AboutPage, BookPage, CatalogPage, GuidePage, LeaderboardPage, ProgramsPage } from "./components/pages.tsx";
+import { href, navigate, useRoute } from "./router.ts";
 
 function safeDerive(session: Session) {
   try {
@@ -29,6 +31,8 @@ export default function App() {
   });
   const state = useMemo(() => (session ? safeDerive(session) : null), [session]);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const route = useRoute();
+  const onPage = route.page !== "home";
 
   useEffect(() => saveSession(session), [session]);
 
@@ -53,7 +57,7 @@ export default function App() {
 
   // Move focus to the new heading whenever the screen or question changes (screen readers + keyboard).
   const kind = state ? state.action.kind : "start";
-  const screenKey = `${kind}:${session?.events.length ?? 0}`;
+  const screenKey = onPage ? `page:${route.page}:${route.id ?? ""}:${route.params}` : `${kind}:${session?.events.length ?? 0}`;
   useEffect(() => {
     headingRef.current?.focus({ preventScroll: true });
     window.scrollTo({ top: 0 });
@@ -61,7 +65,7 @@ export default function App() {
 
   // Global keyboard shortcuts: 1–5 answers, U undo, Y/N on a guess.
   useEffect(() => {
-    if (!state) return;
+    if (!state || onPage) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
       const target = e.target as HTMLElement | null;
@@ -81,10 +85,20 @@ export default function App() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [state, session, dispatch, onUndo]);
+  }, [state, session, dispatch, onUndo, onPage]);
 
   let screen;
-  if (!session || !state) {
+  const pageProps = { headingRef, t, L, lang };
+  if (onPage) {
+    switch (route.page) {
+      case "catalog": screen = <CatalogPage key={String(route.params)} {...pageProps} route={route} />; break;
+      case "book": screen = <BookPage key={route.id ?? ""} {...pageProps} route={route} onPlay={() => { onStart(false); navigate(href("home")); }} />; break;
+      case "leaderboard": screen = <LeaderboardPage {...pageProps} />; break;
+      case "programs": screen = <ProgramsPage {...pageProps} />; break;
+      case "guide": screen = <GuidePage {...pageProps} />; break;
+      case "about": screen = <AboutPage {...pageProps} />; break;
+    }
+  } else if (!session || !state) {
     screen = <HomeScreen headingRef={headingRef} onStart={onStart} t={t} L={L} lang={lang} />;
   } else {
     const a = state.action;
@@ -121,10 +135,10 @@ export default function App() {
 
   const notice =
     ACTIVE_CATALOG.data_status === "production" ? null : ACTIVE_CATALOG.data_status === "machine_labelled_unreviewed" ? t.unreviewedData : t.devData;
-  const header = { L, lang, setLang, hours: mock.hours, onHome: onRestart, onStart: () => onStart(false) };
+  const header = { L, lang, setLang, hours: mock.hours, active: route.page, onHome: () => { onRestart(); navigate(href("home")); } };
 
   return (
-    <div className={`app screen-${kind}`}>
+    <div className={`app screen-${onPage ? `page-${route.page}` : kind}`}>
       <Header {...header} />
       <MobileHeader {...header} />
       <main aria-live="polite">{screen}</main>
