@@ -1,0 +1,1891 @@
+{
+  "provider": "Open Library",
+  "checkedOn": "2026-11-15",
+  "documentation": "https://openlibrary.org/dev/docs/api/search",
+  "books": {
+    "fx-harry-potter-1": {
+      "coverId": 15155833,
+      "workUrl": "https://openlibrary.org/works/OL82563W",
+      "title": "Harry Potter and the Philosopher's Stone",
+      "author": "J. K. Rowling"
+    },
+    "fx-pride-and-prejudice": {
+      "coverId": 14348537,
+      "workUrl": "https://openlibrary.org/works/OL66554W",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen"
+    },
+    "fx-nineteen-eighty-four": {
+      "coverId": 9267242,
+      "workUrl": "https://openlibrary.org/works/OL1168083W",
+      "title": "Nineteen Eighty-Four",
+      "author": "George Orwell"
+    },
+    "fx-hunger-games-1": {
+      "coverId": 12646537,
+      "workUrl": "https://openlibrary.org/works/OL5735363W",
+      "title": "The Hunger Games",
+      "author": "Suzanne Collins"
+    },
+    "fx-murder-orient-express": {
+      "coverId": 11100465,
+      "workUrl": "https://openlibrary.org/works/OL471576W",
+      "title": "Murder on the Orient Express",
+      "author": "Agatha Christie"
+    },
+    "fx-little-prince": {
+      "coverId": 10708272,
+      "workUrl": "https://openlibrary.org/works/OL10263W",
+      "title": "The Little Prince",
+      "author": "Antoine de Saint-Exupéry"
+    },
+    "fx-frankenstein": {
+      "coverId": 12356249,
+      "workUrl": "https://openlibrary.org/works/OL450063W",
+      "title": "Frankenstein; or, The Modern Prometheus",
+      "author": "Mary Shelley"
+    },
+    "fx-the-vegetarian": {
+      "coverId": 7412625,
+      "workUrl": "https://openlibrary.org/works/OL17334243W",
+      "title": "The Vegetarian",
+      "author": "Han Kang"
+    },
+    "fx-norwegian-wood": {
+      "coverId": 2237620,
+      "workUrl": "https://openlibrary.org/works/OL2625457W",
+      "title": "Norwegian Wood",
+      "author": "Haruki Murakami"
+    },
+    "fx-the-hobbit": {
+      "coverId": 14627509,
+      "workUrl": "https://openlibrary.org/works/OL27482W",
+      "title": "The Hobbit",
+      "author": "J. R. R. Tolkien"
+    },
+    "cmu:enwiki:73408": {
+      "coverId": 14351077,
+      "workUrl": "https://openlibrary.org/works/OL3140822W",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee"
+    },
+    "cmu:enwiki:76033": {
+      "coverId": 10590366,
+      "workUrl": "https://openlibrary.org/works/OL468431W",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald"
+    },
+    "cmu:enwiki:24162": {
+      "coverId": 14348537,
+      "workUrl": "https://openlibrary.org/works/OL66554W",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen"
+    },
+    "cmu:enwiki:23454753": {
+      "coverId": 9267242,
+      "workUrl": "https://openlibrary.org/works/OL1168083W",
+      "title": "Nineteen Eighty-Four",
+      "author": "George Orwell"
+    },
+    "cmu:enwiki:620": {
+      "coverId": 11261770,
+      "workUrl": "https://openlibrary.org/works/OL1168007W",
+      "title": "Animal Farm",
+      "author": "George Orwell"
+    },
+    "cmu:enwiki:1398951": {
+      "coverId": 14846827,
+      "workUrl": "https://openlibrary.org/works/OL5781992W",
+      "title": "The Kite Runner",
+      "author": "Khaled Hosseini"
+    },
+    "cmu:enwiki:31584": {
+      "coverId": 8684447,
+      "workUrl": "https://openlibrary.org/works/OL455327W",
+      "title": "Lord of the Flies",
+      "author": "William Golding"
+    },
+    "cmu:enwiki:62120": {
+      "coverId": 14319003,
+      "workUrl": "https://openlibrary.org/works/OL23204W",
+      "title": "Of Mice and Men",
+      "author": "John Steinbeck"
+    },
+    "cmu:enwiki:901398": {
+      "coverId": 8231782,
+      "workUrl": "https://openlibrary.org/works/OL1856675W",
+      "title": "Memoirs of a Geisha",
+      "author": "Arthur Golden"
+    },
+    "cmu:enwiki:8595912": {
+      "coverId": 8775559,
+      "workUrl": "https://openlibrary.org/works/OL29983W",
+      "title": "Little Women",
+      "author": "Louisa May Alcott"
+    },
+    "cmu:enwiki:55438": {
+      "coverId": 8235363,
+      "workUrl": "https://openlibrary.org/works/OL1095427W",
+      "title": "Jane Eyre",
+      "author": "Charlotte Brontë"
+    },
+    "cmu:enwiki:302301": {
+      "coverId": 8461797,
+      "workUrl": "https://openlibrary.org/works/OL483391W",
+      "title": "Charlotte's Web",
+      "author": "E. B. White"
+    },
+    "cmu:enwiki:714218": {
+      "coverId": 7382153,
+      "workUrl": "https://openlibrary.org/works/OL54797W",
+      "title": "The Notebook",
+      "author": "Nicholas Sparks"
+    },
+    "cmu:enwiki:36681": {
+      "coverId": 8231823,
+      "workUrl": "https://openlibrary.org/works/OL64365W",
+      "title": "Brave New World",
+      "author": "Aldous Huxley"
+    },
+    "cmu:enwiki:419078": {
+      "coverId": 12840573,
+      "workUrl": "https://openlibrary.org/works/OL2827199W",
+      "title": "Life of Pi",
+      "author": "Yann Martel"
+    },
+    "cmu:enwiki:55435": {
+      "coverId": 12818862,
+      "workUrl": "https://openlibrary.org/works/OL21177W",
+      "title": "Wuthering Heights",
+      "author": "Emily Brontë"
+    },
+    "cmu:enwiki:2162569": {
+      "coverId": 14315052,
+      "workUrl": "https://openlibrary.org/works/OL875437W",
+      "title": "The Perks of Being a Wallflower",
+      "author": "Stephen Chbosky"
+    },
+    "cmu:enwiki:12995": {
+      "coverId": 14817133,
+      "workUrl": "https://openlibrary.org/works/OL267933W",
+      "title": "Gone With the Wind",
+      "author": "Margaret Mitchell"
+    },
+    "cmu:enwiki:890626": {
+      "coverId": 7890719,
+      "workUrl": "https://openlibrary.org/works/OL2965102W",
+      "title": "The Curious Incident of the Dog in the Night-Time",
+      "author": "Mark Haddon"
+    },
+    "cmu:enwiki:2449650": {
+      "coverId": 12643437,
+      "workUrl": "https://openlibrary.org/works/OL891923W",
+      "title": "My Sister's Keeper",
+      "author": "Jodi Picoult"
+    },
+    "cmu:enwiki:10433866": {
+      "coverId": 8579790,
+      "workUrl": "https://openlibrary.org/works/OL5782000W",
+      "title": "A Thousand Splendid Suns",
+      "author": "Khaled Hosseini"
+    },
+    "cmu:enwiki:29999": {
+      "coverId": 12376585,
+      "workUrl": "https://openlibrary.org/works/OL81633W",
+      "title": "The Shining",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:13116455": {
+      "coverId": 3366731,
+      "workUrl": "https://openlibrary.org/works/OL5720033W",
+      "title": "The Host",
+      "author": "Stephenie Meyer"
+    },
+    "cmu:enwiki:959366": {
+      "coverId": 19797,
+      "workUrl": "https://openlibrary.org/works/OL116250W",
+      "title": "Holes",
+      "author": "Louis Sachar"
+    },
+    "cmu:enwiki:2029175": {
+      "coverId": 9273734,
+      "workUrl": "https://openlibrary.org/works/OL4720160W",
+      "title": "The Time Traveler's Wife",
+      "author": "Audrey Niffenegger"
+    },
+    "cmu:enwiki:27490": {
+      "coverId": 9278292,
+      "workUrl": "https://openlibrary.org/works/OL66562W",
+      "title": "Sense and Sensibility",
+      "author": "Jane Austen"
+    },
+    "cmu:enwiki:1937988": {
+      "coverId": 528271,
+      "workUrl": "https://openlibrary.org/works/OL5825377W",
+      "title": "The devil wears Prada",
+      "author": "Lauren Weisberger"
+    },
+    "cmu:enwiki:410873": {
+      "coverId": 12622062,
+      "workUrl": "https://openlibrary.org/works/OL69612W",
+      "title": "The Secret Garden",
+      "author": "Frances Hodgson Burnett"
+    },
+    "cmu:enwiki:3433040": {
+      "coverId": 13301713,
+      "workUrl": "https://openlibrary.org/works/OL8193465W",
+      "title": "A Tale of Two Cities",
+      "author": "Charles Dickens"
+    },
+    "cmu:enwiki:3681524": {
+      "coverId": 9284881,
+      "workUrl": "https://openlibrary.org/works/OL486967W",
+      "title": "The Princess Bride",
+      "author": "William Goldman"
+    },
+    "cmu:enwiki:7923": {
+      "coverId": 12216503,
+      "workUrl": "https://openlibrary.org/works/OL85892W",
+      "title": "Dracula",
+      "author": "Bram Stoker"
+    },
+    "cmu:enwiki:562222": {
+      "coverId": 8709146,
+      "workUrl": "https://openlibrary.org/works/OL41495W",
+      "title": "A Wrinkle in Time",
+      "author": "Madeleine L'Engle"
+    },
+    "cmu:enwiki:34269647": {
+      "coverId": 14416577,
+      "workUrl": "https://openlibrary.org/works/OL16151508W",
+      "title": "Miss Peregrine's Home for Peculiar Children",
+      "author": "Ransom Riggs"
+    },
+    "cmu:enwiki:165026": {
+      "coverId": 8231851,
+      "workUrl": "https://openlibrary.org/works/OL675783W",
+      "title": "The Handmaid's Tale",
+      "author": "Margaret Atwood"
+    },
+    "cmu:enwiki:31342": {
+      "coverId": 14314858,
+      "workUrl": "https://openlibrary.org/works/OL8193416W",
+      "title": "The Picture of Dorian Gray",
+      "author": "Oscar Wilde"
+    },
+    "cmu:enwiki:10951": {
+      "coverId": 12993656,
+      "workUrl": "https://openlibrary.org/works/OL103123W",
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury"
+    },
+    "cmu:enwiki:55469": {
+      "coverId": 6468653,
+      "workUrl": "https://openlibrary.org/works/OL276798W",
+      "title": "Catch-22",
+      "author": "Joseph Heller"
+    },
+    "cmu:enwiki:19918431": {
+      "coverId": 229771,
+      "workUrl": "https://openlibrary.org/works/OL54813W",
+      "title": "A walk to remember",
+      "author": "Nicholas Sparks"
+    },
+    "cmu:enwiki:161502": {
+      "coverId": 463307,
+      "workUrl": "https://openlibrary.org/works/OL63073W",
+      "title": "The Old Man and the Sea",
+      "author": "Ernest Hemingway"
+    },
+    "cmu:enwiki:699430": {
+      "coverId": 7350925,
+      "workUrl": "https://openlibrary.org/works/OL17113464W",
+      "title": "The Joy Luck Club",
+      "author": "Amy Tan"
+    },
+    "cmu:enwiki:61489": {
+      "coverId": 12721865,
+      "workUrl": "https://openlibrary.org/works/OL1063588W",
+      "title": "Les Misérables",
+      "author": "Victor Hugo"
+    },
+    "cmu:enwiki:28755850": {
+      "coverId": 8364817,
+      "workUrl": "https://openlibrary.org/works/OL15212619W",
+      "title": "Room",
+      "author": "Emma Donoghue"
+    },
+    "cmu:enwiki:7402039": {
+      "coverId": 198120,
+      "workUrl": "https://openlibrary.org/works/OL40873W",
+      "title": "The Road",
+      "author": "Cormac McCarthy"
+    },
+    "cmu:enwiki:28411923": {
+      "coverId": 6300478,
+      "workUrl": "https://openlibrary.org/works/OL14932974W",
+      "title": "If I Stay",
+      "author": "Gayle Forman"
+    },
+    "cmu:enwiki:7911644": {
+      "coverId": 8373699,
+      "workUrl": "https://openlibrary.org/works/OL1921530W",
+      "title": "The Memory Keeper's Daughter",
+      "author": "Kim Edwards"
+    },
+    "cmu:enwiki:2531453": {
+      "coverId": 9272688,
+      "workUrl": "https://openlibrary.org/works/OL2944469W",
+      "title": "One Flew Over the Cuckoo's Nest",
+      "author": "Ken Kesey"
+    },
+    "cmu:enwiki:31879966": {
+      "coverId": 6582736,
+      "workUrl": "https://openlibrary.org/works/OL15370343W",
+      "title": "Clockwork Angel",
+      "author": "Cassandra Clare"
+    },
+    "cmu:enwiki:654705": {
+      "coverId": 15185412,
+      "workUrl": "https://openlibrary.org/works/OL43108828W",
+      "title": "One Hundred Years of Solitude",
+      "author": "Gabriel Garcia Marquez"
+    },
+    "cmu:enwiki:889073": {
+      "coverId": 12367196,
+      "workUrl": "https://openlibrary.org/works/OL3951520W",
+      "title": "Middlesex",
+      "author": "Jeffrey Eugenides"
+    },
+    "cmu:enwiki:71416": {
+      "coverId": 11481354,
+      "workUrl": "https://openlibrary.org/works/OL893414W",
+      "title": "Dune",
+      "author": "Frank Herbert"
+    },
+    "cmu:enwiki:63750": {
+      "coverId": 14627564,
+      "workUrl": "https://openlibrary.org/works/OL27479W",
+      "title": "The Two Towers",
+      "author": "J.R.R. Tolkien"
+    },
+    "cmu:enwiki:18451040": {
+      "coverId": 5731773,
+      "workUrl": "https://openlibrary.org/works/OL11822690W",
+      "title": "Paper Towns",
+      "author": "John Green"
+    },
+    "cmu:enwiki:1022221": {
+      "coverId": 14553479,
+      "workUrl": "https://openlibrary.org/works/OL76835W",
+      "title": "Deception Point",
+      "author": "Dan Brown"
+    },
+    "cmu:enwiki:57766": {
+      "coverId": 12459564,
+      "workUrl": "https://openlibrary.org/works/OL45790W",
+      "title": "Charlie and the Chocolate Factory",
+      "author": "Roald Dahl"
+    },
+    "cmu:enwiki:1196343": {
+      "coverId": 12553870,
+      "workUrl": "https://openlibrary.org/works/OL1822312W",
+      "title": "The Five People You Meet in Heaven",
+      "author": "Mitch Albom"
+    },
+    "cmu:enwiki:5326809": {
+      "coverId": 12882940,
+      "workUrl": "https://openlibrary.org/works/OL46881W",
+      "title": "Jurassic Park",
+      "author": "Michael Crichton"
+    },
+    "cmu:enwiki:472089": {
+      "coverId": 12889769,
+      "workUrl": "https://openlibrary.org/works/OL45846W",
+      "title": "Matilda",
+      "author": "Roald Dahl"
+    },
+    "cmu:enwiki:288153": {
+      "coverId": 9255992,
+      "workUrl": "https://openlibrary.org/works/OL81618W",
+      "title": "The Stand",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:843": {
+      "coverId": 14430663,
+      "workUrl": "https://openlibrary.org/works/OL261794W",
+      "title": "A Clockwork Orange",
+      "author": "Anthony Burgess"
+    },
+    "cmu:enwiki:33314889": {
+      "coverId": 8773134,
+      "workUrl": "https://openlibrary.org/works/OL16086747W",
+      "title": "The Night Circus",
+      "author": "Erin Morgenstern"
+    },
+    "cmu:enwiki:3552124": {
+      "coverId": 175302,
+      "workUrl": "https://openlibrary.org/works/OL1868949W",
+      "title": "The Red Tent",
+      "author": "Anita Diamant"
+    },
+    "cmu:enwiki:23817576": {
+      "coverId": 6411538,
+      "workUrl": "https://openlibrary.org/works/OL14873874W",
+      "title": "The last song",
+      "author": "Nicholas Sparks"
+    },
+    "cmu:enwiki:944096": {
+      "coverId": 8396115,
+      "workUrl": "https://openlibrary.org/works/OL76836W",
+      "title": "Digital Fortress",
+      "author": "Dan Brown"
+    },
+    "cmu:enwiki:18949410": {
+      "coverId": 11172296,
+      "workUrl": "https://openlibrary.org/works/OL471565W",
+      "title": "And Then There Were None",
+      "author": "Agatha Christie"
+    },
+    "cmu:enwiki:21796996": {
+      "coverId": 1999158,
+      "workUrl": "https://openlibrary.org/works/OL5724635W",
+      "title": "Something borrowed",
+      "author": "Emily Giffin"
+    },
+    "cmu:enwiki:25572395": {
+      "coverId": 6597605,
+      "workUrl": "https://openlibrary.org/works/OL15299819W",
+      "title": "Fallen",
+      "author": "Lauren Kate"
+    },
+    "cmu:enwiki:73670": {
+      "coverId": 12875748,
+      "workUrl": "https://openlibrary.org/works/OL32466W",
+      "title": "A Christmas Carol",
+      "author": "Charles Dickens"
+    },
+    "cmu:enwiki:29798": {
+      "coverId": 14625765,
+      "workUrl": "https://openlibrary.org/works/OL27448W",
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien"
+    },
+    "cmu:enwiki:871902": {
+      "coverId": 10212689,
+      "workUrl": "https://openlibrary.org/works/OL5725956W",
+      "title": "Artemis Fowl",
+      "author": "Eoin Colfer"
+    },
+    "cmu:enwiki:182128": {
+      "coverId": 8494659,
+      "workUrl": "https://openlibrary.org/works/OL679360W",
+      "title": "American Gods",
+      "author": "Neil Gaiman"
+    },
+    "cmu:enwiki:43168": {
+      "coverId": 8564628,
+      "workUrl": "https://openlibrary.org/works/OL273644W",
+      "title": "The Color Purple",
+      "author": "Alice Walker"
+    },
+    "cmu:enwiki:330523": {
+      "coverId": 6562535,
+      "workUrl": "https://openlibrary.org/works/OL872932W",
+      "title": "Siddhartha",
+      "author": "Hermann Hesse"
+    },
+    "cmu:enwiki:347822": {
+      "coverId": 12824691,
+      "workUrl": "https://openlibrary.org/works/OL66544W",
+      "title": "Persuasion",
+      "author": "Jane Austen"
+    },
+    "cmu:enwiki:23854860": {
+      "coverId": 7890578,
+      "workUrl": "https://openlibrary.org/works/OL18941W",
+      "title": "Fight Club",
+      "author": "Chuck Palahniuk"
+    },
+    "cmu:enwiki:540888": {
+      "coverId": 10857543,
+      "workUrl": "https://openlibrary.org/works/OL509183W",
+      "title": "Speak",
+      "author": "Laurie Halse Anderson"
+    },
+    "cmu:enwiki:67003": {
+      "coverId": 9256043,
+      "workUrl": "https://openlibrary.org/works/OL81626W",
+      "title": "Carrie",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:32903764": {
+      "coverId": 8737626,
+      "workUrl": "https://openlibrary.org/works/OL15936512W",
+      "title": "Ready Player One",
+      "author": "Ernest Cline"
+    },
+    "cmu:enwiki:1890954": {
+      "coverId": 8381043,
+      "workUrl": "https://openlibrary.org/works/OL1855944W",
+      "title": "Atonement",
+      "author": "Ian McEwan"
+    },
+    "cmu:enwiki:891623": {
+      "coverId": 50323,
+      "workUrl": "https://openlibrary.org/works/OL14372W",
+      "title": "Ella Enchanted",
+      "author": "Gail Carson Levine"
+    },
+    "cmu:enwiki:386568": {
+      "coverId": 8259296,
+      "workUrl": "https://openlibrary.org/works/OL81634W",
+      "title": "Misery",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:1804983": {
+      "coverId": 13249599,
+      "workUrl": "https://openlibrary.org/works/OL1846074W",
+      "title": "Number the Stars",
+      "author": "Lois Lowry"
+    },
+    "cmu:enwiki:30976827": {
+      "coverId": 5728115,
+      "workUrl": "https://openlibrary.org/works/OL5842017W",
+      "title": "Dark Places",
+      "author": "Gillian Flynn"
+    },
+    "cmu:enwiki:26683273": {
+      "coverId": 10050085,
+      "workUrl": "https://openlibrary.org/works/OL20784876W",
+      "title": "The Art of Racing in the Rain",
+      "author": "Garth Stein"
+    },
+    "cmu:enwiki:42645": {
+      "coverId": 12715902,
+      "workUrl": "https://openlibrary.org/works/OL23205W",
+      "title": "The Grapes of Wrath",
+      "author": "John Steinbeck"
+    },
+    "cmu:enwiki:161446": {
+      "coverId": 11386937,
+      "workUrl": "https://openlibrary.org/works/OL23166W",
+      "title": "East of Eden",
+      "author": "John Steinbeck"
+    },
+    "cmu:enwiki:17253525": {
+      "coverId": 12947700,
+      "workUrl": "https://openlibrary.org/works/OL515754W",
+      "title": "Flowers for Algernon",
+      "author": "Daniel Keyes"
+    },
+    "cmu:enwiki:10023921": {
+      "coverId": 14559681,
+      "workUrl": "https://openlibrary.org/works/OL2130549W",
+      "title": "An Abundance of Katherines",
+      "author": "John Green"
+    },
+    "cmu:enwiki:10876585": {
+      "coverId": 7099583,
+      "workUrl": "https://openlibrary.org/works/OL679348W",
+      "title": "The Graveyard Book",
+      "author": "Neil Gaiman"
+    },
+    "cmu:enwiki:1779024": {
+      "coverId": 8057301,
+      "workUrl": "https://openlibrary.org/works/OL5738259W",
+      "title": "Extremely Loud and Incredibly Close",
+      "author": "Jonathan Safran Foer"
+    },
+    "cmu:enwiki:1697748": {
+      "coverId": 1047334,
+      "workUrl": "https://openlibrary.org/works/OL59038W",
+      "title": "Never Let Me Go",
+      "author": "Kazuo Ishiguro"
+    },
+    "cmu:enwiki:271590": {
+      "coverId": 8569284,
+      "workUrl": "https://openlibrary.org/works/OL81613W",
+      "title": "It",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:67317": {
+      "coverId": 6450196,
+      "workUrl": "https://openlibrary.org/works/OL2096536W",
+      "title": "Watership Down",
+      "author": "Richard Adams"
+    },
+    "cmu:enwiki:1364178": {
+      "coverId": 14559662,
+      "workUrl": "https://openlibrary.org/works/OL78359W",
+      "title": "A tree grows in Brooklyn",
+      "author": "Betty Smith"
+    },
+    "cmu:enwiki:543142": {
+      "coverId": 10578479,
+      "workUrl": "https://openlibrary.org/works/OL76965W",
+      "title": "The Pelican Brief",
+      "author": "John Grisham"
+    },
+    "cmu:enwiki:5205080": {
+      "coverId": 12720687,
+      "workUrl": "https://openlibrary.org/works/OL5840870W",
+      "title": "The Boy in the Striped Pyjamas",
+      "author": "John Boyne"
+    },
+    "cmu:enwiki:360245": {
+      "coverId": 78741,
+      "workUrl": "https://openlibrary.org/works/OL62979W",
+      "title": "The Sun Also Rises",
+      "author": "Ernest Hemingway"
+    },
+    "cmu:enwiki:1022544": {
+      "coverId": 10518348,
+      "workUrl": "https://openlibrary.org/works/OL23624225W",
+      "title": "Love in the Time of Cholera",
+      "author": "Gabriel García Márquez"
+    },
+    "cmu:enwiki:17271493": {
+      "coverId": 6785165,
+      "workUrl": "https://openlibrary.org/works/OL14927217W",
+      "title": "Snow Flower and the Secret Fan",
+      "author": "Lisa See"
+    },
+    "cmu:enwiki:29834": {
+      "coverId": 9009316,
+      "workUrl": "https://openlibrary.org/works/OL52267W",
+      "title": "The Time Machine",
+      "author": "H. G. Wells"
+    },
+    "cmu:enwiki:894970": {
+      "coverId": 8252454,
+      "workUrl": "https://openlibrary.org/works/OL45809W",
+      "title": "James and the Giant Peach",
+      "author": "Roald Dahl"
+    },
+    "cmu:enwiki:1301931": {
+      "coverId": 7996608,
+      "workUrl": "https://openlibrary.org/works/OL465360W",
+      "title": "Where the Red Fern Grows",
+      "author": "Wilson Rawls"
+    },
+    "cmu:enwiki:10125728": {
+      "coverId": 1008998,
+      "workUrl": "https://openlibrary.org/works/OL679333W",
+      "title": "Neverwhere",
+      "author": "Neil Gaiman"
+    },
+    "cmu:enwiki:167963": {
+      "coverId": 13859660,
+      "workUrl": "https://openlibrary.org/works/OL24034W",
+      "title": "Treasure Island",
+      "author": "Robert Louis Stevenson"
+    },
+    "cmu:enwiki:3608386": {
+      "coverId": 812420,
+      "workUrl": "https://openlibrary.org/works/OL1952158W",
+      "title": "She's come undone",
+      "author": "Wally Lamb"
+    },
+    "cmu:enwiki:31058296": {
+      "coverId": 10713447,
+      "workUrl": "https://openlibrary.org/works/OL16002468W",
+      "title": "11/22/63",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:535144": {
+      "coverId": 12015500,
+      "workUrl": "https://openlibrary.org/works/OL81631W",
+      "title": "Pet Sematary",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:381491": {
+      "coverId": 14895094,
+      "workUrl": "https://openlibrary.org/works/OL31353161W",
+      "title": "The Thorn Birds",
+      "author": "Colleen McCullough"
+    },
+    "cmu:enwiki:11263766": {
+      "coverId": 14376136,
+      "workUrl": "https://openlibrary.org/works/OL8483260W",
+      "title": "Diary of a Wimpy Kid",
+      "author": "Jeff Kinney"
+    },
+    "cmu:enwiki:2152": {
+      "coverId": 15262512,
+      "workUrl": "https://openlibrary.org/works/OL38898913W",
+      "title": "All Quiet on the Western Front",
+      "author": "Erich Maria Remarque"
+    },
+    "cmu:enwiki:54436": {
+      "coverId": 552443,
+      "workUrl": "https://openlibrary.org/works/OL18417W",
+      "title": "The Wonderful Wizard of Oz",
+      "author": "L. Frank Baum"
+    },
+    "cmu:enwiki:3574282": {
+      "coverId": 42828,
+      "workUrl": "https://openlibrary.org/works/OL1952159W",
+      "title": "I Know This Much Is True",
+      "author": "Wally Lamb"
+    },
+    "cmu:enwiki:340909": {
+      "coverId": 34655,
+      "workUrl": "https://openlibrary.org/works/OL65906W",
+      "title": "On The Road",
+      "author": "Jack Kerouac"
+    },
+    "cmu:enwiki:231716": {
+      "coverId": 9176033,
+      "workUrl": "https://openlibrary.org/works/OL45885W",
+      "title": "The BFG",
+      "author": "Roald Dahl"
+    },
+    "cmu:enwiki:180464": {
+      "coverId": 6767765,
+      "workUrl": "https://openlibrary.org/works/OL731663W",
+      "title": "The Fountainhead",
+      "author": "Ayn Rand"
+    },
+    "cmu:enwiki:182433": {
+      "coverId": 8216379,
+      "workUrl": "https://openlibrary.org/works/OL15833328W",
+      "title": "Stardust",
+      "author": "Neil Gaiman"
+    },
+    "cmu:enwiki:3083277": {
+      "coverId": 14860109,
+      "workUrl": "https://openlibrary.org/works/OL77100W",
+      "title": "Stargirl",
+      "author": "Jerry Spinelli"
+    },
+    "cmu:enwiki:876994": {
+      "coverId": 5021868,
+      "workUrl": "https://openlibrary.org/works/OL1503145W",
+      "title": "Island of the Blue Dolphins",
+      "author": "Scott O’Dell"
+    },
+    "cmu:enwiki:10614529": {
+      "coverId": 479431,
+      "workUrl": "https://openlibrary.org/works/OL891945W",
+      "title": "Nineteen Minutes",
+      "author": "Jodi Picoult"
+    },
+    "cmu:enwiki:13881203": {
+      "coverId": 13147028,
+      "workUrl": "https://openlibrary.org/works/OL167189W",
+      "title": "1st to Die",
+      "author": "James Patterson"
+    },
+    "cmu:enwiki:1268726": {
+      "coverId": 8261367,
+      "workUrl": "https://openlibrary.org/works/OL50548W",
+      "title": "Beloved",
+      "author": "Toni Morrison"
+    },
+    "cmu:enwiki:27979753": {
+      "coverId": 11272966,
+      "workUrl": "https://openlibrary.org/works/OL15183119W",
+      "title": "The Red Pyramid",
+      "author": "Rick Riordan"
+    },
+    "cmu:enwiki:5842145": {
+      "coverId": 13396,
+      "workUrl": "https://openlibrary.org/works/OL158041W",
+      "title": "Fear and Loathing in Las Vegas",
+      "author": "Hunter S. Thompson"
+    },
+    "cmu:enwiki:161301": {
+      "coverId": 13300802,
+      "workUrl": "https://openlibrary.org/works/OL8193478W",
+      "title": "Oliver Twist",
+      "author": "Charles Dickens"
+    },
+    "cmu:enwiki:412654": {
+      "coverId": 5414972,
+      "workUrl": "https://openlibrary.org/works/OL14858723W",
+      "title": "A Prayer for Owen Meany",
+      "author": "John Irving"
+    },
+    "cmu:enwiki:358335": {
+      "coverId": 12393037,
+      "workUrl": "https://openlibrary.org/works/OL14942956W",
+      "title": "The Call of the Wild",
+      "author": "Jack London"
+    },
+    "cmu:enwiki:752068": {
+      "coverId": 9322902,
+      "workUrl": "https://openlibrary.org/works/OL76984W",
+      "title": "The Runaway Jury",
+      "author": "John Grisham"
+    },
+    "cmu:enwiki:1225812": {
+      "coverId": 11240448,
+      "workUrl": "https://openlibrary.org/works/OL8125760W",
+      "title": "Hatchet",
+      "author": "Gary Paulsen"
+    },
+    "cmu:enwiki:635510": {
+      "coverId": 12374442,
+      "workUrl": "https://openlibrary.org/works/OL45886W",
+      "title": "The Witches",
+      "author": "Roald Dahl"
+    },
+    "cmu:enwiki:53595": {
+      "coverId": 14630668,
+      "workUrl": "https://openlibrary.org/works/OL59688W",
+      "title": "Stranger in a Strange Land",
+      "author": "Robert A. Heinlein"
+    },
+    "cmu:enwiki:8841014": {
+      "coverId": 475588,
+      "workUrl": "https://openlibrary.org/works/OL8454235W",
+      "title": "The Thirteenth Tale",
+      "author": "Diane Setterfield"
+    },
+    "cmu:enwiki:1137787": {
+      "coverId": 7075051,
+      "workUrl": "https://openlibrary.org/works/OL263273W",
+      "title": "Odd Thomas",
+      "author": "Dean Koontz"
+    },
+    "cmu:enwiki:3345384": {
+      "coverId": 14618737,
+      "workUrl": "https://openlibrary.org/works/OL66530W",
+      "title": "Mansfield Park",
+      "author": "Jane Austen"
+    },
+    "cmu:enwiki:11651402": {
+      "coverId": 1119262,
+      "workUrl": "https://openlibrary.org/works/OL175865W",
+      "title": "Just Listen",
+      "author": "Sarah Dessen"
+    },
+    "cmu:enwiki:224500": {
+      "coverId": 13405534,
+      "workUrl": "https://openlibrary.org/works/OL262496W",
+      "title": "A Study in Scarlet",
+      "author": "Arthur Conan Doyle"
+    },
+    "cmu:enwiki:1164368": {
+      "coverId": 2328315,
+      "workUrl": "https://openlibrary.org/works/OL69630W",
+      "title": "A Little Princess",
+      "author": "Frances Hodgson Burnett"
+    },
+    "cmu:enwiki:217046": {
+      "coverId": 15079464,
+      "workUrl": "https://openlibrary.org/works/OL38438001W",
+      "title": "The three musketeers",
+      "author": "Alexandre Dumas"
+    },
+    "cmu:enwiki:77652": {
+      "coverId": 2560810,
+      "workUrl": "https://openlibrary.org/works/OL63009W",
+      "title": "For Whom the Bell Tolls",
+      "author": "Ernest Hemingway"
+    },
+    "cmu:enwiki:10178524": {
+      "coverId": 6874781,
+      "workUrl": "https://openlibrary.org/works/OL492872W",
+      "title": "The Princess Diaries",
+      "author": "Meg Cabot"
+    },
+    "cmu:enwiki:328689": {
+      "coverId": 14647238,
+      "workUrl": "https://openlibrary.org/works/OL453657W",
+      "title": "The Colour of Magic",
+      "author": "Terry Pratchett"
+    },
+    "cmu:enwiki:2578185": {
+      "coverId": 8345372,
+      "workUrl": "https://openlibrary.org/works/OL5856511W",
+      "title": "The Historian",
+      "author": "Elizabeth Kostova"
+    },
+    "cmu:enwiki:2168301": {
+      "coverId": 1474730,
+      "workUrl": "https://openlibrary.org/works/OL7989979W",
+      "title": "In the Woods",
+      "author": "Tana French"
+    },
+    "cmu:enwiki:61069": {
+      "coverId": 7226599,
+      "workUrl": "https://openlibrary.org/works/OL63072W",
+      "title": "A Farewell to Arms",
+      "author": "Ernest Hemingway"
+    },
+    "cmu:enwiki:4632423": {
+      "coverId": 827781,
+      "workUrl": "https://openlibrary.org/works/OL1844035W",
+      "title": "Cold Mountain",
+      "author": "Charles Frazier"
+    },
+    "cmu:enwiki:2530403": {
+      "coverId": 540720,
+      "workUrl": "https://openlibrary.org/works/OL54811W",
+      "title": "Message in a bottle",
+      "author": "Nicholas Sparks"
+    },
+    "cmu:enwiki:21725": {
+      "coverId": 283860,
+      "workUrl": "https://openlibrary.org/works/OL27258W",
+      "title": "Neuromancer",
+      "author": "William Gibson"
+    },
+    "cmu:enwiki:18042052": {
+      "coverId": 14651549,
+      "workUrl": "https://openlibrary.org/works/OL14917748W",
+      "title": "Under the Dome",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:380143": {
+      "coverId": 5007492,
+      "workUrl": "https://openlibrary.org/works/OL15854658W",
+      "title": "Black Beauty",
+      "author": "Anna Sewell"
+    },
+    "cmu:enwiki:410134": {
+      "coverId": 2626823,
+      "workUrl": "https://openlibrary.org/works/OL1140109W",
+      "title": "The Good Earth",
+      "author": "Pearl S. Buck"
+    },
+    "cmu:enwiki:32860050": {
+      "coverId": 8541749,
+      "workUrl": "https://openlibrary.org/works/OL19633909W",
+      "title": "Before I Go to Sleep",
+      "author": "S. J. Watson"
+    },
+    "cmu:enwiki:3563571": {
+      "coverId": 213299,
+      "workUrl": "https://openlibrary.org/works/OL2435522W",
+      "title": "The No. 1 Ladies' Detective Agency",
+      "author": "Alexander McCall Smith"
+    },
+    "cmu:enwiki:2072053": {
+      "coverId": 400726,
+      "workUrl": "https://openlibrary.org/works/OL15024566W",
+      "title": "The truth about forever",
+      "author": "Sarah Dessen"
+    },
+    "cmu:enwiki:178842": {
+      "coverId": 8578174,
+      "workUrl": "https://openlibrary.org/works/OL1636262W",
+      "title": "The Phantom Tollbooth",
+      "author": "Norton Juster"
+    },
+    "cmu:enwiki:55483": {
+      "coverId": 368541,
+      "workUrl": "https://openlibrary.org/works/OL45089W",
+      "title": "Robinson Crusoe",
+      "author": "Daniel Defoe"
+    },
+    "cmu:enwiki:1259759": {
+      "coverId": 8238729,
+      "workUrl": "https://openlibrary.org/works/OL36633W",
+      "title": "Rebecca",
+      "author": "Daphne du Maurier"
+    },
+    "cmu:enwiki:1106246": {
+      "coverId": 12529015,
+      "workUrl": "https://openlibrary.org/works/OL2746369W",
+      "title": "The Clan of the Cave Bear",
+      "author": "Jean M. Auel"
+    },
+    "cmu:enwiki:697395": {
+      "coverId": 1005963,
+      "workUrl": "https://openlibrary.org/works/OL2010436W",
+      "title": "Wizard's First Rule",
+      "author": "Terry Goodkind"
+    },
+    "cmu:enwiki:5085908": {
+      "coverId": 1471164,
+      "workUrl": "https://openlibrary.org/works/OL2775698W",
+      "title": "Tuck Everlasting",
+      "author": "Natalie Babbitt"
+    },
+    "cmu:enwiki:64029": {
+      "coverId": 9334567,
+      "workUrl": "https://openlibrary.org/works/OL81629W",
+      "title": "The Green Mile",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:5162233": {
+      "coverId": 7079039,
+      "workUrl": "https://openlibrary.org/works/OL519373W",
+      "title": "A Great and Terrible Beauty",
+      "author": "Libba Bray"
+    },
+    "cmu:enwiki:48573": {
+      "coverId": 9330577,
+      "workUrl": "https://openlibrary.org/works/OL46909W",
+      "title": "The Andromeda Strain",
+      "author": "Michael Crichton"
+    },
+    "cmu:enwiki:1660387": {
+      "coverId": 15170836,
+      "workUrl": "https://openlibrary.org/works/OL43125206W",
+      "title": "2001 A SPACE ODYSSEY",
+      "author": "Arthur C. Clarke"
+    },
+    "cmu:enwiki:28270460": {
+      "coverId": 6929288,
+      "workUrl": "https://openlibrary.org/works/OL15382656W",
+      "title": "Fall of Giants",
+      "author": "Ken Follett"
+    },
+    "cmu:enwiki:43023": {
+      "coverId": 12717083,
+      "workUrl": "https://openlibrary.org/works/OL20600W",
+      "title": "Gulliver's Travels",
+      "author": "Jonathan Swift"
+    },
+    "cmu:enwiki:1678384": {
+      "coverId": 744854,
+      "workUrl": "https://openlibrary.org/works/OL4321141W",
+      "title": "The Secret History",
+      "author": "Donna Tartt"
+    },
+    "cmu:enwiki:4533526": {
+      "coverId": 6897514,
+      "workUrl": "https://openlibrary.org/works/OL134383W",
+      "title": "Postmortem",
+      "author": "Patricia Cornwell"
+    },
+    "cmu:enwiki:323063": {
+      "coverId": 10513792,
+      "workUrl": "https://openlibrary.org/works/OL1052133W",
+      "title": "The God of Small Things",
+      "author": "Arundhati Roy"
+    },
+    "cmu:enwiki:10802071": {
+      "coverId": 28677,
+      "workUrl": "https://openlibrary.org/works/OL1719746W",
+      "title": "Little House in the Big Woods",
+      "author": "Laura Ingalls Wilder"
+    },
+    "cmu:enwiki:9633523": {
+      "coverId": 11089125,
+      "workUrl": "https://openlibrary.org/works/OL24477958W",
+      "title": "Killing Floor",
+      "author": "Lee Child"
+    },
+    "cmu:enwiki:11423191": {
+      "coverId": 545172,
+      "workUrl": "https://openlibrary.org/works/OL5850286W",
+      "title": "It's Kind of a Funny Story",
+      "author": "Ned Vizzini"
+    },
+    "cmu:enwiki:15894908": {
+      "coverId": 12366775,
+      "workUrl": "https://openlibrary.org/works/OL46472W",
+      "title": "The Absolutely True Diary of a Part-Time Indian",
+      "author": "Sherman Alexie"
+    },
+    "cmu:enwiki:13726089": {
+      "coverId": 12451659,
+      "workUrl": "https://openlibrary.org/works/OL7990014W",
+      "title": "The Brief Wondrous Life of Oscar Wao",
+      "author": "Junot Díaz"
+    },
+    "cmu:enwiki:32688947": {
+      "coverId": 36314,
+      "workUrl": "https://openlibrary.org/works/OL52114W",
+      "title": "The War of the Worlds",
+      "author": "H. G. Wells"
+    },
+    "cmu:enwiki:80124": {
+      "coverId": 486854,
+      "workUrl": "https://openlibrary.org/works/OL3951517W",
+      "title": "The Virgin Suicides",
+      "author": "Jeffrey Eugenides"
+    },
+    "cmu:enwiki:236599": {
+      "coverId": 8570003,
+      "workUrl": "https://openlibrary.org/works/OL81610W",
+      "title": "Cujo",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:421473": {
+      "coverId": 96817,
+      "workUrl": "https://openlibrary.org/works/OL23738W",
+      "title": "The Mists of Avalon",
+      "author": "Marion Zimmer Bradley"
+    },
+    "cmu:enwiki:13737962": {
+      "coverId": 8272833,
+      "workUrl": "https://openlibrary.org/works/OL21435W",
+      "title": "Redeeming Love",
+      "author": "Francine Rivers"
+    },
+    "cmu:enwiki:661719": {
+      "coverId": 10628378,
+      "workUrl": "https://openlibrary.org/works/OL267913W",
+      "title": "A Separate Peace",
+      "author": "John Knowles"
+    },
+    "cmu:enwiki:2890": {
+      "coverId": 13617691,
+      "workUrl": "https://openlibrary.org/works/OL59798W",
+      "title": "A Wizard of Earthsea",
+      "author": "Ursula K. Le Guin"
+    },
+    "cmu:enwiki:69485": {
+      "coverId": 10925829,
+      "workUrl": "https://openlibrary.org/works/OL18940W",
+      "title": "Choke",
+      "author": "Chuck Palahniuk"
+    },
+    "cmu:enwiki:30280": {
+      "coverId": 8063264,
+      "workUrl": "https://openlibrary.org/works/OL262454W",
+      "title": "The Hound of the Baskervilles",
+      "author": "Arthur Conan Doyle"
+    },
+    "cmu:enwiki:1524981": {
+      "coverId": 2241356,
+      "workUrl": "https://openlibrary.org/works/OL468658W",
+      "title": "Because of Winn-Dixie",
+      "author": "Kate DiCamillo"
+    },
+    "cmu:enwiki:868230": {
+      "coverId": 8404327,
+      "workUrl": "https://openlibrary.org/works/OL81607W",
+      "title": "Needful Things",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:1544083": {
+      "coverId": 6714077,
+      "workUrl": "https://openlibrary.org/works/OL482454W",
+      "title": "Cloud Atlas",
+      "author": "David Mitchell"
+    },
+    "cmu:enwiki:6286677": {
+      "coverId": 400653,
+      "workUrl": "https://openlibrary.org/works/OL175867W",
+      "title": "This Lullaby",
+      "author": "Sarah Dessen"
+    },
+    "cmu:enwiki:576114": {
+      "coverId": 12388102,
+      "workUrl": "https://openlibrary.org/works/OL268217W",
+      "title": "Are You There God? It's Me, Margaret",
+      "author": "Judy Blume"
+    },
+    "cmu:enwiki:20815127": {
+      "coverId": 7019430,
+      "workUrl": "https://openlibrary.org/works/OL15024568W",
+      "title": "Along for the ride",
+      "author": "Sarah Dessen"
+    },
+    "cmu:enwiki:537049": {
+      "coverId": 12507658,
+      "workUrl": "https://openlibrary.org/works/OL675722W",
+      "title": "Oryx and Crake",
+      "author": "Margaret Atwood"
+    },
+    "cmu:enwiki:320387": {
+      "coverId": 14655985,
+      "workUrl": "https://openlibrary.org/works/OL81619W",
+      "title": "Christine",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:63110": {
+      "coverId": 1048892,
+      "workUrl": "https://openlibrary.org/works/OL8662242W",
+      "title": "David Copperfield",
+      "author": "Charles Dickens"
+    },
+    "cmu:enwiki:5629681": {
+      "coverId": 6712198,
+      "workUrl": "https://openlibrary.org/works/OL5713342W",
+      "title": "Beastly",
+      "author": "Alex Flinn"
+    },
+    "cmu:enwiki:1298672": {
+      "coverId": 12451613,
+      "workUrl": "https://openlibrary.org/works/OL46884W",
+      "title": "Timeline",
+      "author": "Michael Crichton"
+    },
+    "cmu:enwiki:23986473": {
+      "coverId": 6294573,
+      "workUrl": "https://openlibrary.org/works/OL2679341W",
+      "title": "The Magicians",
+      "author": "Lev Grossman"
+    },
+    "cmu:enwiki:842685": {
+      "coverId": 12745205,
+      "workUrl": "https://openlibrary.org/works/OL119436W",
+      "title": "The Amazing Adventures of Kavalier & Clay",
+      "author": "Michael Chabon"
+    },
+    "cmu:enwiki:3562073": {
+      "coverId": 14654054,
+      "workUrl": "https://openlibrary.org/works/OL81597W",
+      "title": "Cell",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:22459634": {
+      "coverId": 2787713,
+      "workUrl": "https://openlibrary.org/works/OL1954412W",
+      "title": "Unwind",
+      "author": "Neal Shusterman"
+    },
+    "cmu:enwiki:535391": {
+      "coverId": 12015446,
+      "workUrl": "https://openlibrary.org/works/OL81623W",
+      "title": "Firestarter",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:162189": {
+      "coverId": 10912611,
+      "workUrl": "https://openlibrary.org/works/OL24380174W",
+      "title": "The Phantom of the Opera",
+      "author": "Gaston Leroux"
+    },
+    "cmu:enwiki:30052313": {
+      "coverId": 7511657,
+      "workUrl": "https://openlibrary.org/works/OL17404404W",
+      "title": "Bloodlines",
+      "author": "Richelle Mead"
+    },
+    "cmu:enwiki:162770": {
+      "coverId": 11100465,
+      "workUrl": "https://openlibrary.org/works/OL471576W",
+      "title": "Murder on the Orient Express",
+      "author": "Agatha Christie"
+    },
+    "cmu:enwiki:71989": {
+      "coverId": 12728198,
+      "workUrl": "https://openlibrary.org/works/OL152161W",
+      "title": "Uncle Tom's Cabin",
+      "author": "Harriet Beecher Stowe"
+    },
+    "cmu:enwiki:1641867": {
+      "coverId": 12049134,
+      "workUrl": "https://openlibrary.org/works/OL679266W",
+      "title": "Anansi Boys",
+      "author": "Neil Gaiman"
+    },
+    "cmu:enwiki:2644402": {
+      "coverId": 9322929,
+      "workUrl": "https://openlibrary.org/works/OL77021W",
+      "title": "The Rainmaker",
+      "author": "John Grisham"
+    },
+    "cmu:enwiki:529614": {
+      "coverId": 13165306,
+      "workUrl": "https://openlibrary.org/works/OL2628761W",
+      "title": "Sabriel",
+      "author": "Garth Nix"
+    },
+    "cmu:enwiki:28426": {
+      "coverId": 14630746,
+      "workUrl": "https://openlibrary.org/works/OL59740W",
+      "title": "Starship Troopers",
+      "author": "Robert A. Heinlein"
+    },
+    "cmu:enwiki:24015984": {
+      "coverId": 286172,
+      "workUrl": "https://openlibrary.org/works/OL54812W",
+      "title": "The Guardian",
+      "author": "Nicholas Sparks"
+    },
+    "cmu:enwiki:220272": {
+      "coverId": 6397580,
+      "workUrl": "https://openlibrary.org/works/OL39349W",
+      "title": "Mrs. Dalloway",
+      "author": "Virginia Woolf"
+    },
+    "cmu:enwiki:160046": {
+      "coverId": 824359,
+      "workUrl": "https://openlibrary.org/works/OL1916907W",
+      "title": "High Fidelity",
+      "author": "Nick Hornby"
+    },
+    "cmu:enwiki:840200": {
+      "coverId": 4915230,
+      "workUrl": "https://openlibrary.org/works/OL2707183W",
+      "title": "Assassin's Apprentice",
+      "author": "Robin Hobb"
+    },
+    "cmu:enwiki:10902339": {
+      "coverId": 14653991,
+      "workUrl": "https://openlibrary.org/works/OL81630W",
+      "title": "The Dead Zone",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:1851232": {
+      "coverId": 13108904,
+      "workUrl": "https://openlibrary.org/works/OL8036957W",
+      "title": "Snow Falling on Cedars",
+      "author": "David Guterson"
+    },
+    "cmu:enwiki:10861": {
+      "coverId": 14910748,
+      "workUrl": "https://openlibrary.org/works/OL43043884W",
+      "title": "The Trial",
+      "author": "Franz Kafka"
+    },
+    "cmu:enwiki:367519": {
+      "coverId": 10984324,
+      "workUrl": "https://openlibrary.org/works/OL46883W",
+      "title": "Prey",
+      "author": "Michael Crichton"
+    },
+    "cmu:enwiki:1898130": {
+      "coverId": 14653458,
+      "workUrl": "https://openlibrary.org/works/OL81609W",
+      "title": "Bag of Bones",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:3434631": {
+      "coverId": 8274288,
+      "workUrl": "https://openlibrary.org/works/OL149210W",
+      "title": "Thinner",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:608748": {
+      "coverId": 10653144,
+      "workUrl": "https://openlibrary.org/works/OL46913W",
+      "title": "Congo",
+      "author": "Michael Crichton"
+    },
+    "cmu:enwiki:19931129": {
+      "coverId": 286349,
+      "workUrl": "https://openlibrary.org/works/OL54816W",
+      "title": "Nights in Rodanthe",
+      "author": "Nicholas Sparks"
+    },
+    "cmu:enwiki:6961605": {
+      "coverId": 100108,
+      "workUrl": "https://openlibrary.org/works/OL1992167W",
+      "title": "Breakfast at Tiffany's",
+      "author": "Truman Capote"
+    },
+    "cmu:enwiki:385612": {
+      "coverId": 5283748,
+      "workUrl": "https://openlibrary.org/works/OL14937643W",
+      "title": "Walk Two Moons",
+      "author": "Sharon Creech"
+    },
+    "cmu:enwiki:30033": {
+      "coverId": 14648805,
+      "workUrl": "https://openlibrary.org/works/OL453658W",
+      "title": "Mort",
+      "author": "Terry Pratchett"
+    },
+    "cmu:enwiki:3433133": {
+      "coverId": 6873471,
+      "workUrl": "https://openlibrary.org/works/OL15706843W",
+      "title": "Plain truth",
+      "author": "Jodi Picoult"
+    },
+    "cmu:enwiki:895506": {
+      "coverId": 9254423,
+      "workUrl": "https://openlibrary.org/works/OL46917W",
+      "title": "Sphere",
+      "author": "Michael Crichton"
+    },
+    "cmu:enwiki:27722629": {
+      "coverId": 8261369,
+      "workUrl": "https://openlibrary.org/works/OL15168588W",
+      "title": "The Passage",
+      "author": "Justin Cronin"
+    },
+    "cmu:enwiki:7817": {
+      "coverId": 12369293,
+      "workUrl": "https://openlibrary.org/works/OL8026340W",
+      "title": "The CIDER HOUSE RULES",
+      "author": "John Irving"
+    },
+    "cmu:enwiki:9309742": {
+      "coverId": 474832,
+      "workUrl": "https://openlibrary.org/works/OL59941W",
+      "title": "The Constant Princess",
+      "author": "Philippa Gregory"
+    },
+    "cmu:enwiki:229593": {
+      "coverId": 8292212,
+      "workUrl": "https://openlibrary.org/works/OL82870W",
+      "title": "The Sound and the Fury",
+      "author": "William Faulkner"
+    },
+    "cmu:enwiki:45133": {
+      "coverId": 13335427,
+      "workUrl": "https://openlibrary.org/works/OL28570037W",
+      "title": "The Wind in the Willows",
+      "author": "Kenneth Grahame"
+    },
+    "cmu:enwiki:86351": {
+      "coverId": 12715730,
+      "workUrl": "https://openlibrary.org/works/OL927199W",
+      "title": "The Exorcist",
+      "author": "William Peter Blatty"
+    },
+    "cmu:enwiki:302997": {
+      "coverId": 8783945,
+      "workUrl": "https://openlibrary.org/works/OL60149W",
+      "title": "Howl's Moving Castle",
+      "author": "Diana Wynne Jones"
+    },
+    "cmu:enwiki:396639": {
+      "coverId": 998256,
+      "workUrl": "https://openlibrary.org/works/OL495470W",
+      "title": "Invisible Man",
+      "author": "Ralph Ellison"
+    },
+    "cmu:enwiki:1674879": {
+      "coverId": 380332,
+      "workUrl": "https://openlibrary.org/works/OL1963268W",
+      "title": "Hyperion",
+      "author": "Dan Simmons"
+    },
+    "cmu:enwiki:17106013": {
+      "coverId": 2325289,
+      "workUrl": "https://openlibrary.org/works/OL175864W",
+      "title": "Lock and Key",
+      "author": "Sarah Dessen"
+    },
+    "cmu:enwiki:52803": {
+      "coverId": 8015311,
+      "workUrl": "https://openlibrary.org/works/OL17736010W",
+      "title": "The hunchback of Notre Dame",
+      "author": "Victor Hugo"
+    },
+    "cmu:enwiki:6161733": {
+      "coverId": 6307636,
+      "workUrl": "https://openlibrary.org/works/OL8369445W",
+      "title": "The Lies of Locke Lamora",
+      "author": "Scott Lynch"
+    },
+    "cmu:enwiki:29055790": {
+      "coverId": 9273701,
+      "workUrl": "https://openlibrary.org/works/OL4082696W",
+      "title": "The Corrections",
+      "author": "Jonathan Franzen"
+    },
+    "cmu:enwiki:2661883": {
+      "coverId": 6973801,
+      "workUrl": "https://openlibrary.org/works/OL4103857W",
+      "title": "The Westing Game",
+      "author": "Ellen Raskin"
+    },
+    "cmu:enwiki:42609": {
+      "coverId": 10671991,
+      "workUrl": "https://openlibrary.org/works/OL24216150W",
+      "title": "Around the World in Eighty Days",
+      "author": "Jules Verne"
+    },
+    "cmu:enwiki:30709": {
+      "coverId": 9779,
+      "workUrl": "https://openlibrary.org/works/OL71072W",
+      "title": "The Screwtape Letters",
+      "author": "C. S. Lewis"
+    },
+    "cmu:enwiki:1282996": {
+      "coverId": 7888268,
+      "workUrl": "https://openlibrary.org/works/OL13754384W",
+      "title": "\"A\" is for Alibi",
+      "author": "Sue Grafton"
+    },
+    "cmu:enwiki:160428": {
+      "coverId": 14651654,
+      "workUrl": "https://openlibrary.org/works/OL81598W",
+      "title": "Dreamcatcher",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:196963": {
+      "coverId": 12009325,
+      "workUrl": "https://openlibrary.org/works/OL49496W",
+      "title": "Ender's Shadow",
+      "author": "Orson Scott Card"
+    },
+    "cmu:enwiki:15120912": {
+      "coverId": 28990,
+      "workUrl": "https://openlibrary.org/works/OL17200W",
+      "title": "Shutter Island",
+      "author": "Dennis Lehane"
+    },
+    "cmu:enwiki:2931456": {
+      "coverId": 541143,
+      "workUrl": "https://openlibrary.org/works/OL468677W",
+      "title": "The Tale of Despereaux",
+      "author": "Kate DiCamillo"
+    },
+    "cmu:enwiki:16689232": {
+      "coverId": 392494,
+      "workUrl": "https://openlibrary.org/works/OL92967W",
+      "title": "Angus, Thongs and Full-Frontal Snogging",
+      "author": "Louise Rennison"
+    },
+    "cmu:enwiki:238534": {
+      "coverId": 8376548,
+      "workUrl": "https://openlibrary.org/works/OL134601W",
+      "title": "Lonesome Dove",
+      "author": "Larry McMurtry"
+    },
+    "cmu:enwiki:28108371": {
+      "coverId": 6305239,
+      "workUrl": "https://openlibrary.org/works/OL891935W",
+      "title": "House rules",
+      "author": "Jodi Picoult"
+    },
+    "cmu:enwiki:113470": {
+      "coverId": 1748132,
+      "workUrl": "https://openlibrary.org/works/OL88813W",
+      "title": "A Room with a View",
+      "author": "E. M. Forster"
+    },
+    "cmu:enwiki:1827695": {
+      "coverId": 15152696,
+      "workUrl": "https://openlibrary.org/works/OL50565W",
+      "title": "The Bluest Eye",
+      "author": "Toni Morrison"
+    },
+    "cmu:enwiki:797758": {
+      "coverId": 10563354,
+      "workUrl": "https://openlibrary.org/works/OL19671516W",
+      "title": "Sophie's world",
+      "author": "Jostein Gaarder"
+    },
+    "cmu:enwiki:4910784": {
+      "coverId": 12879739,
+      "workUrl": "https://openlibrary.org/works/OL263297W",
+      "title": "Watchers",
+      "author": "Dean Koontz"
+    },
+    "cmu:enwiki:21341823": {
+      "coverId": 6306862,
+      "workUrl": "https://openlibrary.org/works/OL15015332W",
+      "title": "The Way of Shadows",
+      "author": "Brent Weeks"
+    },
+    "cmu:enwiki:375359": {
+      "coverId": 13200934,
+      "workUrl": "https://openlibrary.org/works/OL31587398W",
+      "title": "The Neverending Story",
+      "author": "Michael Ende"
+    },
+    "cmu:enwiki:2295010": {
+      "coverId": 14598487,
+      "workUrl": "https://openlibrary.org/works/OL134834W",
+      "title": "Flowers in the Attic",
+      "author": "V.C. Andrews"
+    },
+    "cmu:enwiki:331967": {
+      "coverId": 13095550,
+      "workUrl": "https://openlibrary.org/works/OL453735W",
+      "title": "Guards! Guards!",
+      "author": "Terry Pratchett"
+    },
+    "cmu:enwiki:312623": {
+      "coverId": 6458534,
+      "workUrl": "https://openlibrary.org/works/OL10619574W",
+      "title": "Schindler's ark",
+      "author": "Thomas Keneally"
+    },
+    "cmu:enwiki:19300183": {
+      "coverId": 6287533,
+      "workUrl": "https://openlibrary.org/works/OL14927216W",
+      "title": "Shanghai girls",
+      "author": "Lisa See"
+    },
+    "cmu:enwiki:2040458": {
+      "coverId": 9268263,
+      "workUrl": "https://openlibrary.org/works/OL1838382W",
+      "title": "Tales of a Fourth Grade Nothing",
+      "author": "Judy Blume"
+    },
+    "cmu:enwiki:25839458": {
+      "coverId": 10195516,
+      "workUrl": "https://openlibrary.org/works/OL15093169W",
+      "title": "Abraham Lincoln, Vampire Hunter",
+      "author": "Seth Grahame-Smith"
+    },
+    "cmu:enwiki:133721": {
+      "coverId": 95742,
+      "workUrl": "https://openlibrary.org/works/OL59048W",
+      "title": "The Remains of the Day",
+      "author": "Kazuo Ishiguro"
+    },
+    "cmu:enwiki:2662485": {
+      "coverId": 4904594,
+      "workUrl": "https://openlibrary.org/works/OL4783032W",
+      "title": "The Witch of Blackbird Pond",
+      "author": "Elizabeth George Speare"
+    },
+    "cmu:enwiki:1388208": {
+      "coverId": 22367,
+      "workUrl": "https://openlibrary.org/works/OL1846863W",
+      "title": "The Bean Trees",
+      "author": "Barbara Kingsolver"
+    },
+    "cmu:enwiki:9366759": {
+      "coverId": 14356892,
+      "workUrl": "https://openlibrary.org/works/OL2011278W",
+      "title": "Year of Wonders",
+      "author": "Geraldine Brooks"
+    },
+    "cmu:enwiki:4261283": {
+      "coverId": 272344,
+      "workUrl": "https://openlibrary.org/works/OL461936W",
+      "title": "Guilty Pleasures",
+      "author": "Laurell K. Hamilton"
+    },
+    "cmu:enwiki:8520267": {
+      "coverId": 12366759,
+      "workUrl": "https://openlibrary.org/works/OL5969752W",
+      "title": "Crank",
+      "author": "Ellen Hopkins"
+    },
+    "cmu:enwiki:25504525": {
+      "coverId": 6028240,
+      "workUrl": "https://openlibrary.org/works/OL111486W",
+      "title": "Vision in White",
+      "author": "Nora Roberts"
+    },
+    "cmu:enwiki:322301": {
+      "coverId": 9327716,
+      "workUrl": "https://openlibrary.org/works/OL82929W",
+      "title": "As I Lay Dying",
+      "author": "William Faulkner"
+    },
+    "cmu:enwiki:2220261": {
+      "coverId": 401618,
+      "workUrl": "https://openlibrary.org/works/OL1893842W",
+      "title": "The deep end of the ocean",
+      "author": "Jacquelyn Mitchard"
+    },
+    "cmu:enwiki:528860": {
+      "coverId": 11196262,
+      "workUrl": "https://openlibrary.org/works/OL98491W",
+      "title": "The Age of Innocence",
+      "author": "Edith Wharton"
+    },
+    "cmu:enwiki:8179637": {
+      "coverId": 8440296,
+      "workUrl": "https://openlibrary.org/works/OL3454854W",
+      "title": "Jaws",
+      "author": "Peter Benchley"
+    },
+    "cmu:enwiki:2595361": {
+      "coverId": 31228,
+      "workUrl": "https://openlibrary.org/works/OL796601W",
+      "title": "Eleven Minutes",
+      "author": "Paulo Coelho"
+    },
+    "cmu:enwiki:7034259": {
+      "coverId": 6501473,
+      "workUrl": "https://openlibrary.org/works/OL1822318W",
+      "title": "For One More Day",
+      "author": "Mitch Albom"
+    },
+    "cmu:enwiki:74257": {
+      "coverId": 824427,
+      "workUrl": "https://openlibrary.org/works/OL1916893W",
+      "title": "About a Boy",
+      "author": "Nick Hornby"
+    },
+    "cmu:enwiki:19955124": {
+      "coverId": 5698313,
+      "workUrl": "https://openlibrary.org/works/OL13351631W",
+      "title": "The Elegance of the Hedgehog",
+      "author": "Muriel Barbery"
+    },
+    "cmu:enwiki:4806475": {
+      "coverId": 845223,
+      "workUrl": "https://openlibrary.org/works/OL3359138W",
+      "title": "We need to talk about Kevin",
+      "author": "Lionel Shriver"
+    },
+    "cmu:enwiki:623219": {
+      "coverId": 7886954,
+      "workUrl": "https://openlibrary.org/works/OL81603W",
+      "title": "Insomnia",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:3134572": {
+      "coverId": 9296899,
+      "workUrl": "https://openlibrary.org/works/OL40875W",
+      "title": "No Country for Old Men",
+      "author": "Cormac McCarthy"
+    },
+    "cmu:enwiki:7589425": {
+      "coverId": 12940123,
+      "workUrl": "https://openlibrary.org/works/OL8075674W",
+      "title": "Déjà Dead",
+      "author": "Kathy Reichs"
+    },
+    "cmu:enwiki:703539": {
+      "coverId": 8236920,
+      "workUrl": "https://openlibrary.org/works/OL74504W",
+      "title": "White Fang",
+      "author": "Jack London"
+    },
+    "cmu:enwiki:64025": {
+      "coverId": 10705875,
+      "workUrl": "https://openlibrary.org/works/OL81617W",
+      "title": "Gerald's Game",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:2827312": {
+      "coverId": 10134677,
+      "workUrl": "https://openlibrary.org/works/OL77104W",
+      "title": "Maniac Magee",
+      "author": "Jerry Spinelli"
+    },
+    "cmu:enwiki:14607140": {
+      "coverId": 9312656,
+      "workUrl": "https://openlibrary.org/works/OL8755877W",
+      "title": "Fablehaven",
+      "author": "Brandon Mull"
+    },
+    "cmu:enwiki:933335": {
+      "coverId": 8348310,
+      "workUrl": "https://openlibrary.org/works/OL2980902W",
+      "title": "A Fine Balance",
+      "author": "Rohinton Mistry"
+    },
+    "cmu:enwiki:13420965": {
+      "coverId": 541383,
+      "workUrl": "https://openlibrary.org/works/OL891950W",
+      "title": "The Tenth Circle",
+      "author": "Jodi Picoult"
+    },
+    "cmu:enwiki:12948231": {
+      "coverId": 188409,
+      "workUrl": "https://openlibrary.org/works/OL111744W",
+      "title": "The black echo",
+      "author": "Michael Connelly"
+    },
+    "cmu:enwiki:248364": {
+      "coverId": 11041760,
+      "workUrl": "https://openlibrary.org/works/OL675698W",
+      "title": "The Blind Assassin",
+      "author": "Margaret Atwood"
+    },
+    "cmu:enwiki:10917506": {
+      "coverId": 251178,
+      "workUrl": "https://openlibrary.org/works/OL5814543W",
+      "title": "The History of Love",
+      "author": "Nicole Krauss"
+    },
+    "cmu:enwiki:5405446": {
+      "coverId": 524402,
+      "workUrl": "https://openlibrary.org/works/OL5734647W",
+      "title": "Old Man’s War",
+      "author": "John Scalzi"
+    },
+    "cmu:enwiki:2423068": {
+      "coverId": 223032,
+      "workUrl": "https://openlibrary.org/works/OL30838W",
+      "title": "The hours",
+      "author": "Michael Cunningham"
+    },
+    "cmu:enwiki:1498012": {
+      "coverId": 417627,
+      "workUrl": "https://openlibrary.org/works/OL2671485W",
+      "title": "The Alienist",
+      "author": "Caleb Carr"
+    },
+    "cmu:enwiki:15931932": {
+      "coverId": 532043,
+      "workUrl": "https://openlibrary.org/works/OL8032275W",
+      "title": "Poison Study",
+      "author": "Maria V. Snyder"
+    },
+    "cmu:enwiki:3445721": {
+      "coverId": 14658083,
+      "workUrl": "https://openlibrary.org/works/OL5738147W",
+      "title": "Elantris",
+      "author": "Brandon Sanderson"
+    },
+    "cmu:enwiki:15556648": {
+      "coverId": 14355945,
+      "workUrl": "https://openlibrary.org/works/OL2011276W",
+      "title": "People of the book",
+      "author": "Geraldine Brooks"
+    },
+    "cmu:enwiki:234527": {
+      "coverId": 802982,
+      "workUrl": "https://openlibrary.org/works/OL731737W",
+      "title": "Anthem",
+      "author": "Ayn Rand"
+    },
+    "cmu:enwiki:50376": {
+      "coverId": 10306696,
+      "workUrl": "https://openlibrary.org/works/OL73387W",
+      "title": "Dragonflight",
+      "author": "Anne McCaffrey"
+    },
+    "cmu:enwiki:862059": {
+      "coverId": 8530409,
+      "workUrl": "https://openlibrary.org/works/OL81620W",
+      "title": "The Dark Half",
+      "author": "Stephen King"
+    },
+    "cmu:enwiki:15529320": {
+      "coverId": 114002,
+      "workUrl": "https://openlibrary.org/works/OL860483W",
+      "title": "Life As We Knew It",
+      "author": "Susan Beth Pfeffer"
+    },
+    "cmu:enwiki:760079": {
+      "coverId": 12685057,
+      "workUrl": "https://openlibrary.org/works/OL25651130W",
+      "title": "Eye of the Needle",
+      "author": "Ken Follett"
+    },
+    "cmu:enwiki:26476": {
+      "coverId": 13472608,
+      "workUrl": "https://openlibrary.org/works/OL17417W",
+      "title": "Rendezvous with Rama",
+      "author": "Arthur C. Clarke"
+    },
+    "cmu:enwiki:9816569": {
+      "coverId": 4319082,
+      "workUrl": "https://openlibrary.org/works/OL5819463W",
+      "title": "I Am the Messenger",
+      "author": "Markus Zusak"
+    },
+    "cmu:enwiki:12184056": {
+      "coverId": 6258969,
+      "workUrl": "https://openlibrary.org/works/OL5738589W",
+      "title": "The Goose Girl",
+      "author": "Shannon Hale"
+    },
+    "cmu:enwiki:5428409": {
+      "coverId": 8401747,
+      "workUrl": "https://openlibrary.org/works/OL26909W",
+      "title": "Presumed Innocent",
+      "author": "Scott Turow"
+    },
+    "cmu:enwiki:181622": {
+      "coverId": 4143957,
+      "workUrl": "https://openlibrary.org/works/OL2950903W",
+      "title": "Contact",
+      "author": "Carl Sagan"
+    },
+    "cmu:enwiki:8843578": {
+      "coverId": 418040,
+      "workUrl": "https://openlibrary.org/works/OL3351636W",
+      "title": "Empire Falls",
+      "author": "Richard Russo"
+    },
+    "cmu:enwiki:50223": {
+      "coverId": 11465456,
+      "workUrl": "https://openlibrary.org/works/OL2163628W",
+      "title": "Dirk Gently’s Holistic Detective Agency",
+      "author": "Douglas Adams"
+    },
+    "cmu:enwiki:723638": {
+      "coverId": 8359565,
+      "workUrl": "https://openlibrary.org/works/OL18437639W",
+      "title": "Journey to the center of the earth",
+      "author": "Jules Verne"
+    }
+  }
+}

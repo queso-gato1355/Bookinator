@@ -11,6 +11,7 @@ import type { CatalogBook } from "./engine/model.ts";
 
 export interface BookBlurb {
   text: string;
+  lang: "en" | "ko";
   sourceLabel: string;
   sourceUrl: string;
 }
@@ -65,8 +66,6 @@ export function trimBlurb(raw: string, max = 420): string | null {
   return end > max * 0.5 ? cut.slice(0, end + 1) : `${cut.replace(/\s+\S*$/, "")}…`;
 }
 
-const WIKI_CURID = /^https:\/\/en\.wikipedia\.org\/\?curid=(\d+)$/;
-
 /** Books a reader can reach: every single-book target plus every volume of a series target. */
 export function titleCount(catalog: { books: unknown[]; coverage?: { titles_reachable?: number } }): number {
   return catalog.coverage?.titles_reachable ?? catalog.books.length;
@@ -80,30 +79,50 @@ export function volumeBook(series: CatalogBook, v: NonNullable<CatalogBook["volu
     openlibrary_work_id: null, editions: [], sources: own.length ? own : series.sources };
 }
 
-export function fetchBlurb(book: CatalogBook): Promise<BookBlurb | null> {
-  return once(`blurb:${book.id}`, async () => {
-    if (book.volumes) return null; // a series target has no single description
-
-    const wiki = book.sources.map((s) => WIKI_CURID.exec(s.url)).find(Boolean);
-    if (wiki) {
-      const id = wiki[1];
-      const data = (await getJson(
-        `https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=extracts&exintro=1&explaintext=1&exsentences=3&pageids=${id}`,
-      )) as { query?: { pages?: Record<string, { extract?: string }> } };
-      const text = trimBlurb(data.query?.pages?.[id]?.extract ?? "");
-      return text ? { text, sourceLabel: "Wikipedia (CC BY-SA)", sourceUrl: wiki[0] } : null;
+/** Read the stored work's Wikipedia article, resolving other languages through that article's links.
+ * Open Library descriptions have no dependable language tag, so they are never labelled as English.
+ */
+export function fetchBlurb(book: CatalogBook, lang: "en" | "ko" = "en"): Promise<BookBlurb | null> {
+  return once(`blurb:${book.id}:${lang}`, async () => {
+    if (book.volumes) return null;
+    const source = book.sources.find((s) => /^https:\/\/en\.wikipedia\.org\/(?:wiki\/|\?curid=)/.test(s.url));
+    if (!source) return null;
+    const url = new URL(source.url);
+    const id = url.searchParams.get("curid");
+    const title = id ? null : decodeURIComponent(url.pathname.replace(/^\/wiki\//, ""));
+    const params = new URLSearchParams({ action: "query", format: "json", origin: "*", prop: "extracts|langlinks", exintro: "1", explaintext: "1", exsentences: "3", redirects: "1", lllang: lang });
+    if (id) params.set("pageids", id); else if (title) params.set("titles", title); else return null;
+    type Page = { pageid?: number; extract?: string; langlinks?: { lang: string; "*": string }[] };
+    type Response = { query?: { pages?: Record<string, Page> } };
+    const enData = await getJson(`https://en.wikipedia.org/w/api.php?${params}`) as Response;
+    const page = Object.values(enData.query?.pages ?? {})[0];
+    if (!page) return null;
+    if (lang === "en") {
+      const text = trimBlurb(page.extract ?? "");
+      return text ? { text, lang, sourceLabel: "Wikipedia (CC BY-SA)", sourceUrl: source.url } : null;
     }
-    const olid = book.openlibrary_work_id;
-    if (olid && /^OL\d+W$/.test(olid)) {
-      const data = (await getJson(`https://openlibrary.org/works/${olid}.json`)) as {
-        description?: string | { value?: string };
-      };
-      const raw = typeof data.description === "string" ? data.description : data.description?.value ?? "";
-      const text = trimBlurb(raw);
-      return text ? { text, sourceLabel: "Open Library", sourceUrl: `https://openlibrary.org/works/${olid}` } : null;
-    }
-    return null;
+    const translated = page.langlinks?.find((link) => link.lang === lang)?.["*"];
+    if (!translated) return null;
+    params.delete("pageids"); params.delete("lllang"); params.set("titles", translated); params.set("prop", "extracts");
+    const data = await getJson(`https://${lang}.wikipedia.org/w/api.php?${params}`) as Response;
+    const localized = Object.values(data.query?.pages ?? {})[0];
+    const text = trimBlurb(localized?.extract ?? "");
+    return text ? { text, lang, sourceLabel: "Wikipedia (CC BY-SA)", sourceUrl: `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(translated)}` } : null;
   });
+}
+
+export function fetchCover(book: CatalogBook): Promise<{ url: string } | null> {
+  return once(`cover:${book.id}`, async () => {
+    if (book.volumes || !book.openlibrary_work_id || !/^OL\d+W$/.test(book.openlibrary_work_id)) return null;
+    const data = await getJson(`https://openlibrary.org/works/${book.openlibrary_work_id}.json`) as { covers?: number[] };
+    const id = data.covers?.find((n) => Number.isSafeInteger(n) && n > 0);
+    return id ? { url: `https://covers.openlibrary.org/b/id/${id}-L.jpg?default=false` } : null;
+  });
+}
+
+export function displayLanguage(code: string, lang: "en" | "ko"): string {
+  try { return new Intl.DisplayNames([lang], { type: "language" }).of(code) ?? code; }
+  catch { return code; }
 }
 
 const PHOTO_CACHE = "bookinator-photo:";

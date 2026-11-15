@@ -8,6 +8,8 @@ A reader half-remembers a novel. Bookinator's seagull (북키네이터 갈매기
 
 Theme: **Library + "Because I'm Lazy"**: the system chooses the search questions, so the reader doesn't need an author, title, ISBN or a good search query. There are no LLM calls during play.
 
+**Hackathon demo:** [presentation guide](docs/hackathon-demo.md) · [rehearsal traces](docs/demo-rehearsal.md). Use **Try the live challenge** in the app (`?collection=classic&demo=1`) for a reproducible audience round. `npm run rehearse` checks three examples and a real early wrong-guess recovery with the normal engine.
+
 > ⚠ **Current data is a 10-book DEVELOPMENT FIXTURE.** Labels were first written from general knowledge by an AI assistant. **171 of 589 labels were then checked against cited Wikipedia and Open Library pages** (status `supported`), and several guesses were corrected. 4 are marked `ambiguous` with notes; the rest are still unchecked. **No human has reviewed any of it.** The app shows a banner saying so, and clues show whether they're source-checked.
 
 ---
@@ -152,10 +154,10 @@ The validator checks:
 | QR code | Deploy workflow added; generate the QR from the Pages URL once deployed. |
 | Human playtests, timed rehearsals | **Can't be done by me.** Recruit 10 fresh testers and record outcomes with exact denominators. |
 
-## Research catalog (500 imported records → 181 targets, 268 titles)
+## Research catalog (500 imported records → 388 targets, 488 titles)
 
 Two catalogs ship, switchable on the start screen (live: https://wiseshrestha.github.io/Bookinator/). The **CMU /
-research catalog** ("Research shelf", 268 titles) is the **default**. The **10-book fixture** ("Classic shelf") is at
+research catalog** ("Research shelf", 488 titles, catalog v3) is the **default**. The **10-book fixture** ("Classic shelf") is at
 `?collection=classic`, `npm run dev:classic` or `VITE_CATALOG=classic`. Never report imported records as game coverage:
 
 | Measure (14 Nov 2026) | Count |
@@ -164,7 +166,7 @@ research catalog** ("Research shelf", 268 titles) is the **default**. The **10-b
 | Records with a validated question matrix | 500 (7,348 source-linked cells; 468 have ≥12) |
 | Form holds kept out of the novel pool | 8 |
 | Cells reviewed by a person | **0** |
-| **Playable game targets** | **181** covering **268** titles (27 before series + AI recall; 17 with the base 64 only) |
+| **Playable game targets** | **388** covering **488** titles (catalog v3, 40-question engine; 181/268 in v1) |
 
 Pipeline (`npm run catalog:research`; needs the research and Core packs next to the repo, not committed):
 1. `scripts/merge_research.py`: researched matrix (`core500_researched_labels.json`) merged by stable ID with
@@ -233,25 +235,55 @@ that disagree on a cell leave it unknown, and per-labeller agreement is reported
 Simulated readers answer from the same labels (internal consistency, not accuracy). More books means more to
 confuse, so per-game rates drop while coverage grows tenfold.
 
-### Second labeller: GPT recall pass (15 Nov 2026)
+### Second labeller: GPT recall pass, rebuilt as catalog `cmu-priority500-v3` (15 Nov 2026)
 
-`data/ai_recall/gpt.txt` (GPT, independent of Claude's file; see `docs/GPT_RECALL_HANDOFF.md`): 488 books,
-37,168 answers, 4 skipped; imported unchanged as a second labeller. Checks from the rebuild:
+`data/ai_recall/gpt.txt` (GPT, independent of Claude's file; see `docs/GPT_RECALL_HANDOFF.md`): 488 books, 37,168
+answers, 4 skipped; imported unchanged. Full rebuild (`merge_research` → `motif_labels` → `build_cmu_catalog
+--version cmu-priority500-v3` → `gate_catalog`) with the **merged engine settings from PR #1** (40-question cap,
+check-ins, 4 rejections; `src/engine/config.ts`, not changed here) and three AI labellers:
 
-| Check | Result |
-| --- | ---: |
-| Claude recall vs sourced labels | 2083/2226 agree (93.6%) |
-| GPT recall vs sourced labels | 6618/6757 agree (97.9%) |
-| Claude vs GPT on the same cells | 7783 agree, 692 disagree → unknown (91.8% agreement) |
-| Recall cells added to the catalog | 29,581 |
+| Labeller | Answers | Agreement with sourced labels |
+| --- | ---: | ---: |
+| Claude (`labels.txt`, incl. 5 books added in PR #1) | 10,345 | 2200/2354 (93.5%) |
+| GPT (`gpt.txt`) | 37,168 | 6618/6757 (97.9%) |
+| Gemini (`gemini.txt`, from PR #1) | 482 | 67/70 (95.7%) |
 
-**Disagreement review.** Disagreements cluster on a few questions where the written definition was broader than
-the question players see (e.g. "Is there a courtroom trial?" was defined as "a trial, lawyer or court case", so a
-solicitor in *Dracula* counted). Rule added (`RELIABILITY_MIN_AGREE` = 0.75 in `build_cmu_catalog.py`, a data
-rule, not an engine threshold): on questions where the two labellers agree < 75% of the time, an answer from only
-one labeller is dropped and only agreed answers are kept. Affected: m12 (40/59), m13 (18/59), m27 (33/49), m34 (23/31), m36 (43/77), m49 (32/50), q22 (21/31); 1,742 single-labeller answers
-dropped. The trial, battle and train definitions (and their keyword patterns) now match the question text.
-Two AIs agreeing is not measured factual accuracy; every cell stays `ai_recall`, no source, `reviewed=false`.
+Between labellers on shared cells: 8,271 agree, 787 disagree → unknown (91.3%). Recall cells added: 29,002.
+
+**Disagreement review.** Disagreements cluster on questions where the written definition was broader than the
+question players see (e.g. "Is there a courtroom trial?" was defined as "a trial, lawyer or court case", so a
+solicitor in *Dracula* counted). Rule added (`RELIABILITY_MIN_AGREE` = 0.75 in `build_cmu_catalog.py`, a data rule,
+not an engine threshold): on questions where labellers agree < 75% of the time on shared cells, an answer from only
+one labeller is dropped and only agreed answers are kept. Affected: m12 (42/63), m13 (18/60), m27 (33/50), m36 (43/81), m49 (32/51), q22 (26/36), q26 (149/202), q29 (51/76), q39 (48/66); 2,498 single-labeller answers dropped.
+The trial, battle and train definitions and keyword patterns now match the question text. AI agreement is not
+measured factual accuracy; every cell stays `ai_recall`, no source, `reviewed=false`.
+
+| Catalog | Engine settings | Playable targets | Titles reachable |
+| --- | --- | ---: | ---: |
+| v1 (Claude recall + series) | 18-question cap | 181 | 268 |
+| v2 (PR #1, labels applied without rebuild) | 40-question cap | 179 | 266 |
+| v3, before merging PR #1 (Claude + GPT) | 18-question cap | 341 | 440 |
+| **v3 (Claude + GPT + Gemini, full rebuild)** | **40-question cap** | **388** of 392 in scope | **488** |
+
+Not playable: Divine Secrets of the Ya-Ya Sisterhood, The Lucky One, Good in Bed, Evermore (sparse labels). Browser playtests (en, 1440 and 390 px):
+*Harry Potter*, *Narnia* and *Twilight* series with volume pick; *To Kill a Mockingbird*, *Pride and Prejudice*,
+*The Wonderful Wizard of Oz*; *The Catcher in the Rye* with one wrong answer (found after 22): all found, no errors.
+
+**Simulation of v3** (`reports/simulation_research.json`: seed 42, 30 games per target per scenario = 11,640 games
+each, main's engine settings: 40-question cap, check-ins, 4 rejections; simulated answers come from the same labels, so
+this is internal consistency, not accuracy):
+
+| Simulated reader | First guess right | Found by any route | Mean questions |
+| --- | ---: | ---: | ---: |
+| Clear memory | 69.8% | 93.1% | 28.2 |
+| One wrong answer | 59.7% | 88.5% | 31.1 |
+| Half memory | 34.0% | 68.9% | 35.8 |
+| Engine's own answer noise | 26.4% | 59.1% | 36.5 |
+| Difficult memory | 10.1% | 40.9% | 39.0 |
+
+Not comparable with the v1 table above (18-question cap, 2 rejections): the longer games and check-ins account for
+much of the rise from 20.4% / 73.3% (clear memory, v1).
+
 
 ## Front end: the seagull, the clouds and the sea
 
@@ -259,10 +291,23 @@ The interface follows the design canvas *북키네이터 (Bookinator) 프론트�
 each question in a speech bubble under a hanging "Question N" sign, and the five answers are cloud buttons
 floating on the sea (keys 1–5). Korean and English (`src/i18n/`, Korean question wording keyed by the English
 text), PC layout from 900 px and a phone layout below it. Guesses hang from a rope as a book card with a generated
-cover (no cover images: their rights are not established). After a miss, "Which book was it?" searches the shelf
+cover. The current catalog cover sources and fallbacks are described below. After a miss, "Which book was it?" searches the shelf
 for a similar book and, when Supabase is configured, lets the reader add the book and — only if they tick the
 box — send their answers (`src/components/Contribute.tsx`, design: `docs/community/DESIGN.md`). Everything is CSS
 and inline SVG; animation stops under `prefers-reduced-motion`.
+
+The current Sea Library **Catalog** page uses book-shaped tiles with Open Library cover images,
+title-card fallbacks, title/author search, series volume lists and 20-item progressive loading. The
+library home, navigation and Unsplash imagery are preserved. Cover metadata lives separately from
+the game labels in `src/data/catalog-covers.json`; no cover search runs while browsing. To refresh it:
+
+```bash
+python3 scripts/catalog_covers.py --cache /tmp/bookinator-cover-lookups.json
+```
+
+The refresh uses stored work IDs when available, otherwise requires an exact normalized title/alias
+and sole author match. Series retain title cards. Images stay hosted by Open Library and may show a
+different edition; failed images fall back to a title card. Cover identity checks run in `npm run verify`.
 
 ## ChatGPT's research source code
 
@@ -277,4 +322,4 @@ Its large data directories are not committed; see the research catalog section a
 - "Source-checked" means an AI assistant read the cited page; treat it as a strong first pass, not review.
 - Simulations are stress scenarios, not human behavior.
 - `q56` (short novel) stays inactive until "short" is defined. Adaptation-sensitive flags are a judgment call.
-- Not built, per the brief: accounts, online learning, vector search, live LLM, covers, related books.
+- Not built, per the brief: accounts, online learning, vector search, live LLM, cover uploads, related books.

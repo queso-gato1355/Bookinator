@@ -40,5 +40,6 @@ export const ACTIVE_CATALOG: Catalog =
 export function collectionHref(id: CollectionId): string {
   const url = new URL((globalThis as { location?: { href: string } }).location?.href ?? "http://localhost/");
   url.searchParams.set("collection", id);
+  if (id !== "classic") url.searchParams.delete("demo");
   return url.pathname + url.search;
 }

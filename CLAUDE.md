@@ -58,6 +58,8 @@ When fixing, run `npm run verify` until green. Don't "fix" errors by deleting te
 
 ## Rules (from the build brief — keep them)
 
+- Preserve the original Sea Library layout, library navigation (Catalog, Leaderboard, Programs, Visit, About), content sections and Unsplash imagery. Keep quiz and live-challenge improvements isolated unless the user explicitly asks to change the library pages.
+
 - **Never invent** book facts, ISBNs, Open Library IDs, Korean titles, citations, API parameters, availability,
   or benchmark numbers. Unknown = p_yes 0.5 / null. Fixture data stays visibly marked as development data.
 - Thresholds stay configurable in `config.ts`. Don't lower the guess threshold to make numbers look better.
@@ -67,10 +69,10 @@ When fixing, run `npm run verify` until green. Don't "fix" errors by deleting te
 - Don't add accounts, vector databases, online learning or a live LLM chatbot.
 - UI must not show raw posterior percentages as accuracy.
 
-## Research catalog (500 imported records → 181 targets, 268 titles)
+## Research catalog (500 imported records → 388 targets, 488 titles)
 
 Two catalogs ship, switchable on the start screen (live: https://wiseshrestha.github.io/Bookinator/). The **CMU /
-research catalog** ("Research shelf", 268 titles) is the **default**. The **10-book fixture** ("Classic shelf") is at
+research catalog** ("Research shelf", 488 titles, catalog v3) is the **default**. The **10-book fixture** ("Classic shelf") is at
 `?collection=classic`, `npm run dev:classic` or `VITE_CATALOG=classic`. Never report imported records as game coverage:
 
 | Measure (14 Nov 2026) | Count |
@@ -79,7 +81,7 @@ research catalog** ("Research shelf", 268 titles) is the **default**. The **10-b
 | Records with a validated question matrix | 500 (7,348 source-linked cells; 468 have ≥12) |
 | Form holds kept out of the novel pool | 8 |
 | Cells reviewed by a person | **0** |
-| **Playable game targets** | **181** covering **268** titles (27 before series + AI recall; 17 with the base 64 only) |
+| **Playable game targets** | **388** covering **488** titles (catalog v3, 40-question engine; 181/268 in v1) |
 
 Pipeline (`npm run catalog:research`; needs the research and Core packs next to the repo, not committed):
 1. `scripts/merge_research.py`: researched matrix (`core500_researched_labels.json`) merged by stable ID with
@@ -169,6 +171,7 @@ title/alias + author), merges duplicates (same direction → stronger, opposite 
 before the shortlist); seeded question variety (`questionSpread`/`questionTopK`, seed per UI game in
 `session.options.seed`; no seed = fixed order, which the engine gate uses). All in `src/engine/config.ts`.
 
+<<<<<<< HEAD
 ### Library pages (fictional "Sea Library" on Pohang's Yeongildae beach)
 
 Hash routes (`src/router.ts`): `#/catalog` (505 novels from the research pool + classic shelf, 24 per page, tag/status
@@ -179,24 +182,57 @@ labels, ranks are goodbooks-10k popularity. Library wording/content: `src/i18n/p
 Unsplash results are cached for every visitor in `public.photo_cache` by the `book-image` Edge Function (demo key: 50/h).
 
 ### Second labeller: GPT recall pass (15 Nov 2026)
+=======
+### Second labeller: GPT recall pass, rebuilt as catalog `cmu-priority500-v3` (15 Nov 2026)
+>>>>>>> 8096e18c100e2f084ed0de38a7f3e47c2fbadffc
 
-`data/ai_recall/gpt.txt` (GPT, independent of Claude's file; see `docs/GPT_RECALL_HANDOFF.md`): 488 books,
-37,168 answers, 4 skipped; imported unchanged as a second labeller. Checks from the rebuild:
+`data/ai_recall/gpt.txt` (GPT, independent of Claude's file; see `docs/GPT_RECALL_HANDOFF.md`): 488 books, 37,168
+answers, 4 skipped; imported unchanged. Full rebuild (`merge_research` → `motif_labels` → `build_cmu_catalog
+--version cmu-priority500-v3` → `gate_catalog`) with the **merged engine settings from PR #1** (40-question cap,
+check-ins, 4 rejections; `src/engine/config.ts`, not changed here) and three AI labellers:
 
-| Check | Result |
-| --- | ---: |
-| Claude recall vs sourced labels | 2083/2226 agree (93.6%) |
-| GPT recall vs sourced labels | 6618/6757 agree (97.9%) |
-| Claude vs GPT on the same cells | 7783 agree, 692 disagree → unknown (91.8% agreement) |
-| Recall cells added to the catalog | 29,581 |
+| Labeller | Answers | Agreement with sourced labels |
+| --- | ---: | ---: |
+| Claude (`labels.txt`, incl. 5 books added in PR #1) | 10,345 | 2200/2354 (93.5%) |
+| GPT (`gpt.txt`) | 37,168 | 6618/6757 (97.9%) |
+| Gemini (`gemini.txt`, from PR #1) | 482 | 67/70 (95.7%) |
 
-**Disagreement review.** Disagreements cluster on a few questions where the written definition was broader than
-the question players see (e.g. "Is there a courtroom trial?" was defined as "a trial, lawyer or court case", so a
-solicitor in *Dracula* counted). Rule added (`RELIABILITY_MIN_AGREE` = 0.75 in `build_cmu_catalog.py`, a data
-rule, not an engine threshold): on questions where the two labellers agree < 75% of the time, an answer from only
-one labeller is dropped and only agreed answers are kept. Affected: m12 (40/59), m13 (18/59), m27 (33/49), m34 (23/31), m36 (43/77), m49 (32/50), q22 (21/31); 1,742 single-labeller answers
-dropped. The trial, battle and train definitions (and their keyword patterns) now match the question text.
-Two AIs agreeing is not measured factual accuracy; every cell stays `ai_recall`, no source, `reviewed=false`.
+Between labellers on shared cells: 8,271 agree, 787 disagree → unknown (91.3%). Recall cells added: 29,002.
+
+**Disagreement review.** Disagreements cluster on questions where the written definition was broader than the
+question players see (e.g. "Is there a courtroom trial?" was defined as "a trial, lawyer or court case", so a
+solicitor in *Dracula* counted). Rule added (`RELIABILITY_MIN_AGREE` = 0.75 in `build_cmu_catalog.py`, a data rule,
+not an engine threshold): on questions where labellers agree < 75% of the time on shared cells, an answer from only
+one labeller is dropped and only agreed answers are kept. Affected: m12 (42/63), m13 (18/60), m27 (33/50), m36 (43/81), m49 (32/51), q22 (26/36), q26 (149/202), q29 (51/76), q39 (48/66); 2,498 single-labeller answers dropped.
+The trial, battle and train definitions and keyword patterns now match the question text. AI agreement is not
+measured factual accuracy; every cell stays `ai_recall`, no source, `reviewed=false`.
+
+| Catalog | Engine settings | Playable targets | Titles reachable |
+| --- | --- | ---: | ---: |
+| v1 (Claude recall + series) | 18-question cap | 181 | 268 |
+| v2 (PR #1, labels applied without rebuild) | 40-question cap | 179 | 266 |
+| v3, before merging PR #1 (Claude + GPT) | 18-question cap | 341 | 440 |
+| **v3 (Claude + GPT + Gemini, full rebuild)** | **40-question cap** | **388** of 392 in scope | **488** |
+
+Not playable: Divine Secrets of the Ya-Ya Sisterhood, The Lucky One, Good in Bed, Evermore (sparse labels). Browser playtests (en, 1440 and 390 px):
+*Harry Potter*, *Narnia* and *Twilight* series with volume pick; *To Kill a Mockingbird*, *Pride and Prejudice*,
+*The Wonderful Wizard of Oz*; *The Catcher in the Rye* with one wrong answer (found after 22): all found, no errors.
+
+**Simulation of v3** (`reports/simulation_research.json`: seed 42, 30 games per target per scenario = 11,640 games
+each, main's engine settings: 40-question cap, check-ins, 4 rejections; simulated answers come from the same labels, so
+this is internal consistency, not accuracy):
+
+| Simulated reader | First guess right | Found by any route | Mean questions |
+| --- | ---: | ---: | ---: |
+| Clear memory | 69.8% | 93.1% | 28.2 |
+| One wrong answer | 59.7% | 88.5% | 31.1 |
+| Half memory | 34.0% | 68.9% | 35.8 |
+| Engine's own answer noise | 26.4% | 59.1% | 36.5 |
+| Difficult memory | 10.1% | 40.9% | 39.0 |
+
+Not comparable with the v1 table above (18-question cap, 2 rejections): the longer games and check-ins account for
+much of the rise from 20.4% / 73.3% (clear memory, v1).
+
 
 **Catalog state after the merge of 15 Nov 2026:** the 341-target / 440-title build from that rebuild (commit
 `f76ae8b`, still versioned `cmu-priority500-v1`) was replaced by `cmu-priority500-v2` (179 targets / 266 titles,
@@ -209,7 +245,7 @@ Claude lines too), give it a NEW version (v3; v1 is already a Supabase release),
 ## Known open items (not errors — need people or keys)
 
 - Fixture: 171/589 labels AI-checked against cited sources; 414 unchecked; **no human review**.
-- Research catalog: 500 imported, 181 targets / 268 titles, 0 human-reviewed (AI recall is not review). Human review of distinguishing labels is the next lever.
+- Research catalog v3: 500 imported, 388 targets / 488 titles, 0 human-reviewed (AI recall from three models is not review).
 - LLM labelling and Data4Library proxy were tested only against mock servers; try one real call each.
 - Human playtests, rehearsals, QR code (live site: https://wiseshrestha.github.io/Bookinator/, redeployed on every push to main).
 
@@ -218,8 +254,8 @@ Claude lines too), give it a NEW version (v3; v1 is already a Supabase release),
 New requirement: Akinator-style reader contributions (new books after a miss, corrections, feature answers,
 question and cover proposals) stored in Supabase (project ref `jvfxqusmnfdvslrgbjyv`, MCP server in `.mcp.json`).
 Applied to the remote project on 15 Nov 2026: both migrations in `supabase/migrations/` and the `book-image` Edge
-Function (Unsplash proxy, `supabase/functions/`). Not done yet: catalog `sync` (needs `SUPABASE_SERVICE_ROLE_KEY`),
-Anonymous sign-ins (off in the dashboard, so contributions fail until enabled), `app_admins` rows. Decided (14 Nov 2026): D1 Supabase anonymous sign-in + CAPTCHA,
+Function (Unsplash proxy, `supabase/functions/`). Catalog releases in Supabase (checked 15 Nov 2026): `fixture-2026-11-14b`, `cmu-priority500-v1`, `-v2`, and **`cmu-priority500-v3`** (synced at commit `c20ee02`: 388 books, 116 questions, 31,188 features; reads back identical except 4 books whose `sources` keep one extra source from an earlier release, because books and their sources are shared across releases). Anonymous sign-ins are enabled. Still not done: `app_admins` rows (maintainer account IDs needed).
+Decided (14 Nov 2026): D1 Supabase anonymous sign-in + CAPTCHA,
 D2 opt-in consent asked at the end of each game (send nothing on decline), D7 no cover uploads (Open Library cover
 links only). D3–D6 and D8–D13 are still open in the design doc — don't hard-code an answer to one of them.
 

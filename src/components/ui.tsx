@@ -29,6 +29,7 @@ import tileSearch from "../assets/icons/tile-search.svg";
 import tileStart from "../assets/icons/tile-start.svg";
 import waves from "../assets/icons/waves.svg";
 import type { Lang } from "../i18n/index.ts";
+import { EXPERIENCE } from "../i18n/experience.ts";
 import type { LibraryStrings } from "../i18n/library.ts";
 
 const ICONS = {
@@ -47,19 +48,24 @@ export function Icon({ name, size = 18 }: { name: IconName; size?: number }) {
   );
 }
 
-/** Loads optional data for a key; null while loading or when unavailable. */
-export function useLoaded<T>(load: () => Promise<T | null>, key: string): T | null {
-  const [value, setValue] = useState<T | null>(null);
+/** Optional content never blocks the game, and failures have an explicit settled state. */
+export function useLoadedState<T>(load: () => Promise<T | null>, key: string): { value: T | null; loading: boolean } {
+  const [result, setResult] = useState<{ value: T | null; loading: boolean }>({ value: null, loading: true });
   useEffect(() => {
     let live = true;
-    setValue(null);
-    load().then((v) => live && setValue(v));
-    return () => {
-      live = false;
-    };
+    setResult({ value: null, loading: true });
+    load().then(
+      (value) => { if (live) setResult({ value, loading: false }); },
+      () => { if (live) setResult({ value: null, loading: false }); },
+    );
+    return () => { live = false; };
+    // The key identifies the request; callers use stable data for a given key.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
-  return value;
+  return result;
+}
+export function useLoaded<T>(load: () => Promise<T | null>, key: string): T | null {
+  return useLoadedState(load, key).value;
 }
 
 // ---------------------------------------------------------------- Button
@@ -105,13 +111,13 @@ export function Button({ variant = "primary", arrow = true, checkMark = false, h
 
 // ---------------------------------------------------------------- Answer
 
-export function AnswerButton({ label, selected, onSelect, shortcut }: { label: string; selected: boolean; onSelect: () => void; shortcut?: string }) {
-  return (
-    <button type="button" className="answer" aria-pressed={selected} aria-keyshortcuts={shortcut} onClick={onSelect}>
-      {selected && <Icon name="checkWhite" />}
-      <span>{label}</span>
-    </button>
-  );
+export function AnswerButton({ label, onSelect, shortcut }: { label: string; onSelect: () => void; shortcut?: string }) {
+  return <button type="button" className="answer" aria-keyshortcuts={shortcut} onClick={(event) => {
+    // Ignore the second mouse/touch click of a double-click on a freshly rendered answer.
+    if (event.detail <= 1) onSelect();
+  }}>
+    <span>{label}</span>{shortcut && <kbd className="answer-shortcut" aria-hidden="true">{shortcut}</kbd>}
+  </button>;
 }
 
 // ---------------------------------------------------------------- Image / Unsplash
@@ -125,10 +131,10 @@ export interface Photo {
 }
 
 /** An image slot. Without a photo it shows the design's sea gradient; the caption pill is optional. */
-export function UnsplashImage({ photo, caption, className = "" }: { photo?: Photo | null; caption?: string; className?: string }) {
+export function UnsplashImage({ photo, caption, className = "", priority = false }: { photo?: Photo | null; caption?: string; className?: string; priority?: boolean }) {
   return (
     <div className={`photo ${className}`}>
-      {photo && <img className="photo-img" src={photo.url} alt={photo.alt ?? ""} loading="lazy" referrerPolicy="no-referrer" />}
+      {photo && <img className="photo-img" src={photo.url} alt={photo.alt ?? ""} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} referrerPolicy="no-referrer" />}
       {photo?.photographer ? (
         <p className="photo-caption">
           <Icon name="image" size={14} />
@@ -185,9 +191,7 @@ export function BookCard(p: BookCardProps) {
             <span>{p.actionLabel}</span>
             <Icon name="arrowRightSm" size={16} />
           </button>
-          <button type="button" className="icon-btn-plain" disabled aria-label={p.saveLabel} title={p.soonLabel}>
-            <Icon name="bookmark" size={20} />
-          </button>
+          <button type="button" className="icon-btn-plain" disabled aria-label={p.saveLabel} title={p.soonLabel}><Icon name="bookmark" size={20} /></button>
         </div>
       </div>
     </article>
@@ -226,10 +230,16 @@ interface HeaderProps {
   L: LibraryStrings;
   lang: Lang;
   setLang: (l: Lang) => void;
-  hours: string;
   onHome: () => void;
+<<<<<<< HEAD
   /** The page being shown, for aria-current in the menus. */
   active: Page;
+=======
+  onStart: () => void;
+  onCatalog: () => void;
+  onSection: (id: string) => void;
+  hours: string;
+>>>>>>> 8096e18c100e2f084ed0de38a7f3e47c2fbadffc
 }
 
 /** Main menu: label index in L.nav → page. */
@@ -259,11 +269,11 @@ function LangSwitch({ L, lang, setLang }: { L: LibraryStrings; lang: Lang; setLa
   );
 }
 
-/** A menu entry the demo does not implement: visible as in the design, not a link. */
-function Soon({ label, hint }: { label: string; hint: string }) {
-  return <span className="soon" title={hint}>{label}</span>;
+function navigationActions(onStart: () => void, onCatalog: () => void, onSection: (id: string) => void) {
+  return [onStart, onCatalog, () => onSection("leaderboard"), () => onSection("programs"), () => onSection("visit"), () => onSection("about")];
 }
 
+<<<<<<< HEAD
 function NavLinks({ L, active }: { L: LibraryStrings; active: Page }) {
   return (
     <>
@@ -326,10 +336,36 @@ export function MobileHeader({ L, lang, setLang, onHome, active }: HeaderProps) 
       )}
     </header>
   );
+=======
+export function Header({ L, lang, setLang, hours, onHome, onStart, onCatalog, onSection }: HeaderProps) {
+  const actions = navigationActions(onStart, onCatalog, onSection);
+  return <header className="header desktop-only">
+    <div className="utility"><p>{hours}</p><div className="utility-links">{L.utilLinks.map((label) => <span key={label} className="soon" title={L.comingSoon}>{label}</span>)}<LangSwitch L={L} lang={lang} setLang={setLang} /></div></div>
+    <div className="mainbar"><Logo L={L} onHome={onHome} size={24} />
+      <nav className="nav" aria-label="Bookinator">{L.nav.map((label, i) => <button key={label} type="button" onClick={actions[i]}>{label}</button>)}</nav>
+      <div className="header-actions"><button type="button" className="icon-btn" aria-label={L.search} onClick={onCatalog}><Icon name="search" size={20} /></button><Button variant="secondary" arrow={false} disabled title={L.comingSoon}>{L.login}</Button></div>
+    </div>
+  </header>;
 }
 
-/** One footer for both sizes (the Mobile Footer frame has the same content, stacked). */
+export function MobileHeader({ L, lang, setLang, onHome, onStart, onCatalog, onSection }: HeaderProps) {
+  const [open, setOpen] = useState(false);
+  const E = EXPERIENCE[lang];
+  const actions = navigationActions(onStart, onCatalog, onSection);
+  const go = (action: () => void) => { setOpen(false); action(); };
+  return <header className="mobile-header mobile-only">
+    <Logo L={L} onHome={() => go(onHome)} size={20} />
+    <div className="header-actions"><LangSwitch L={L} lang={lang} setLang={setLang} />
+      <button type="button" className="icon-btn mobile-search" aria-label={L.search} onClick={() => go(onCatalog)}><Icon name="search" size={20} /></button>
+      <button type="button" className="icon-btn" aria-label={open ? E.close : L.menu} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}><Icon name="menu" size={20} /></button>
+    </div>
+    {open && <nav id="mobile-nav" className="mobile-nav" aria-label="Bookinator" onKeyDown={(event) => { if (event.key === "Escape") { setOpen(false); event.currentTarget.parentElement?.querySelector<HTMLButtonElement>("[aria-controls]")?.focus(); } }}>{L.nav.map((label, i) => <button key={label} type="button" onClick={() => go(actions[i])}>{label}</button>)}</nav>}
+  </header>;
+>>>>>>> 8096e18c100e2f084ed0de38a7f3e47c2fbadffc
+}
+
 export function Footer({ L, address, children }: { L: LibraryStrings; address: string; children?: ReactNode }) {
+<<<<<<< HEAD
   return (
     <footer className="footer">
       <div className="footer-top">
@@ -354,6 +390,13 @@ export function Footer({ L, address, children }: { L: LibraryStrings; address: s
       </div>
     </footer>
   );
+=======
+  return <footer className="footer" id="about" tabIndex={-1}>
+    <div className="footer-top"><div className="footer-brand" id="visit"><p className="footer-logo">Bookinator</p><p>{L.footerTag}</p><p>{address}</p></div>
+      <div className="footer-cols">{L.footerCols.map((col) => <ul key={col[0]}>{col.map((label, i) => <li key={label} className={i === 0 ? "footer-col-head" : undefined}>{label}</li>)}</ul>)}</div>
+    </div><hr />{children && <div className="footer-notes">{children}</div>}<div className="footer-bottom"><p>{L.copyright}</p><p>{L.legal}</p></div>
+  </footer>;
+>>>>>>> 8096e18c100e2f084ed0de38a7f3e47c2fbadffc
 }
 
 /** A plain generated "cover" (no cover images, D7): a colour from the title, the title and author set in type. */

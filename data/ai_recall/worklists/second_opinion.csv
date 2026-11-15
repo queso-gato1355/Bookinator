@@ -2,8 +2,10 @@ book_id,title,author,priority_rank,wikipedia
 cmu:enwiki:20128213,The Hunger Games,Suzanne Collins,0,https://en.wikipedia.org/?curid=20128213
 cmu:enwiki:48648,Harry Potter and the Philosopher's Stone,J. K. Rowling,1,https://en.wikipedia.org/?curid=48648
 cmu:enwiki:4451267,Twilight,Stephenie Meyer,2,https://en.wikipedia.org/?curid=4451267
+cmu:enwiki:76033,The Great Gatsby,F. Scott Fitzgerald,4,https://en.wikipedia.org/?curid=76033
 cmu:enwiki:32262844,The Fault in Our Stars,John Green,5,https://en.wikipedia.org/?curid=32262844
 cmu:enwiki:24162,Pride and Prejudice,Jane Austen,7,https://en.wikipedia.org/?curid=24162
+cmu:enwiki:23454753,Nineteen Eighty-Four,George Orwell,8,https://en.wikipedia.org/?curid=23454753
 cmu:enwiki:620,Animal Farm,George Orwell,9,https://en.wikipedia.org/?curid=620
 cmu:enwiki:254498,Harry Potter and the Prisoner of Azkaban,J. K. Rowling,10,https://en.wikipedia.org/?curid=254498
 cmu:enwiki:21909903,Catching Fire,Suzanne Collins,11,https://en.wikipedia.org/?curid=21909903
@@ -34,6 +36,7 @@ cmu:enwiki:714218,The Notebook,Nicholas Sparks,37,https://en.wikipedia.org/?curi
 cmu:enwiki:419078,Life of Pi,Yann Martel,39,https://en.wikipedia.org/?curid=419078
 cmu:enwiki:571011,Northern Lights,Philip Pullman,40,https://en.wikipedia.org/?curid=571011
 cmu:enwiki:478921,The Hitchhiker's Guide to the Galaxy,Douglas Adams,41,https://en.wikipedia.org/?curid=478921
+cmu:enwiki:2224493,The Secret Life of Bees,Sue Monk Kidd,42,https://en.wikipedia.org/?curid=2224493
 cmu:enwiki:55435,Wuthering Heights,Emily Brontë,43,https://en.wikipedia.org/?curid=55435
 cmu:enwiki:2162569,The Perks of Being a Wallflower,Stephen Chbosky,44,https://en.wikipedia.org/?curid=2162569
 cmu:enwiki:890626,The Curious Incident of the Dog in the Night-time,Mark Haddon,46,https://en.wikipedia.org/?curid=890626
@@ -71,6 +74,7 @@ cmu:enwiki:15011992,The Battle of the Labyrinth,Rick Riordan,79,https://en.wikip
 cmu:enwiki:7402039,The Road,Cormac McCarthy,81,https://en.wikipedia.org/?curid=7402039
 cmu:enwiki:28411923,If I Stay,Gayle Forman,82,https://en.wikipedia.org/?curid=28411923
 cmu:enwiki:2531453,One Flew Over the Cuckoo's Nest,Ken Kesey,84,https://en.wikipedia.org/?curid=2531453
+cmu:enwiki:31879966,Clockwork Angel,Cassandra Clare,85,https://en.wikipedia.org/?curid=31879966
 cmu:enwiki:654705,One Hundred Years of Solitude,Gabriel García Márquez,86,https://en.wikipedia.org/?curid=654705
 cmu:enwiki:889073,Middlesex,Jeffrey Eugenides,87,https://en.wikipedia.org/?curid=889073
 cmu:enwiki:71416,Dune,Frank Herbert,88,https://en.wikipedia.org/?curid=71416
@@ -161,6 +165,7 @@ cmu:enwiki:231716,The BFG,Roald Dahl,196,https://en.wikipedia.org/?curid=231716
 cmu:enwiki:182433,Stardust,Neil Gaiman,202,https://en.wikipedia.org/?curid=182433
 cmu:enwiki:876994,Island of the Blue Dolphins,Scott O'Dell,205,https://en.wikipedia.org/?curid=876994
 cmu:enwiki:1268726,Beloved,Toni Morrison,208,https://en.wikipedia.org/?curid=1268726
+cmu:enwiki:27979753,The Red Pyramid,Rick Riordan,209,https://en.wikipedia.org/?curid=27979753
 cmu:enwiki:161301,Oliver Twist,Charles Dickens,213,https://en.wikipedia.org/?curid=161301
 cmu:enwiki:358335,The Call of the Wild,Jack London,219,https://en.wikipedia.org/?curid=358335
 cmu:enwiki:1225812,Hatchet,Gary Paulsen,222,https://en.wikipedia.org/?curid=1225812
