@@ -15,6 +15,7 @@ import { pg_trgm } from "@electric-sql/pglite/contrib/pg_trgm";
 
 import { computeConsensus, type RawAnswer } from "../../src/community/consensus.ts";
 import type { Answer } from "../../src/engine/model.ts";
+import { applyDemoContributions, type DemoContribution } from "../../src/community/demo.ts";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const read = (p: string) => readFileSync(resolve(ROOT, p), "utf8");
@@ -62,11 +63,51 @@ before(async () => {
   await db.exec(read("supabase/migrations/20261115010000_feature_status_ai_recall.sql"));
   await db.exec(read("supabase/migrations/20261115020000_optional_author.sql"));
   await db.exec(read("supabase/migrations/20261115030000_question_cap_40.sql"));
+  await db.exec(read("supabase/migrations/20261115040000_demo_direct_contributions.sql"));
   await db.query("insert into auth.users (id) values ($1), ($2), ($3)", [ADMIN, ALICE, BOB]);
   await db.query("insert into public.app_admins (user_id) values ($1)", [ADMIN]);
   await as(null, "service_role", async () => {
     await db.query("select public.tb_sync_release($1::jsonb)", [JSON.stringify(FIXTURE)]);
     await db.query("select public.tb_sync_release($1::jsonb)", [JSON.stringify(CMU)]);
+  });
+});
+
+describe("direct demo contributions", () => {
+  const reader = randomUUID();
+  before(async () => { await db.query("insert into auth.users(id) values ($1)", [reader]); });
+  const entry = (change: Partial<DemoContribution> = {}): DemoContribution => ({ id: randomUUID(), catalog_version: V,
+    title: "A reader's demo novel", author: "", notes: "", answers: [], questions: [{ text: "Is the protagonist a lighthouse keeper?", answer: "yes" }], ...change });
+
+  it("immediately exposes a new book and its answers to another visitor without an admin review", async () => {
+    const payload = entry({ answers: FIXTURE.questions.filter((q: { active?: boolean }) => q.active !== false).map((q: { id: string }) => ({ question_id: q.id, answer: "dont_know" as const })) });
+    assert.equal(await user(reader, () => rpc("submit_demo_contribution", payload)), payload.id);
+    const result = await as(null, "anon", () => db.query<{ entries: DemoContribution[] }>("select get_demo_contributions($1) entries", [V]));
+    assert.ok(result.rows[0].entries.some((e) => e.id === payload.id));
+    const catalog = applyDemoContributions(FIXTURE, result.rows[0].entries);
+    assert.ok(catalog.books.some((b) => b.title_en === payload.title));
+    assert.ok(catalog.questions.some((q) => q.text === payload.questions[0].text));
+    assert.equal((await db.query<{ n: number }>("select count(*)::int n from submission_reviews")).rows[0].n, 0);
+    assert.equal(await user(reader, () => rpc("submit_demo_contribution", payload)), payload.id, "a retry is idempotent");
+  });
+
+  it("accepts a title with no game answers and keeps empty author metadata unknown", async () => {
+    const payload = entry({ title: "Title-only demo addition", questions: [] });
+    assert.equal(await user(reader, () => rpc("submit_demo_contribution", payload)), payload.id);
+  });
+
+  it("validates inputs and denies unauthenticated writes and direct table access", async () => {
+    await assert.rejects(as(null, "anon", () => rpc("submit_demo_contribution", entry())), /permission denied/);
+    await assert.rejects(user(reader, () => db.query("select * from demo_contributions")), /permission denied/);
+    for (const payload of [entry({ title: "" }), entry({ catalog_version: "missing" }), entry({ book_id: "nonexistent" }), entry({ questions: [{ text: "", answer: "yes" }] }), entry({ answers: [{ question_id: "q-not-here", answer: "yes" }] })]) {
+      await assert.rejects(user(reader, () => rpc("submit_demo_contribution", payload)));
+    }
+  });
+
+  it("accepts full-bank game sessions longer than 40 questions", async () => {
+    const answers = FIXTURE.questions.filter((q: { active?: boolean }) => q.active !== false).map((q: { id: string }) => [q.id, "dont_know"] as [string, Answer]);
+    const id = await user(reader, () => rpc<string>("submit_game_session", session(answers)));
+    const rows = await db.query<{ n: number }>("select count(*)::int n from session_answers where session_id = $1", [id]);
+    assert.equal(rows.rows[0].n, 63);
   });
 });
 

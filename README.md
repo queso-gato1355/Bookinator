@@ -287,6 +287,11 @@ much of the rise from 20.4% / 73.3% (clear memory, v1).
 
 ## Front end: the seagull, the clouds and the sea
 
+**Current demo contribution flow:** [setup and behavior](docs/demo-contributions.md). Catalog now has
+an **Add a book & questions** form, also available after a failed game. Reader-supplied books and
+answers are immediately playable without admin review, with explicit shared or browser-local
+success messages. Games can use the full active question bank instead of a fixed 40-question cap.
+
 The interface follows the design canvas *북키네이터 (Bookinator) 프론트엔드 디자인*: a seagull in a pale sky asks
 each question in a speech bubble under a hanging "Question N" sign, and the five answers are cloud buttons
 floating on the sea (keys 1–5). Korean and English (`src/i18n/`, Korean question wording keyed by the English

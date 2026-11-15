@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { fetchReleaseCatalog, SUPABASE_CONFIG } from "./community/client.ts";
+import { fetchDemoContributions, fetchReleaseCatalog, SUPABASE_CONFIG } from "./community/client.ts";
+import { DEMO_REMOTE_KEY } from "./community/demo.ts";
 import { activeCollectionId, REMOTE_OVERRIDE_KEY, type RemoteCatalogOverride } from "./data/collection.ts";
 import { DEFAULT_CONFIG } from "./engine/config.ts";
 import { compileCatalog, type Catalog } from "./engine/model.ts";
@@ -32,6 +33,8 @@ async function boot() {
   const root = document.getElementById("root");
   if (!root) throw new Error("Missing #root element");
   await loadRemoteCatalog();
+  const bundled = (activeCollectionId() === "research" ? await import("./data/cmu.catalog.json") : await import("./data/fixture.catalog.json")).default;
+  (globalThis as Record<string, unknown>)[DEMO_REMOTE_KEY] = await fetchDemoContributions(bundled.catalog_version);
   // Imported only now, so the catalog modules see the override.
   const { default: App } = await import("./App.tsx");
   createRoot(root).render(

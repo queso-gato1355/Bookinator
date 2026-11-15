@@ -44,7 +44,7 @@ When fixing, run `npm run verify` until green. Don't "fix" errors by deleting te
 - `src/engine/` — pure TS, shared by UI, tests and `scripts/simulate.ts`. Never import React here.
   - `model.ts` types + channel + `compileCatalog`; `config.ts` **all thresholds**; `posterior.ts` log-space replay;
     `selectQuestion.ts` expected information gain × recallability; `session.ts` event log, Undo, rejection,
-    40-question cap (Akinator-style; DB setting `max_session_answers` must match), shortlist, no-match; `explain.ts` clues; `links.ts` catalog links.
+    active-question-bank cap (Akinator-style; session submission limits follow the release), shortlist, no-match; `explain.ts` clues; `links.ts` catalog links.
 - `src/components/` UI in the "Sea Library" Figma design (file `2y03ZMj6rMWmPFT4GwYa0n`): `ui.tsx` = reusable Header, MobileHeader, Footer,
   Button, AnswerButton, BookCard, LeaderboardRow, UnsplashImage; `screens.tsx` = Home, Question, Book (guess + found), Similar;
   `Contribute.tsx` = Not Found / add-a-book + opt-in answers. Colours only as CSS variables in `src/styles.css`; design wording in
@@ -67,6 +67,7 @@ When fixing, run `npm run verify` until green. Don't "fix" errors by deleting te
 - Simulations must use the same engine module as the UI.
 - Secrets server-side only. Every external integration must fail gracefully (show catalog link, not a guess).
 - Don't add accounts, vector databases, online learning or a live LLM chatbot.
+- User-requested hackathon exception: apply reader-supplied books, questions and answers immediately in the separate demo overlay, without admin review. Keep labels visibly unreviewed and other books' unknown answers unknown. See `docs/demo-contributions.md` for shared publishing and local fallback.
 - UI must not show raw posterior percentages as accuracy.
 
 ## Research catalog (500 imported records → 388 targets, 488 titles)

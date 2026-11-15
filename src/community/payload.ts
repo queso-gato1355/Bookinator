@@ -1,6 +1,6 @@
 // Turns a finished game into the submit_game_session payload (supabase/migrations/…). Pure, so the
 // exact data that leaves the browser is unit-tested: only answers, outcome and book ids — no free text.
-import type { CompiledCatalog } from "../engine/model.ts";
+import type { Answer, CompiledCatalog } from "../engine/model.ts";
 import type { SessionState, Session } from "../engine/session.ts";
 
 /** Version of the consent text shown before sending (D2). Bump it whenever that text changes. */
@@ -16,7 +16,7 @@ export interface SessionPayload {
   identified_book_id: string | null;
   rejected_book_ids: string[];
   consent_version: string;
-  answers: { question_id: string; answer: string }[];
+  answers: { question_id: string; answer: Answer }[];
 }
 
 export function outcomeOf(state: SessionState): SessionOutcome | null {

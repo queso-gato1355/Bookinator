@@ -60,8 +60,8 @@ export function HomeScreen(props: { headingRef: Heading; onStart: (film: boolean
   return isDemoMode() && !props.libraryOnly ? <ChallengeHomeScreen {...props} /> : <LibraryHome {...props} />;
 }
 
-export function CatalogScreen(props: { headingRef: Heading; t: Strings; L: LibraryStrings; lang: Lang }) {
-  return <><Breadcrumb items={[props.L.home, props.L.nav[1]]} /><section className="intro"><h1 ref={props.headingRef} tabIndex={-1}>{props.L.nav[1]}</h1></section><CatalogGallery t={props.t} L={props.L} lang={props.lang} /></>;
+export function CatalogScreen(props: { headingRef: Heading; t: Strings; L: LibraryStrings; lang: Lang; onAddBook: () => void }) {
+  return <><Breadcrumb items={[props.L.home, props.L.nav[1]]} /><section className="intro"><h1 ref={props.headingRef} tabIndex={-1}>{props.L.nav[1]}</h1></section><CatalogGallery t={props.t} L={props.L} lang={props.lang} onAddBook={props.onAddBook} /></>;
 }
 
 function ChallengeHomeScreen({ headingRef, onStart, t, L, lang }: { headingRef: Heading; onStart: (film: boolean) => void; t: Strings; L: LibraryStrings; lang: Lang }) {
@@ -195,6 +195,7 @@ function ClueProvenance({ bookIndex, feature, t, L }: { bookIndex: number; featu
   }
   if (feature?.status === "community_consensus" && feature.consensus) return <small>{t.fromReaders(feature.consensus.contributors)}</small>;
   if (feature?.status === "ai_recall") return <small>{L.aiRecall}</small>;
+  if (feature?.status === "demo_contribution") return <small>{t.demoReaderAnswer}</small>;
   return <small>{t.unchecked}</small>;
 }
 

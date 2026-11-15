@@ -30,6 +30,7 @@ import waves from "../assets/icons/waves.svg";
 import type { Lang } from "../i18n/index.ts";
 import { EXPERIENCE } from "../i18n/experience.ts";
 import type { LibraryStrings } from "../i18n/library.ts";
+import { Creators } from "./Creators.tsx";
 
 const ICONS = {
   arrowLeft, arrowRight, arrowRightSm, arrowRightWhite, bookmark, calendar, check, checkClue, checkWhite, checkWhiteLg,
@@ -286,11 +287,11 @@ export function MobileHeader({ L, lang, setLang, onHome, onStart, onCatalog, onS
   </header>;
 }
 
-export function Footer({ L, address, children }: { L: LibraryStrings; address: string; children?: ReactNode }) {
+export function Footer({ L, address, children, lang }: { L: LibraryStrings; address: string; children?: ReactNode; lang: Lang }) {
   return <footer className="footer" id="about" tabIndex={-1}>
     <div className="footer-top"><div className="footer-brand" id="visit"><p className="footer-logo">Bookinator</p><p>{L.footerTag}</p><p>{address}</p></div>
       <div className="footer-cols">{L.footerCols.map((col) => <ul key={col[0]}>{col.map((label, i) => <li key={label} className={i === 0 ? "footer-col-head" : undefined}>{label}</li>)}</ul>)}</div>
-    </div><hr />{children && <div className="footer-notes">{children}</div>}<div className="footer-bottom"><p>{L.copyright}</p><p>{L.legal}</p></div>
+    </div><Creators lang={lang} /><hr />{children && <div className="footer-notes">{children}</div>}<div className="footer-bottom"><p>{L.copyright}</p><p>{L.legal}</p></div>
   </footer>;
 }
 

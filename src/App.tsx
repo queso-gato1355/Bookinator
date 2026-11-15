@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ACTIVE_CATALOG, CATALOG_SOURCE } from "./data/index.ts";
 import { ANSWERS, type Answer } from "./engine/model.ts";
 import { applyEvent, deriveState, newSession, undo, type Session, type SessionEvent } from "./engine/session.ts";
-import { CC, CONFIG, loadSession, saveSession } from "./game.ts";
+import { CC, CONFIG, loadSession, saveSession, refreshGameCatalog } from "./game.ts";
 import { STRINGS, useLang } from "./i18n/index.ts";
 import { DESIGN_MOCK } from "./mock/design.ts";
 import { LIBRARY } from "./i18n/library.ts";
@@ -25,6 +25,8 @@ export default function App() {
   const t = STRINGS[lang];
   const L = LIBRARY[lang];
   const [catalogOpen, setCatalogOpen] = useState(false);
+  const [directContribution, setDirectContribution] = useState(false);
+  const [, setCatalogRevision] = useState(0);
   const [homeSection, setHomeSection] = useState<{ id: string; request: number } | null>(null);
   const [session, setSession] = useState<Session | null>(() => {
     const saved = loadSession();
@@ -46,7 +48,9 @@ export default function App() {
     [],
   );
   const onUndo = useCallback(() => setSession((s) => (s ? undo(s) : s)), []);
-  const onRestart = useCallback(() => { setSession(null); setCatalogOpen(false); }, []);
+  const onRestart = useCallback(() => { setSession(null); setCatalogOpen(false); setDirectContribution(false); }, []);
+  const onContribute = useCallback(() => { setDirectContribution(true); setCatalogOpen(false); setSession({ ...newSession(), events: [{ type: "exit" }] }); }, []);
+  const onCatalogUpdated = useCallback(() => setCatalogRevision((n) => n + 1), []);
   const onSection = useCallback((id: string) => { setSession(null); setCatalogOpen(id === "catalog"); setHomeSection((previous) => ({ id, request: (previous?.request ?? 0) + 1 })); }, []);
   const onCatalog = useCallback(() => onSection("catalog"), [onSection]);
   const onEditAnswer = useCallback((index: number) => setSession((s) => s ? rewindToAnswer(s, index) : s), []);
@@ -65,7 +69,7 @@ export default function App() {
   }, [homeSection]);
   // Each game gets its own seed, so questions come in a different order from game to game.
   const onStart = useCallback(
-    (filmMemoryMode: boolean) => { setCatalogOpen(false); setSession(newSession({ filmMemoryMode, seed: isDemoMode() ? DEMO_SEED : Math.floor(Math.random() * 2 ** 31) })); },
+    (filmMemoryMode: boolean) => { refreshGameCatalog(); setCatalogOpen(false); setDirectContribution(false); setSession(newSession({ filmMemoryMode, seed: isDemoMode() ? DEMO_SEED : Math.floor(Math.random() * 2 ** 31) })); },
     [],
   );
 
@@ -104,7 +108,7 @@ export default function App() {
 
   let screen;
   if (!session || !state) {
-    screen = catalogOpen ? <CatalogScreen headingRef={headingRef} t={t} L={L} lang={lang} /> : <HomeScreen headingRef={headingRef} onStart={onStart} t={t} L={L} lang={lang} libraryOnly={Boolean(homeSection && homeSection.id !== "catalog")} />;
+    screen = catalogOpen ? <CatalogScreen headingRef={headingRef} t={t} L={L} lang={lang} onAddBook={onContribute} /> : <HomeScreen headingRef={headingRef} onStart={onStart} t={t} L={L} lang={lang} libraryOnly={Boolean(homeSection && homeSection.id !== "catalog")} />;
   } else {
     const a = state.action;
     const common = { headingRef, state, session, t, L, lang, onUndo, onRestart, canUndo: session.events.length > 0, onEditAnswer };
@@ -133,7 +137,7 @@ export default function App() {
         break;
       case "no_match":
         // Keyed by the event count so the form starts empty after Undo + a new miss.
-        screen = <AddBookScreen key={session.events.length} {...common} onPlayAgain={onRestart} />;
+        screen = <AddBookScreen key={session.events.length} {...common} direct={directContribution} onPlayAgain={onRestart} onCatalogUpdated={onCatalogUpdated} />;
         break;
     }
   }
@@ -148,7 +152,7 @@ export default function App() {
       <Header {...header} />
       <MobileHeader {...header} />
       <main id="main-content">{screen}</main>
-      <Footer L={L} address={DESIGN_MOCK[lang].address}>
+      <Footer L={L} address={DESIGN_MOCK[lang].address} lang={lang}>
         {notice && (
           <p>
             <b>{notice}.</b> <span lang="en">{ACTIVE_CATALOG.notice}</span>

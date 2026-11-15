@@ -11,6 +11,7 @@ import type { Catalog } from "../engine/model.ts";
 import { activeCollectionId, REMOTE_OVERRIDE_KEY, type CollectionId, type RemoteCatalogOverride } from "./collection.ts";
 import cmu from "./cmu.catalog.json";
 import fixture from "./fixture.catalog.json";
+import { applyDemoContributions, DEMO_REMOTE_KEY, readDemoContributions } from "../community/demo.ts";
 
 export type { CollectionId } from "./collection.ts";
 
@@ -33,8 +34,19 @@ const remote = (globalThis as Record<string, unknown>)[REMOTE_OVERRIDE_KEY] as R
 
 /** "remote" when this page plays a release loaded from Supabase, "bundled" otherwise. */
 export const CATALOG_SOURCE: "remote" | "bundled" = remote?.collection === ACTIVE_COLLECTION ? "remote" : "bundled";
-export const ACTIVE_CATALOG: Catalog =
+const BASE_CATALOG: Catalog =
   CATALOG_SOURCE === "remote" ? (remote!.catalog as Catalog) : COLLECTIONS[ACTIVE_COLLECTION].catalog;
+
+export let ACTIVE_CATALOG: Catalog;
+export function refreshActiveCatalog(): Catalog {
+  const shared = (globalThis as Record<string, unknown>)[DEMO_REMOTE_KEY];
+  const entries = [...(Array.isArray(shared) ? shared : []), ...readDemoContributions()];
+  const unique = [...new Map(entries.map((entry) => [entry.id, entry])).values()];
+  ACTIVE_CATALOG = applyDemoContributions(BASE_CATALOG, unique);
+  COLLECTIONS[ACTIVE_COLLECTION].catalog = ACTIVE_CATALOG;
+  return ACTIVE_CATALOG;
+}
+refreshActiveCatalog();
 
 /** Link that reloads the app on the given collection (keeps the rest of the URL). */
 export function collectionHref(id: CollectionId): string {

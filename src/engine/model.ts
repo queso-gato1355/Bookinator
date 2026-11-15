@@ -33,7 +33,9 @@ export type FeatureStatus =
   /** Accepted by a reviewer from aggregated reader answers (src/community/consensus.ts). */
   | "community_consensus"
   /** An AI assistant's general knowledge of the book; no source. Never shown as source-checked. */
-  | "ai_recall";
+  | "ai_recall"
+  /** Reader-supplied hackathon demo data, applied immediately without review. */
+  | "demo_contribution";
 
 export const ALLOWED_P_YES = [0.1, 0.3, 0.5, 0.7, 0.9] as const;
 
